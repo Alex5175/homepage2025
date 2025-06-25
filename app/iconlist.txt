@@ -1,7 +1,0 @@
-<a href="https://www.flaticon.com/free-icons/html" title="html icons">Html icons created by Freepik - Flaticon</a>
-<a href="https://www.flaticon.com/free-icons/css" title="css icons">Css icons created by iconsimple - Flaticon</a>
-<a href="https://www.flaticon.com/free-icons/javascript" title="javascript icons">Javascript icons created by Freepik - Flaticon</a>
-<a href="https://www.flaticon.com/free-icons/react" title="react icons">React icons created by Erix - Flaticon</a>
-<a href="https://www.flaticon.com/free-icons/node-js" title="node js icons">Node js icons created by Freepik - Flaticon</a>
-<a href="https://www.flaticon.com/free-icons/java" title="java icons">Java icons created by Freepik - Flaticon</a>
-<a href="https://www.flaticon.com/free-icons/c-sharp" title="c sharp icons">C sharp icons created by Freepik - Flaticon</a>
