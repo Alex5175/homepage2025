@@ -50,6 +50,10 @@ const skillIcons = [
     src: "./icons/c-sharp.png",
     text: "c sharp logo",
   },
+  {
+    src: "./icons/wordpress.png",
+    text: "wordpress logo",
+  },
 ];
 
 export default function Hero() {
@@ -87,7 +91,7 @@ export default function Hero() {
   return (
     <div
       id="hero"
-      className="h-[88vh] bg-background w-screen grid  grid-cols-2"
+      className="h-[88vh] bg-background w-screen grid   grid-cols-2"
     >
       <div className="p-8">
         <h1
@@ -118,7 +122,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div>
+      <div className="flex justify-end">
         <img src="me_edited_no_bg_scaled2.png" className="h-full" alt="" />
       </div>
     </div>

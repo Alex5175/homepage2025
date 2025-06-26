@@ -21,7 +21,7 @@ export default function AboutMe() {
   return (
     <div
       id="aboutme"
-      className="bg-primary w-screen grid grid-cols-12 h-[98vh] "
+      className="bg-primary w-screen grid grid-cols-12 snap-start h-[98vh] "
     >
       <div className="p-16 col-span-7">
         <h2

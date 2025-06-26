@@ -13,7 +13,7 @@ export default function NavBar() {
 
   return (
     <>
-      <nav className="flex h-24 bg-background-opacity w-screen fixed items-center z-10">
+      <nav className="flex h-16 bg-background-opacity w-screen fixed items-center z-[1000]">
         <div className="w-[66.6vw] pl-6">
           <a
             href="#top"
@@ -73,7 +73,7 @@ export default function NavBar() {
           </a>
         </div>
       )}
-      <div className="h-24"></div>
+      <div className="h-12 snap-start"></div>
     </>
   );
 }

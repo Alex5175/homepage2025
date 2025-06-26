@@ -8,6 +8,7 @@ import React, { useEffect, useState } from "react";
 import Hero from "./Hero";
 import AboutMe from "./AboutMe";
 import Projects from "./Projects";
+import Contact from "./Contact";
 
 export default function Home() {
   return (
@@ -21,7 +22,7 @@ export default function Home() {
 
         <Projects></Projects>
 
-        <div id="contact" className="bg-green-300 h-[98vh]"></div>
+        <Contact></Contact>
       </main>
     </div>
   );
