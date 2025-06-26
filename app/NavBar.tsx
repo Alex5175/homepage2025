@@ -4,6 +4,7 @@ import { Parisienne } from "next/font/google";
 
 const parisienne = Parisienne({
   weight: "400",
+  subsets: ["latin"],
 });
 
 export default function NavBar() {
