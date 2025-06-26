@@ -3,6 +3,7 @@ import { Figtree } from "next/font/google";
 
 const figtree = Figtree({
   weight: "700",
+  subsets: ["latin"],
 });
 
 // Example card data – replace with your own

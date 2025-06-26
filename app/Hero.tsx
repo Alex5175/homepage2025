@@ -2,15 +2,16 @@
 import { useState, useEffect } from "react";
 import { Imperial_Script, Aref_Ruqaa, Figtree } from "next/font/google";
 
-const imperal = Imperial_Script({
-  weight: "400",
-});
+// const imperal = Imperial_Script({
+//   weight: "400",
+// });
 
-const aref = Aref_Ruqaa({
-  weight: "400",
-});
+// const aref = Aref_Ruqaa({
+//   weight: "400",
+// });
 const figtree = Figtree({
   weight: "700",
+  subsets: ["latin"],
 });
 
 const words = ["Website?", "Web App?", "Desktop App?"];
