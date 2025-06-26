@@ -15,7 +15,7 @@ const figtree = Figtree({
 
 const words = ["Website?", "Web App?", "Desktop App?"];
 
-const iconDims = "w-24";
+const iconDims = "w-16 md:w-20 lg:w-28";
 
 const skillIcons = [
   {
@@ -91,26 +91,29 @@ export default function Hero() {
   return (
     <div
       id="hero"
-      className="h-screen bg-background w-screen grid   grid-cols-2"
+      className="h-screen bg-background w-screen grid overflow-x-hidden grid-cols-2"
     >
-      <div className="p-8">
+      <div className="p-8 col-span-2 md:col-span-1">
         <h1
-          className={`text-7xl ${figtree.className} text-foreground  text-left `}
+          className={`text-4xl md:text-6xl xl:text-8xl ${figtree.className} text-foreground  text-left `}
         >
           ZEITLHOFER{" "}
           <span className="font-black bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            ALEX
+            ALEXANDER
           </span>
         </h1>
 
         <p
-          className={`text-foreground text-4xl mt-4  text-left ${figtree.className} `}
+          className={`text-foreground text-2xl md:text-4xl mt-4  text-left ${figtree.className} `}
         >
           WEB-ENTWICKLUNG/DESIGN <br />
           SOFTWARE ENTWICKLUNG
         </p>
 
-        <div id="icons" className="grid grid-cols-4 gap-10 mt-12 ">
+        <div
+          id="icons"
+          className="grid grid-cols-3 lg:grid-cols-4 gap-10 mt-12 "
+        >
           {skillIcons.map((icon) => (
             <img
               src={icon.src}
@@ -122,7 +125,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="flex justify-end">
+      <div className="hidden md:flex justify-end">
         <img
           src="me_edited_no_bg_scaled2.png"
           className="h-full object-cover"

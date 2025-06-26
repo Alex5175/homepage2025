@@ -13,11 +13,11 @@ export default function NavBar() {
 
   return (
     <>
-      <nav className="flex h-16 bg-background-opacity w-screen fixed items-center z-[1000]">
+      <nav className="fixed top-0 left-0 right-0 h-16 bg-background-opacity w-full flex items-center z-[1000]">
         <div className="w-[66.6vw] pl-6">
           <a
             href="#top"
-            className={`font-black text-foreground text-6xl ${parisienne.className} cursor-pointer text-glow`}
+            className={`font-black text-foreground text-4xl md:text-6xl ${parisienne.className} cursor-pointer text-glow`}
           >
             Alex Zeitlhofer
           </a>
@@ -49,7 +49,10 @@ export default function NavBar() {
       </nav>
       {/* Mobile dropdown menu */}
       {open && (
-        <div className="fixed top-24 right-0 w-2/3 max-w-xs bg-background shadow-lg z-20 flex flex-col items-end p-6 gap-6 md:hidden">
+        <div
+          className="fixed top-16 left-0 w-full bg-background shadow-lg z-20 flex flex-col items-end p-6 gap-6 md:hidden"
+          style={{ boxSizing: "border-box", maxWidth: "100vw" }}
+        >
           <a
             href="#aboutme"
             className={btnClass}
