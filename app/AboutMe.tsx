@@ -1,20 +1,12 @@
 import {
   Imperial_Script,
-  Aref_Ruqaa,
   Figtree,
-  Parisienne,
 } from "next/font/google";
 const imperal = Imperial_Script({
   weight: "400",
   subsets: ["latin"],
 });
-// const parisienne = Parisienne({
-//   weight: "400",
-// });
 
-// const aref = Aref_Ruqaa({
-//   weight: "400",
-// });
 const figtree = Figtree({
   weight: "700",
   subsets: ["latin"],

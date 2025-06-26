@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { Imperial_Script, Aref_Ruqaa, Figtree } from "next/font/google";
+import { Figtree } from "next/font/google";
 
 // const imperal = Imperial_Script({
 //   weight: "400",

@@ -1,9 +1,9 @@
 "use client";
-import Image from "next/image";
+// import Image from "next/image";
 import NavBar from "./NavBar";
-import { Imperial_Script, Aref_Ruqaa } from "next/font/google";
+// import { Imperial_Script, Aref_Ruqaa } from "next/font/google";
 import "./home.css";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import Hero from "./Hero";
 import AboutMe from "./AboutMe";

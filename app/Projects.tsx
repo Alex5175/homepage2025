@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import { Figtree } from "next/font/google";
 
 const figtree = Figtree({
