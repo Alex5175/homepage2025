@@ -91,7 +91,7 @@ export default function Hero() {
   return (
     <div
       id="hero"
-      className="h-[88vh] bg-background w-screen grid   grid-cols-2"
+      className="h-screen bg-background w-screen grid   grid-cols-2"
     >
       <div className="p-8">
         <h1
@@ -123,7 +123,11 @@ export default function Hero() {
       </div>
 
       <div className="flex justify-end">
-        <img src="me_edited_no_bg_scaled2.png" className="h-full" alt="" />
+        <img
+          src="me_edited_no_bg_scaled2.png"
+          className="h-full object-cover"
+          alt=""
+        />
       </div>
     </div>
   );

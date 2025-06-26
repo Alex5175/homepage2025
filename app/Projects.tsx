@@ -27,43 +27,43 @@ const projects = [
 export default function Projects() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
+  // useEffect(() => {
+  //   const el = scrollRef.current;
+  //   if (!el) return;
 
-    const onWheel = (e: WheelEvent) => {
-      // Only act if the container can scroll horizontally
-      if (
-        el.scrollWidth > el.clientWidth &&
-        (e.deltaY !== 0 || e.deltaX !== 0)
-      ) {
-        const atStart = el.scrollLeft === 0;
-        const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 1;
+  //   const onWheel = (e: WheelEvent) => {
+  //     // Only act if the container can scroll horizontally
+  //     if (
+  //       el.scrollWidth > el.clientWidth &&
+  //       (e.deltaY !== 0 || e.deltaX !== 0)
+  //     ) {
+  //       const atStart = el.scrollLeft === 0;
+  //       const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 1;
 
-        // If not at start or end, prevent vertical scroll and scroll horizontally
-        if (
-          (!atStart && !atEnd) ||
-          (atStart && e.deltaY > 0) ||
-          (atEnd && e.deltaY < 0)
-        ) {
-          e.preventDefault();
-          el.scrollLeft += e.deltaY;
-        }
-        // If at start and scrolling up, or at end and scrolling down, allow normal scroll
-      }
-    };
+  //       // If not at start or end, prevent vertical scroll and scroll horizontally
+  //       if (
+  //         (!atStart && !atEnd) ||
+  //         (atStart && e.deltaY > 0) ||
+  //         (atEnd && e.deltaY < 0)
+  //       ) {
+  //         e.preventDefault();
+  //         el.scrollLeft += e.deltaY;
+  //       }
+  //       // If at start and scrolling up, or at end and scrolling down, allow normal scroll
+  //     }
+  //   };
 
-    el.addEventListener("wheel", onWheel, { passive: false });
-    return () => el.removeEventListener("wheel", onWheel);
-  }, []);
+  //   el.addEventListener("wheel", onWheel, { passive: false });
+  //   return () => el.removeEventListener("wheel", onWheel);
+  // }, []);
 
   return (
     <div
       id="projects"
-      className="bg-secondary snap-start h-[98vh] pt-16 flex flex-col items-center"
+      className="bg-secondary snap-start h-screen pt-20 flex flex-col items-center"
     >
       <h1
-        className={`text-7xl ${figtree.className} text-foreground ml-16 text-left w-full mb-4`}
+        className={`text-7xl ${figtree.className} text-foreground ml-16 text-left w-full mb-8`}
       >
         PROJEKTE
       </h1>
@@ -80,7 +80,7 @@ export default function Projects() {
             key={idx}
             className="flex-shrink-0 w-[35vw] bg-foreground shadow-lg flex flex-col items-center relative group"
           >
-            <div className="relative w-full hover:z-50 h-[60vh]">
+            <div className="relative w-full hover:z-50 h-[70vh]">
               <div className="w-full h-full transition-transform duration-300 transform group-hover:scale-105">
                 <img
                   src={project.image}
