@@ -1,7 +1,5 @@
-import {
-  Imperial_Script,
-  Figtree,
-} from "next/font/google";
+import { Imperial_Script, Figtree } from "next/font/google";
+
 const imperal = Imperial_Script({
   weight: "400",
   subsets: ["latin"],

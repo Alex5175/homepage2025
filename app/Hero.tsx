@@ -64,7 +64,7 @@ export default function Hero() {
 
   useEffect(() => {
     const word = words[currentWordIndex];
-    let typingSpeed = isDeleting ? 40 : 80;
+    const typingSpeed = isDeleting ? 40 : 80;
     let timeout: NodeJS.Timeout;
 
     if (!isDeleting && displayedText === word) {
