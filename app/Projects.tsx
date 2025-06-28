@@ -10,34 +10,34 @@ const figtree = Figtree({
 const projects = [
   {
     title: "Projekt 1",
-    image: "/img/pexels-bri-schneiter-28802-346529.jpg",
+    image: "",
     description: "Kurze Beschreibung von Projekt 1.",
   },
-  {
-    title: "Projekt 2",
-    image: "/img/pexels-pixabay-206359.jpg",
-    description: "Kurze Beschreibung von Projekt 2.",
-  },
-  {
-    title: "Projekt 3",
-    image: "/img/pexels-samandgos-709552.jpg",
-    description: "Kurze Beschreibung von Projekt 3.",
-  },
-  {
-    title: "Projekt 3",
-    image: "/img/pexels-samandgos-709552.jpg",
-    description: "Kurze Beschreibung von Projekt 3.",
-  },
-  {
-    title: "Projekt 3",
-    image: "/img/pexels-samandgos-709552.jpg",
-    description: "Kurze Beschreibung von Projekt 3.",
-  },
-  {
-    title: "Projekt 3",
-    image: "/img/pexels-samandgos-709552.jpg",
-    description: "Kurze Beschreibung von Projekt 3.",
-  },
+  // {
+  //   title: "Projekt 2",
+  //   image: "/img/pexels-pixabay-206359.jpg",
+  //   description: "Kurze Beschreibung von Projekt 2.",
+  // },
+  // {
+  //   title: "Projekt 3",
+  //   image: "/img/pexels-samandgos-709552.jpg",
+  //   description: "Kurze Beschreibung von Projekt 3.",
+  // },
+  // {
+  //   title: "Projekt 3",
+  //   image: "/img/pexels-samandgos-709552.jpg",
+  //   description: "Kurze Beschreibung von Projekt 3.",
+  // },
+  // {
+  //   title: "Projekt 3",
+  //   image: "/img/pexels-samandgos-709552.jpg",
+  //   description: "Kurze Beschreibung von Projekt 3.",
+  // },
+  // {
+  //   title: "Projekt 3",
+  //   image: "/img/pexels-samandgos-709552.jpg",
+  //   description: "Kurze Beschreibung von Projekt 3.",
+  // },
 ];
 
 export default function Projects() {
