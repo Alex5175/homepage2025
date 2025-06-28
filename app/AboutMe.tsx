@@ -13,7 +13,7 @@ export default function AboutMe() {
   return (
     <div
       id="aboutme"
-      className="bg-primary w-screen grid grid-cols-12 overflow-x-hidden snap-start h-screen "
+      className="bg-primary w-screen grid grid-cols-12 overflow-hidden snap-start h-screen "
     >
       <div className="p-8 col-span-12 lg:col-span-7">
         <h2
@@ -37,19 +37,19 @@ export default function AboutMe() {
           begleiten mich seitdem auf meinem Weg durch die Welt des Webs.
         </p>
 
-        <div className="flex justify-center mt-8 items-center">
+        {/* <div className="flex justify-center mt-8 items-center">
           <img
             src="./signature.png"
             alt="Alexander Zeitlhofer Signature"
             className="lg:w-[20rem] hidden xl:block"
           />
-        </div>
+        </div> */}
       </div>
       <div className="h-full  justify-end col-span-5 hidden lg:flex">
         <img
           src="./fave_edited_md.png"
           loading="lazy"
-          className="object-contain"
+          className="object-cover"
           alt="Alex Zeitlhofer Suit Image"
         />
       </div>

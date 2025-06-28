@@ -46,13 +46,13 @@ export default function Projects() {
   return (
     <div
       id="projects"
-      className="bg-secondary snap-start h-screen pt-8 md:pt-20 flex flex-col items-center overflow-x-hidden"
+      className="bg-secondary snap-start h-screen p-8 flex flex-col items-center overflow-hidden"
     >
-      <h1
-        className={`text-4xl md:text-7xl ${figtree.className} text-foreground ml-16 text-left w-full mb-8`}
+      <h2
+        className={`text-4xl md:text-7xl ${figtree.className} text-foreground mt-8 text-left w-full mb-8`}
       >
         PROJEKTE
-      </h1>
+      </h2>
       <div className="relative w-full flex items-center justify-center max-w-8xl">
         {/* Left Scroll Button */}
         <button
@@ -121,7 +121,7 @@ export default function Projects() {
         {/* Cards Scrollable Row */}
         <div
           ref={scrollRef}
-          className="flex w-full max-w-8xl overflow-x-auto pb-4 scrollbar-hide"
+          className="flex w-full max-w-8xl overflow-x-auto  pb-4 scrollbar-hide"
           style={{
             scrollbarWidth: "none", // Firefox
             msOverflowStyle: "none", // IE 10+
@@ -130,7 +130,7 @@ export default function Projects() {
           {projects.map((project, idx) => (
             <div
               key={idx}
-              className="flex-shrink-0 max-w-screen lg:max-w-[35vw] bg-foreground shadow-lg flex flex-col items-center relative group"
+              className="flex-shrink-0 max-w-screen lg:max-w-[33.3vw] bg-foreground shadow-lg flex flex-col items-center relative group"
             >
               <div className="relative w-full hover:z-30 h-[70vh] md:h-[30vh] lg:h-[70vh]">
                 <div className="w-full h-full transition-transform duration-300 transform group-hover:scale-105">

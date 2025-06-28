@@ -13,8 +13,6 @@ import Contact from "./Contact";
 export default function Home() {
   return (
     <div id="top">
-      <NavBar></NavBar>
-
       <main className="">
         <Hero></Hero>
 

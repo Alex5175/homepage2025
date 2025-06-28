@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import { Parisienne } from "next/font/google";
 
@@ -9,14 +10,14 @@ const parisienne = Parisienne({
 export default function NavBar() {
   const [open, setOpen] = useState(false);
   const btnClass =
-    "cursor-pointer bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent";
+    "cursor-pointer bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]";
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 h-16 bg-background-opacity w-full flex items-center z-[1000]">
+      <nav className="fixed top-0 left-0 right-0 h-16  w-full flex items-center z-[1000]">
         <div className="w-[66.6vw] pl-6">
           <a
-            href="#top"
+            href="/#top"
             className={`font-black text-foreground text-4xl md:text-6xl ${parisienne.className} cursor-pointer text-glow`}
           >
             Alex Zeitlhofer
@@ -25,13 +26,13 @@ export default function NavBar() {
 
         {/* Desktop menu */}
         <div className="hidden md:flex w-[33.3vw] justify-around items-center text-foreground text-2xl font-bold">
-          <a href="#aboutme" className={btnClass}>
+          <a href="/#aboutme" className={btnClass}>
             Über mich
           </a>
-          <a href="#projects" className={btnClass}>
+          <a href="/#projects" className={btnClass}>
             Projekte
           </a>
-          <a href="#contact" className={btnClass}>
+          <a href="/#contact" className={btnClass}>
             Kontakt
           </a>
         </div>
@@ -76,7 +77,7 @@ export default function NavBar() {
           </a>
         </div>
       )}
-      <div className="h-12 snap-start"></div>
+      {/* <div className="snap-start"></div> */}
     </>
   );
 }

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-// import { Geist_Mono } from "next/font/google";
-
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import NavBar from "./NavBar";
+import Footer from "./Footer";
 import "./globals.css";
 
 // const geistSans = Geist({
@@ -48,7 +50,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased `}>{children}</body>
+      <body className={`antialiased `}>
+        <NavBar></NavBar>
+        {children}
+        <Footer></Footer>
+        <Analytics></Analytics>
+        <SpeedInsights></SpeedInsights>
+      </body>
     </html>
   );
 }

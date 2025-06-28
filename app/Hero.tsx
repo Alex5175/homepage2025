@@ -92,7 +92,7 @@ export default function Hero() {
   return (
     <div
       id="hero"
-      className="h-screen bg-background w-screen grid overflow-x-hidden grid-cols-2"
+      className="max-h-screen bg-background snap-start w-screen grid overflow-hidden grid-cols-2"
     >
       <div className="p-8 col-span-2 md:col-span-1">
         <h1
@@ -111,10 +111,7 @@ export default function Hero() {
           SOFTWARE ENTWICKLUNG
         </p>
 
-        <div
-          id="icons"
-          className="grid grid-cols-3 lg:grid-cols-4 gap-10 mt-12 "
-        >
+        <div id="icons" className="grid grid-cols-3 lg:grid-cols-4 gap-8 mt-8 ">
           {skillIcons.map((icon) => (
             <img
               src={icon.src}
@@ -126,10 +123,10 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="hidden md:flex justify-end">
+      <div className="hidden md:flex overflow-y-hidden justify-end">
         <img
           src="me_edited_no_bg_scaled2.png"
-          className="h-full object-cover"
+          className="w-full  object-cover"
           alt=""
         />
       </div>
