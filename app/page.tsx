@@ -1,6 +1,5 @@
 "use client";
 // import Image from "next/image";
-import NavBar from "./NavBar";
 // import { Imperial_Script, Aref_Ruqaa } from "next/font/google";
 import "./home.css";
 import React from "react";

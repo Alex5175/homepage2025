@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Parisienne } from "next/font/google";
+import Link from "next/link";
 
 const parisienne = Parisienne({
   weight: "400",
@@ -16,25 +17,25 @@ export default function NavBar() {
     <>
       <nav className="fixed top-0 left-0 right-0 h-16  w-full flex items-center z-[1000]">
         <div className="w-[66.6vw] pl-6">
-          <a
+          <Link
             href="/#top"
             className={`font-black text-foreground text-4xl md:text-6xl ${parisienne.className} cursor-pointer text-glow`}
           >
             Alex Zeitlhofer
-          </a>
+          </Link>
         </div>
 
         {/* Desktop menu */}
         <div className="hidden md:flex w-[33.3vw] justify-around items-center text-foreground text-2xl font-bold">
-          <a href="/#aboutme" className={btnClass}>
+          <Link href="/#aboutme" className={btnClass}>
             Über mich
-          </a>
-          <a href="/#projects" className={btnClass}>
+          </Link>
+          <Link href="/#projects" className={btnClass}>
             Projekte
-          </a>
-          <a href="/#contact" className={btnClass}>
+          </Link>
+          <Link href="/#contact" className={btnClass}>
             Kontakt
-          </a>
+          </Link>
         </div>
 
         {/* Hamburger icon for mobile */}
@@ -54,27 +55,27 @@ export default function NavBar() {
           className="fixed top-16 left-0 w-full bg-background shadow-lg z-20 flex flex-col items-end p-6 gap-6 md:hidden"
           style={{ boxSizing: "border-box", maxWidth: "100vw" }}
         >
-          <a
-            href="#aboutme"
+          <Link
+            href="/#aboutme"
             className={btnClass}
             onClick={() => setOpen(false)}
           >
             Über mich
-          </a>
-          <a
-            href="#projects"
+          </Link>
+          <Link
+            href="/#projects"
             className={btnClass}
             onClick={() => setOpen(false)}
           >
             Projekte
-          </a>
-          <a
-            href="#contact"
+          </Link>
+          <Link
+            href="/#contact"
             className={btnClass}
             onClick={() => setOpen(false)}
           >
             Kontakt
-          </a>
+          </Link>
         </div>
       )}
       {/* <div className="snap-start"></div> */}
