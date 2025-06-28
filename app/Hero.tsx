@@ -16,7 +16,7 @@ const figtree = Figtree({
 
 const words = ["Website?", "Web App?", "Desktop App?"];
 
-const iconDims = "w-16 md:w-20 lg:w-28";
+const iconDims = "w-16 md:w-20 lg:w-24";
 
 const skillIcons = [
   {
@@ -92,11 +92,11 @@ export default function Hero() {
   return (
     <div
       id="hero"
-      className="max-h-screen bg-background snap-start w-screen grid overflow-hidden grid-cols-2"
+      className="h-screen bg-background snap-start w-screen grid overflow-hidden grid-cols-2"
     >
       <div className="p-8 col-span-2 md:col-span-1">
         <h1
-          className={`text-4xl md:text-6xl xl:text-8xl ${figtree.className} text-foreground  text-left `}
+          className={`text-5xl md:text-6xl xl:text-8xl ${figtree.className} text-foreground  text-left mt-8`}
         >
           ZEITLHOFER{" "}
           <span className="font-black bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
