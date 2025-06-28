@@ -1,47 +1,43 @@
 import { useRef } from "react";
 import { Figtree } from "next/font/google";
+// import { list } from "@vercel/blob";
+import { useState } from "react";
+// import { useEffect } from "react";
 
 const figtree = Figtree({
   weight: "700",
   subsets: ["latin"],
 });
 
+type Project = {
+  title: string;
+  image: string;
+  description: string;
+};
+
+// type BlobMeta = {
+//   pathname: string;
+//   url: string;
+//   size: number;
+//   uploadedAt: string;
+//   contentType: string;
+// };
+
 // Example card data – replace with your own
-const projects = [
-  {
-    title: "Projekt 1",
-    image: "",
-    description: "Kurze Beschreibung von Projekt 1.",
-  },
-  // {
-  //   title: "Projekt 2",
-  //   image: "/img/pexels-pixabay-206359.jpg",
-  //   description: "Kurze Beschreibung von Projekt 2.",
-  // },
-  // {
-  //   title: "Projekt 3",
-  //   image: "/img/pexels-samandgos-709552.jpg",
-  //   description: "Kurze Beschreibung von Projekt 3.",
-  // },
-  // {
-  //   title: "Projekt 3",
-  //   image: "/img/pexels-samandgos-709552.jpg",
-  //   description: "Kurze Beschreibung von Projekt 3.",
-  // },
-  // {
-  //   title: "Projekt 3",
-  //   image: "/img/pexels-samandgos-709552.jpg",
-  //   description: "Kurze Beschreibung von Projekt 3.",
-  // },
-  // {
-  //   title: "Projekt 3",
-  //   image: "/img/pexels-samandgos-709552.jpg",
-  //   description: "Kurze Beschreibung von Projekt 3.",
-  // },
-];
+// const projects: Project[] = [
+//   {
+//     title: "Griessler Website",
+//     image: "./fave_edited.png",
+//     description:
+//       "Im Rahmen eines Schulprojekts wurde die Griessler Website neu designed.",
+//   },
+// ];
 
 export default function Projects() {
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  // setProjects missing
+  const [projects] = useState<Project[]>([]);
 
   return (
     <div

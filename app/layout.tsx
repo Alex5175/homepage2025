@@ -15,6 +15,8 @@ import "./globals.css";
 //   subsets: ["latin"],
 // });
 
+const isDisabled = true;
+
 export const metadata: Metadata = {
   title: "Alex Zeitlhofer",
   description:
@@ -51,11 +53,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`antialiased `}>
-        <NavBar></NavBar>
-        {children}
-        <Footer></Footer>
-        <Analytics></Analytics>
-        <SpeedInsights></SpeedInsights>
+        {isDisabled ? (
+          <>
+            <h1 className="text-2x text-foreground">Temporary Maintenance</h1>
+          </>
+        ) : (
+          <>
+            <NavBar></NavBar>
+            {children}
+            <Footer></Footer>
+            <Analytics></Analytics>
+            <SpeedInsights></SpeedInsights>
+          </>
+        )}
       </body>
     </html>
   );
