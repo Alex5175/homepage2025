@@ -15,7 +15,7 @@ import "./globals.css";
 //   subsets: ["latin"],
 // });
 
-const isDisabled = true;
+const isDisabled = false;
 
 export const metadata: Metadata = {
   title: "Alex Zeitlhofer",
