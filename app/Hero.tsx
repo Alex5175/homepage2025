@@ -12,7 +12,7 @@ import { Figtree } from "next/font/google";
 const figtree = Figtree({
   weight: "700",
   subsets: ["latin"],
-  preload: true
+  preload: true,
 });
 
 const words = ["Website?", "Web App?", "Desktop App?"];

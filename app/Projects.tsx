@@ -12,7 +12,6 @@ type Project = {
   title: string;
   image: string;
   description: string;
-  createdAt: Date;
 };
 
 // type BlobMeta = {
@@ -24,43 +23,49 @@ type Project = {
 // };
 
 // Example card data
-// const projects: Project[] = [
-//   {
-//     title: "Griessler Website",
-//     image: "./images/griessler.png",
-//     description:
-//       "Im Rahmen eines Schulprojekts wurde die Griessler Website neu designed.",
-//   },
-// ];
+const projects: Project[] = [
+  {
+    title: "Griessler Website",
+    image: "./images/griessler.png",
+    description:
+      "Im Rahmen eines Schulprojekts wurde die Griessler Website neu designed.",
+  },
+  {
+    title: "StageUp Website",
+    image: "./images/stageup.png",
+    description:
+      "In kooperation mit Benjamin Leitner wurde eine Website für sein Unternehmen StageUp erstellt.",
+  },
+];
 
 export default function Projects() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  const [projects, setProjects] = useState<Project[]>([]);
+  // const [projects, setProjects] = useState<Project[]>([]);
 
-  useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const res = await fetch("/api/projects", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`,
-          },
-        });
+  // useEffect(() => {
+  //   const fetchProjects = async () => {
+  //     try {
+  //       const res = await fetch("/api/projects", {
+  //         method: "GET",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //           Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`,
+  //         },
+  //       });
 
-        if (!res.ok) throw new Error(`Error: ${res.status}`);
+  //       if (!res.ok) throw new Error(`Error: ${res.status}`);
 
-        const projects = await res.json();
+  //       const projects = await res.json();
 
-        setProjects(projects);
-      } catch (error) {
-        console.error(`Error fetching Projects: ${error}`);
-      }
-    };
+  //       setProjects(projects);
+  //     } catch (error) {
+  //       console.error(`Error fetching Projects: ${error}`);
+  //     }
+  //   };
 
-    fetchProjects();
-  }, []);
+  //   fetchProjects();
+  // }, []);
 
   return (
     <div
