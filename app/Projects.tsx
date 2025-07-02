@@ -166,6 +166,7 @@ export default function Projects() {
                           : "./images/No_image_available.png"
                       }
                       alt={project?.title}
+                      loading="lazy"
                       className="w-full h-full grayscale group-hover:grayscale-0 transition-all duration-300 object-cover"
                     />
 
