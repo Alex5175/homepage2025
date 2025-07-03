@@ -41,10 +41,7 @@ const cards = [
 
 export default function Contact() {
   return (
-    <div
-      id="contact"
-      className="bg-foreground snap-start h-[90vh] p-8 overflow-hidden"
-    >
+    <div id="contact" className="bg-foreground h-[90vh] p-8 overflow-hidden">
       <h1
         className={`text-4xl md:text-7xl ${figtree.className} text-background mt-8 text-left w-full mb-8`}
       >
