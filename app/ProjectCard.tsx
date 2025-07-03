@@ -14,9 +14,11 @@ export default function ProjectCard({
         loading="lazy"
         className="object-cover rounded-t-lg "
       />
-      <div className="text-pretty bg-gradient-to-r from-secondary to-primary w-full p-4 rounded-b-lg overflow-hidden text-foreground min-h-32">
+      <div className="text-pretty bg-gradient-to-r from-primary to-secondary w-full p-4 rounded-b-lg overflow-hidden text-foreground min-h-32">
         <div className="flex">
-          <h3 className="text-lg md:text-md lg:text-xl font-bold ">{title}</h3>
+          <h3 className="text-lg md:text-md lg:text-xl font-bold flex-shrink-0">
+            {title}
+          </h3>
           <div id="tags" className="flex items-center ml-2 gap-2">
             {tags.map((tag) => (
               <ProjectTag tagName={tag} key={tag}></ProjectTag>

@@ -1,6 +1,7 @@
 import { Figtree } from "next/font/google";
 import { Project } from "./ProjectType";
 import ProjectCard from "./ProjectCard";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 const figtree = Figtree({
   weight: "700",
@@ -37,11 +38,16 @@ export default function Projects() {
       >
         PROJEKTE
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-        {projects.map((project, idx) => (
-          <ProjectCard {...project} key={idx}></ProjectCard>
-        ))}
-      </div>
+      <ResponsiveMasonry
+        columnsCountBreakPoints={{ 350: 1, 750: 2 }}
+        className="w-full"
+      >
+        <Masonry gutter="16px">
+          {projects.map((project, idx) => (
+            <ProjectCard {...project} key={idx}></ProjectCard>
+          ))}
+        </Masonry>
+      </ResponsiveMasonry>
     </div>
   );
 }

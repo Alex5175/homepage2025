@@ -25,16 +25,20 @@ export default function AboutMe() {
         <p
           className={`text-background text-2xl md:text-4xl  ltext-justify ${figtree.className} mt-4`}
         >
-          ich bin Webentwickler mit Leidenschaft für cleanen Code, durchdachtes
-          Design und performante Websites. Ich liebe es, digitale Ideen zum
-          Leben zu erwecken - pixelgenau, nutzerzentriert und zukunftssicher.
+          ich bin{" "}
+          <span className="text-gradient-underline-hover ">Webentwickler</span>{" "}
+          mit Leidenschaft für cleanen Code, durchdachtes Design und performante
+          Websites. Ich liebe es, digitale Ideen zum Leben zu erwecken -
+          pixelgenau, nutzerzentriert und zukunftssicher.
         </p>
         <p
           className={`text-background text-2xl md:text-4xl text-justify ${figtree.className} mt-4`}
         >
-          Ich habe meine Matura an der IT-HTL Ybbs abgeschlossen und komme aus
-          Oberndorf an der Melk. Technik, Kreativität und stetiges Lernen
-          begleiten mich seitdem auf meinem Weg durch die Welt des Webs.
+          Ich habe meine Matura an der{" "}
+          <span className="text-gradient-underline-hover">IT-HTL Ybbs</span>{" "}
+          abgeschlossen und komme aus Oberndorf an der Melk. Technik,
+          Kreativität und stetiges Lernen begleiten mich seitdem auf meinem Weg
+          durch die Welt des Webs.
         </p>
 
         {/* <div className="flex justify-center mt-8 items-center">
