@@ -1,3 +1,4 @@
+"use client";
 import { Figtree } from "next/font/google";
 import { Project } from "./ProjectType";
 import ProjectCard from "./ProjectCard";
