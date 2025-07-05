@@ -13,17 +13,17 @@ export default function AboutMe() {
   return (
     <div
       id="aboutme"
-      className="bg-foreground w-screen grid grid-cols-12 overflow-hidden h-screen "
+      className="p-8 bg-background w-screen grid grid-cols-12 overflow-hidden h-screen "
     >
-      <div className="p-8 col-span-12 lg:col-span-7">
+      <div className=" col-span-12 lg:col-span-7">
         <h2
-          className={`text-background text-8xl md:text- xl:text-[10rem] text-shadow-2xs md:mt-8 shadow-foreground   text-left ${imperal.className} `}
+          className={`text-foreground text-8xl md:text- xl:text-[10rem] text-shadow-2xs md:mt-8 shadow-foreground   text-left ${imperal.className} `}
         >
           Hi,
         </h2>
 
         <p
-          className={`text-background text-2xl md:text-4xl  ltext-justify ${figtree.className} mt-4`}
+          className={`text-foreground text-2xl md:text-4xl  ltext-justify ${figtree.className} mt-4`}
         >
           ich bin{" "}
           <span className="text-gradient-underline-hover ">Webentwickler</span>{" "}
@@ -32,7 +32,7 @@ export default function AboutMe() {
           pixelgenau, nutzerzentriert und zukunftssicher.
         </p>
         <p
-          className={`text-background text-2xl md:text-4xl text-justify ${figtree.className} mt-4`}
+          className={`text-foreground text-2xl md:text-4xl text-justify ${figtree.className} mt-4`}
         >
           Ich habe meine Matura an der{" "}
           <span className="text-gradient-underline-hover">IT-HTL Ybbs</span>{" "}
@@ -51,7 +51,7 @@ export default function AboutMe() {
       </div>
       <div className="h-full  justify-end col-span-5 hidden lg:flex">
         <img
-          src="./fave_edited_md.png"
+          src="/fave_edited_md.png"
           loading="lazy"
           className="object-cover"
           alt="Alex Zeitlhofer Suit Image"

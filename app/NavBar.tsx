@@ -78,6 +78,8 @@ export default function NavBar() {
           </Link>
         </div>
       )}
+
+      <div className="h-16"></div>
     </>
   );
 }

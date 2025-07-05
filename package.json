@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@prisma/client": "^6.6.0",
+    "@prisma/client": "^6.11.1",
     "@prisma/extension-accelerate": "^2.0.1",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@vercel/analytics": "^1.5.0",
@@ -31,7 +31,7 @@
     "@types/react-responsive-masonry": "^2.6.0",
     "eslint": "^9",
     "eslint-config-next": "15.3.2",
-    "prisma": "^6.6.0",
+    "prisma": "^6.11.1",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

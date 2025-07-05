@@ -19,7 +19,7 @@ export default function ProjectCard({
           <h3 className="text-lg md:text-md lg:text-xl font-bold flex-shrink-0">
             {title}
           </h3>
-          <div id="tags" className="flex items-center ml-2 gap-2">
+          <div id="tags" className="hidden items-center ml-2 gap-2  md:flex">
             {tags.map((tag) => (
               <ProjectTag tagName={tag} key={tag}></ProjectTag>
             ))}

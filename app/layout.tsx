@@ -51,19 +51,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`antialiased `}>
+    <html lang="de" className="h-full">
+      <body className="antialiased flex flex-col min-h-full">
         {isDisabled ? (
-          <>
-            <h1 className="text-2x text-foreground">Temporary Maintenance</h1>
-          </>
+          <main className="flex-grow">
+            <h1 className="text-2xl text-foreground">Temporary Maintenance</h1>
+          </main>
         ) : (
           <>
-            <NavBar></NavBar>
-            {children}
-            <Footer></Footer>
-            <Analytics></Analytics>
-            <SpeedInsights></SpeedInsights>
+            <NavBar />
+            <main className="flex-grow">{children}</main>
+            <Footer />
+            <Analytics />
+            <SpeedInsights />
           </>
         )}
       </body>

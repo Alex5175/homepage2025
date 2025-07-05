@@ -55,8 +55,3 @@
   }
 }
 
-.text-glow {
-  text-shadow: 0 0 8px var(--primary), 0 0 16px var(--secondary),
-    0 0 24px var(--primary);
-}
-

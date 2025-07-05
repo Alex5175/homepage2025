@@ -17,43 +17,43 @@ const figtree = Figtree({
 
 const words = ["Website?", "Web App?", "Desktop App?"];
 
-const iconDims = "w-16 md:w-20 lg:w-24";
+const iconDims = "w-20  lg:w-28";
 
 const skillIcons = [
   {
-    src: "./icons/html.png",
+    src: "/icons/html.png",
     text: "html logo",
   },
   {
-    src: "./icons/css.png",
+    src: "/icons/css.png",
     text: "css logo",
   },
   {
-    src: "./icons/js.png",
+    src: "/icons/js.png",
     text: "js logo",
   },
   {
-    src: "./icons/react.png",
+    src: "/icons/react.png",
     text: "react logo",
   },
   {
-    src: "./icons/svelte.png",
+    src: "/icons/svelte.png",
     text: "svelte logo",
   },
   {
-    src: "./icons/node-js.png",
+    src: "/icons/node-js.png",
     text: "node js logo",
   },
   {
-    src: "./icons/java.png",
+    src: "/icons/java.png",
     text: "java logo",
   },
   {
-    src: "./icons/c-sharp.png",
+    src: "/icons/c-sharp.png",
     text: "c sharp logo",
   },
   {
-    src: "./icons/wordpress.png",
+    src: "/icons/wordpress.png",
     text: "wordpress logo",
   },
 ];
@@ -93,11 +93,11 @@ export default function Hero() {
   return (
     <div
       id="hero"
-      className="h-screen bg-background w-screen grid overflow-hidden grid-cols-2"
+      className="min-h-screen bg-background w-screen grid overflow-hidden grid-cols-2"
     >
-      <div className="p-8 col-span-2 md:col-span-1">
+      <div className="pb-8 px-8 col-span-2 md:col-span-1">
         <h1
-          className={`text-5xl md:text-6xl xl:text-8xl ${figtree.className} text-foreground  text-left mt-8`}
+          className={`text-5xl md:text-6xl xl:text-8xl ${figtree.className} text-foreground  text-left `}
         >
           ZEITLHOFER{" "}
           <span className="font-black bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
@@ -113,7 +113,7 @@ export default function Hero() {
         </p>
         <div
           id="icons"
-          className="grid grid-cols-3 lg:grid-cols-4 gap-8 mt-8 w-full"
+          className="grid grid-cols-3 lg:grid-cols-4 gap-4 mt-8 w-full gap-y-8 lg:gap-y-12"
         >
           {skillIcons.map((icon) => (
             <img
@@ -128,7 +128,7 @@ export default function Hero() {
 
       <div className="hidden md:flex overflow-y-hidden justify-end">
         <img
-          src="me_edited_no_bg_scaled2.png"
+          src="/me_edited_no_bg_scaled2.png"
           className="w-full  object-cover"
           alt=""
         />
