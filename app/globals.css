@@ -1,20 +1,35 @@
 @import "tailwindcss";
 
 :root {
-  --foreground: #f7f2f7;
+  --foreground: #f7f3f7;
   --primary: #5778ff;
   --secondary: #822ed1;
-  --background: #292b3d;
+  --background: #181a25;
 }
 
 html {
   scroll-behavior: smooth;
-
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  height: 100vh;
+  height: 100%;
   margin: 0;
   padding: 0;
+}
+
+body {
+  background: var(--background);
+  scroll-snap-type: y mandatory; /* Enables vertical snap scrolling */
+  overflow-y: scroll; /* Ensures the body is scrollable */
+  height: 100vh;
+  overflow-y: hidden !important;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  /* overflow-x: hidden; */
+}
+
+.snap-container {
+  scroll-snap-type: y mandatory; /* Enables vertical snapping */
+  overflow-y: scroll; /* Ensures the container is scrollable */
+  height: 100vh; /* Full viewport height */
+  overflow-x: hidden !important;
 }
 
 @theme {
@@ -40,12 +55,6 @@ html {
   }
 }
 */
-
-body {
-  background: var(--background);
-  scroll-behavior: smooth;
-  font-family: Arial, Helvetica, sans-serif;
-}
 
 .bg-background-opacity {
   background: color-mix(in srgb, var(--background) 50%, transparent);
@@ -86,4 +95,14 @@ body {
 .text-glow {
   text-shadow: 0 0 8px var(--primary), 0 0 16px var(--secondary),
     0 0 24px var(--primary);
+}
+
+.bg-gradient {
+  background: #822ed1;
+  background: radial-gradient(
+    circle,
+    rgba(130, 46, 209, 1) 17%,
+    rgba(87, 120, 255, 1) 60%,
+    rgba(35, 250, 160, 1) 100%
+  );
 }

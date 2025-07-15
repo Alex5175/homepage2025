@@ -1,62 +1,77 @@
-import { Imperial_Script, Figtree } from "next/font/google";
+import { Figtree } from "next/font/google";
+// import Link from "next/link";
+import SectionTemplate from "./SectionTemplate";
 
-const imperal = Imperial_Script({
-  weight: "400",
-  subsets: ["latin"],
-});
+// const imperal = Imperial_Script({
+//   weight: "400",
+//   subsets: ["latin"],
+// });
 
 const figtree = Figtree({
   weight: "700",
   subsets: ["latin"],
 });
+
+// const iconDims = "w-16  lg:w-16";
+
+// const skillIcons = [
+//   {
+//     src: "/icons/html.png",
+//     text: "html logo",
+//   },
+//   {
+//     src: "/icons/css.png",
+//     text: "css logo",
+//   },
+//   {
+//     src: "/icons/js.png",
+//     text: "js logo",
+//   },
+//   {
+//     src: "/icons/react.png",
+//     text: "react logo",
+//   },
+//   {
+//     src: "/icons/svelte.png",
+//     text: "svelte logo",
+//   },
+//   {
+//     src: "/icons/node-js.png",
+//     text: "node js logo",
+//   },
+//   {
+//     src: "/icons/java.png",
+//     text: "java logo",
+//   },
+//   {
+//     src: "/icons/c-sharp.png",
+//     text: "c sharp logo",
+//   },
+//   {
+//     src: "/icons/wordpress.png",
+//     text: "wordpress logo",
+//   },
+// ];
 export default function AboutMe() {
   return (
-    <div
+    <SectionTemplate
+      title="wer bin ich?"
       id="aboutme"
-      className="p-8 bg-background w-screen grid grid-cols-12 overflow-hidden h-screen "
+      // backgroundImage="https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg"
+      theme="dark"
+      subTitle="Hi, ich bin Alex!"
     >
-      <div className=" col-span-12 lg:col-span-7">
-        <h2
-          className={`text-foreground text-8xl md:text- xl:text-[10rem] text-shadow-2xs md:mt-8 shadow-foreground   text-left ${imperal.className} `}
-        >
-          Hi,
-        </h2>
-
-        <p
-          className={`text-foreground text-2xl md:text-4xl  ltext-justify ${figtree.className} mt-4`}
-        >
-          ich bin{" "}
-          <span className="text-gradient-underline-hover ">Webentwickler</span>{" "}
-          mit Leidenschaft für cleanen Code, durchdachtes Design und performante
-          Websites. Ich liebe es, digitale Ideen zum Leben zu erwecken -
-          pixelgenau, nutzerzentriert und zukunftssicher.
-        </p>
-        <p
-          className={`text-foreground text-2xl md:text-4xl text-justify ${figtree.className} mt-4`}
-        >
-          Ich habe meine Matura an der{" "}
-          <span className="text-gradient-underline-hover">IT-HTL Ybbs</span>{" "}
-          abgeschlossen und komme aus Oberndorf an der Melk. Technik,
-          Kreativität und stetiges Lernen begleiten mich seitdem auf meinem Weg
-          durch die Welt des Webs.
-        </p>
-
-        {/* <div className="flex justify-center mt-8 items-center">
-          <img
-            src="./signature.png"
-            alt="Alexander Zeitlhofer Signature"
-            className="lg:w-[20rem] hidden xl:block"
-          />
-        </div> */}
-      </div>
-      <div className="h-full  justify-end col-span-5 hidden lg:flex">
-        <img
-          src="/fave_edited_md.png"
-          loading="lazy"
-          className="object-cover"
-          alt="Alex Zeitlhofer Suit Image"
-        />
-      </div>
-    </div>
+      <p
+        className={`md:columns-2  text-foreground text-[4vw] md:text-[1.75vw] ${figtree.className} text-justify`}
+      >
+        ich bin Webentwickler mit Leidenschaft für cleanen Code, durchdachtes
+        Design und performante Websites. Ich liebe es, digitale Ideen zum Leben
+        zu erwecken - pixelgenau, nutzerzentriert und zukunftssicher. Ich habe
+        meine Matura an der IT-HTL Ybbs abgeschlossen und komme aus Oberndorf an
+        der Melk. Technik, Kreativität und stetiges Lernen begleiten mich
+        seitdem auf meinem Weg durch die Welt des Webs.
+      </p>
+      <div className="h-96"></div>
+    </SectionTemplate>
   );
 }

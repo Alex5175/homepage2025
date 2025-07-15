@@ -2,7 +2,6 @@ export default function Impressum() {
   return (
     <div className="text-foreground p-8 pt-24 ">
       <h1>Impressum</h1>
-
       <p>
         Alexander Zeitlhofer
         <br />
@@ -10,14 +9,12 @@ export default function Impressum() {
         <br />
         3281 Oberndorf an der Melk
       </p>
-
       <h2>Kontakt</h2>
       <p>
         Telefon: +43 660 6796469
         <br />
         E-Mail: alex.zeitlhofer@outlook.at
       </p>
-
       <h2>Redaktionell verantwortlich</h2>
       <p>
         Alexander Zeitlhofer
@@ -26,13 +23,10 @@ export default function Impressum() {
         <br />
         3281 Oberndorf an der Melk
       </p>
-
       <p>
         Quelle: <a href="https://www.e-recht24.de">eRecht24</a>
       </p>
-
       <h2>Icons:</h2>
-
       <a href="https://www.flaticon.com/free-icons/html" title="html icons">
         Html icons created by Freepik - Flaticon
       </a>
@@ -107,6 +101,18 @@ export default function Impressum() {
         Linkedin icons created by riajulislam - Flaticon
       </a>
       <br></br>
+      Sound Effect by{" "}
+      <a href="https://pixabay.com/users/matthewvakaliuk73627-48347364/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=290204">
+        Matthew Vakalyuk
+      </a>{" "}
+      from{" "}
+      <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=290204">
+        Pixabay
+      </a>
+      <p>
+        Photo by Codioful (formerly Gradienta) from Pexels:
+        https://www.pexels.com/photo/colorful-gradient-6985001/
+      </p>
     </div>
   );
 }

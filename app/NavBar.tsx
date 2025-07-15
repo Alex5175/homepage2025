@@ -15,7 +15,7 @@ export default function NavBar() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 h-16  w-full flex items-center z-[1000]">
+      <nav className="fixed top-0 left-0 right-0 h-16  w-full bg-black/50 flex items-center z-[1000]">
         <div className="w-[66.6vw] pl-6">
           <Link
             href="/#top"

@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Figtree } from "next/font/google";
 
 // const imperal = Imperial_Script({
@@ -15,124 +15,106 @@ const figtree = Figtree({
   preload: true,
 });
 
-const words = ["Website?", "Web App?", "Desktop App?"];
+// const words = ["Website?", "Web App?", "Desktop App?"];
 
-const iconDims = "w-20  lg:w-28";
+// const iconDims = "w-16  lg:w-16";
 
-const skillIcons = [
-  {
-    src: "/icons/html.png",
-    text: "html logo",
-  },
-  {
-    src: "/icons/css.png",
-    text: "css logo",
-  },
-  {
-    src: "/icons/js.png",
-    text: "js logo",
-  },
-  {
-    src: "/icons/react.png",
-    text: "react logo",
-  },
-  {
-    src: "/icons/svelte.png",
-    text: "svelte logo",
-  },
-  {
-    src: "/icons/node-js.png",
-    text: "node js logo",
-  },
-  {
-    src: "/icons/java.png",
-    text: "java logo",
-  },
-  {
-    src: "/icons/c-sharp.png",
-    text: "c sharp logo",
-  },
-  {
-    src: "/icons/wordpress.png",
-    text: "wordpress logo",
-  },
-];
+// const skillIcons = [
+//   {
+//     src: "/icons/html.png",
+//     text: "html logo",
+//   },
+//   {
+//     src: "/icons/css.png",
+//     text: "css logo",
+//   },
+//   {
+//     src: "/icons/js.png",
+//     text: "js logo",
+//   },
+//   {
+//     src: "/icons/react.png",
+//     text: "react logo",
+//   },
+//   {
+//     src: "/icons/svelte.png",
+//     text: "svelte logo",
+//   },
+//   {
+//     src: "/icons/node-js.png",
+//     text: "node js logo",
+//   },
+//   {
+//     src: "/icons/java.png",
+//     text: "java logo",
+//   },
+//   {
+//     src: "/icons/c-sharp.png",
+//     text: "c sharp logo",
+//   },
+//   {
+//     src: "/icons/wordpress.png",
+//     text: "wordpress logo",
+//   },
+// ];
 
 export default function Hero() {
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [displayedText, setDisplayedText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
-
-  useEffect(() => {
-    const word = words[currentWordIndex];
-    const typingSpeed = isDeleting ? 40 : 80;
-    let timeout: NodeJS.Timeout;
-
-    if (!isDeleting && displayedText === word) {
-      // Wait before starting to delete (display word longer)
-      timeout = setTimeout(() => setIsDeleting(true), 5000);
-    } else if (isDeleting && displayedText === "") {
-      // Move to next word and start typing
-      timeout = setTimeout(() => {
-        setIsDeleting(false);
-        setCurrentWordIndex((prev) => (prev + 1) % words.length);
-      }, 300);
-    } else {
-      timeout = setTimeout(() => {
-        setDisplayedText((prev) =>
-          isDeleting
-            ? word.slice(0, prev.length - 1)
-            : word.slice(0, prev.length + 1)
-        );
-      }, typingSpeed);
-    }
-
-    return () => clearTimeout(timeout);
-  }, [displayedText, isDeleting, currentWordIndex]);
+  const [hasColor] = useState(true);
 
   return (
-    <div
-      id="hero"
-      className="min-h-screen bg-background w-screen grid overflow-hidden grid-cols-2"
-    >
-      <div className="pb-8 px-8 col-span-2 md:col-span-1">
-        <h1
-          className={`text-5xl md:text-6xl xl:text-8xl ${figtree.className} text-foreground  text-left `}
-        >
-          ZEITLHOFER{" "}
-          <span className="font-black bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            ALEXANDER
-          </span>
-        </h1>
+    <>
+      {/* Background Image */}
+      <div
+        id="top"
+        className={`absolute top-0 left-0 w-full h-screen -z-20 bg-cover bg-center ${
+          hasColor ? "grayscale-0" : "grayscale"
+        } transition-all duration-300 `}
+        style={{
+          backgroundImage:
+            "url('https://images.pexels.com/photos/6985001/pexels-photo-6985001.jpeg')",
+        }}
+      ></div>
 
-        <p
-          className={`text-foreground text-2xl md:text-4xl mt-4  text-left ${figtree.className} `}
-        >
-          WEB-ENTWICKLUNG/DESIGN <br />
-          SOFTWARE ENTWICKLUNG
-        </p>
-        <div
-          id="icons"
-          className="grid grid-cols-3 lg:grid-cols-4 gap-4 mt-8 w-full gap-y-8 lg:gap-y-12"
-        >
-          {skillIcons.map((icon) => (
-            <img
-              src={icon.src}
-              key={icon.text}
-              alt={icon.text}
-              className={`${iconDims} hover:animate-pulse cursor-pointer`}
-            ></img>
-          ))}
+      {/* Hero Section */}
+      <div
+        id="hero"
+        className=" h-screen p-8 py-24 w-screen grid overflow-hidden grid-cols-1 md:grid-cols-2  relative snap-start"
+      >
+        <div>
+          <h1
+            className={` leading-none text-[14vw] md:text-[9.5vw] ${figtree.className} text-foreground text-left`}
+          >
+            ZEITLHOFER{" "}
+            <span className="font-black bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              ALEXANDER
+            </span>
+          </h1>
+
+          <p
+            className={`text-foreground text-[10vw] md:text-[5vw] leading-none  mt-4 text-left ${figtree.className}`}
+          >
+            WEB-ENTWICKLUNG/-DESIGN <br />
+            SOFTWARE ENTWICKLUNG
+          </p>
+        </div>
+
+        <div className="  ">
+          <img
+            src="/me_edited_no_bg_scaled2.png"
+            loading="lazy"
+            className={`w-full cursor-pointer ${
+              hasColor ? "grayscale-0" : "grayscale"
+            }  transition-all duration-300 hidden xl:block `}
+            alt="Alex Zeitlhofer Image"
+            // onClick={() => {
+            //   setHasColor(!hasColor);
+            //   const clickSound = new Audio("/audio/mouse-click.mp3");
+            //   clickSound.volume = 0.5;
+            //   clickSound.play();
+            // }}
+          />
         </div>
       </div>
-
-      <div className="hidden md:flex overflow-y-hidden justify-end">
-        <img
-          src="/me_edited_no_bg_scaled2.png"
-          className="w-full  object-cover"
-          alt=""
-        />
-      </div>
-    </div>
+    </>
   );
 }

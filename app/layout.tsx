@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import NavBar from "./NavBar";
-import Footer from "./Footer";
+// import Footer from "./Footer";
 import "./globals.css";
 
 // const geistSans = Geist({
@@ -45,6 +45,11 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1.0,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -60,8 +65,9 @@ export default function RootLayout({
         ) : (
           <>
             <NavBar />
-            <main className="flex-grow">{children}</main>
-            <Footer />
+            <div>{children}</div>
+            {/* <Footer /> */}
+
             <Analytics />
             <SpeedInsights />
           </>

@@ -8,11 +8,12 @@ import Hero from "./Hero";
 import AboutMe from "./AboutMe";
 import Projects from "./Projects";
 import Contact from "./Contact";
+import Footer from "./Footer";
 
 export default function Home() {
   return (
-    <div id="top">
-      <main className="">
+    <>
+      <main className="snap-container">
         <Hero></Hero>
 
         <AboutMe></AboutMe>
@@ -20,7 +21,8 @@ export default function Home() {
         <Projects></Projects>
 
         <Contact></Contact>
+        <Footer></Footer>
       </main>
-    </div>
+    </>
   );
 }
