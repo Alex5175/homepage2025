@@ -70,8 +70,7 @@ export default function Hero() {
           hasColor ? "grayscale-0" : "grayscale"
         } transition-all duration-300 `}
         style={{
-          backgroundImage:
-            "url('https://images.pexels.com/photos/6985001/pexels-photo-6985001.jpeg')",
+          backgroundImage: "url('/images/bg_pexels-photo-6985001.webp')",
         }}
       ></div>
 
