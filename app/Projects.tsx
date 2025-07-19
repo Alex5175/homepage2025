@@ -12,7 +12,7 @@ import SectionTemplate from "./SectionTemplate";
 const projects: Project[] = [
   {
     title: "Griessler Website",
-    image: "/images/griessler.png",
+    image: "/images/griessler.webp",
     description:
       "Im Rahmen eines Schulprojekts wurde die Griessler Website neu designed.",
     alt: "Screenshot der Griessler Website",
@@ -20,7 +20,7 @@ const projects: Project[] = [
   },
   {
     title: "StageUp Website",
-    image: "/images/stageup.png",
+    image: "/images/stageup.webp",
     description:
       "In kooperation mit Benjamin Leitner wurde eine Website für sein Unternehmen StageUp erstellt.",
     alt: "Screenshot der Griessler Website",
