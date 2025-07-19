@@ -18,7 +18,7 @@ export default function NavBar() {
       <nav className="fixed top-0 left-0 right-0 h-16  w-full bg-black/50 flex items-center z-[1000]">
         <div className="w-[66.6vw] pl-6">
           <Link
-            href="/#top"
+            href="/#hero"
             className={`font-black text-foreground text-4xl md:text-6xl ${parisienne.className} cursor-pointer text-glow`}
           >
             Alex Zeitlhofer
