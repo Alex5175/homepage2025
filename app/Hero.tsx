@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { Figtree } from "next/font/google";
-import { transform } from "next/dist/build/swc/generated-native";
 
 // const imperal = Imperial_Script({
 //   weight: "400",
@@ -15,8 +14,6 @@ const figtree = Figtree({
   subsets: ["latin"],
   preload: true,
 });
-
-const ICON_DISTANCE = 400;
 
 // const words = ["Website?", "Web App?", "Desktop App?"];
 
