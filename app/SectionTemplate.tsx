@@ -34,7 +34,7 @@ export default function SectionTemplate({
       id={id}
       className={`w-screen max-w-screen p-8 ${
         hasFooter ? "min-h-[90dvh]" : "min-h-dvh"
-      }  pt-24 snap-start  ${
+      }  pt-20 snap-start  ${
         theme === "dark" ? "bg-background/0" : "bg-foreground/0"
       }`}
       style={{
