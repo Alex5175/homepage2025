@@ -22,7 +22,7 @@ export default function SectionTemplate({
 }: Readonly<{
   children?: React.ReactNode;
   title: string | React.ReactNode;
-  subTitle?: string;
+  subTitle?: string | React.ReactNode;
   titlePosition?: "left" | "center" | "right";
   theme?: "dark" | "light";
   backgroundImage?: string; // New prop for background image
@@ -60,15 +60,20 @@ export default function SectionTemplate({
         </h2>
       )}
 
-      <h3
-        className={`${
-          theme === "dark" ? "text-foreground" : "text-background"
-        } text-[10vw] md:text-[5vw] leading-none ${
-          figtree.className
-        } text-${titlePosition} mb-4 uppercase`}
-      >
-        {subTitle}
-      </h3>
+      {isReactNode(subTitle) ? (
+        subTitle
+      ) : (
+        <h3
+          className={`${
+            theme === "dark" ? "text-foreground" : "text-background"
+          } text-[10vw] md:text-[5vw] leading-none ${
+            figtree.className
+          } text-${titlePosition} mb-4 uppercase`}
+        >
+          {subTitle}
+        </h3>
+      )}
+
       <div className="w-full h-full">{children}</div>
     </div>
   );

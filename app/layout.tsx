@@ -2,18 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import NavBar from "./NavBar";
-// import Footer from "./Footer";
 import "./globals.css";
-
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
 
 const isDisabled = false;
 
@@ -65,9 +54,7 @@ export default function RootLayout({
         ) : (
           <>
             <NavBar />
-            <div>{children}</div>
-            {/* <Footer /> */}
-
+          <div>{children}</div>
             <Analytics />
             <SpeedInsights />
           </>

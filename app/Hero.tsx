@@ -2,20 +2,11 @@
 import { useState, useEffect, useRef } from "react";
 import { Figtree } from "next/font/google";
 
-// const imperal = Imperial_Script({
-//   weight: "400",
-// });
-
-// const aref = Aref_Ruqaa({
-//   weight: "400",
-// });
 const figtree = Figtree({
   weight: "700",
   subsets: ["latin"],
   preload: true,
 });
-
-// const words = ["Website?", "Web App?", "Desktop App?"];
 
 const iconDims = "w-16  lg:w-24";
 const skillIcons = [
@@ -58,15 +49,13 @@ const skillIcons = [
 ];
 
 export default function Hero() {
-  const [hasColor] = useState(true);
   const [imageSize, setImageSize] = useState(0);
   const imageRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
-    // Update the image size dynamically
     const updateImageSize = () => {
       if (imageRef.current) {
-        setImageSize(imageRef.current.offsetWidth); // Half of the image size
+        setImageSize(imageRef.current.offsetWidth);
       }
     };
 
@@ -80,18 +69,9 @@ export default function Hero() {
 
   return (
     <>
-      {/* Background Image */}
-      <div
-        id="top"
-        className={`absolute top-0 left-0 w-full h-screen -z-20 bg-cover bg-center ${
-          hasColor ? "grayscale-0" : "grayscale"
-        } transition-all duration-300 `}
-      ></div>
-
-      {/* Hero Section */}
       <div
         id="hero"
-        className="h-screen p-8 py-24 w-screen grid overflow-hidden grid-cols-1 md:grid-cols-2 relative snap-start"
+        className="h-screen p-8 py-20 w-screen grid overflow-hidden grid-cols-1 md:grid-cols-2 relative snap-start"
       >
         <div>
           <h1
@@ -122,37 +102,33 @@ export default function Hero() {
             ref={imageRef}
             src="/me_edited_no_bg_scaled2.png"
             loading="lazy"
-            className={`w-[80vw] md:w-[40vw] rounded-full cursor-pointer ${
-              hasColor ? "grayscale-0" : "grayscale"
-            } transition-all duration-300 block`}
+            className={`w-[80vw]  md:w-[40vw] rounded-full cursor-pointer transition-all duration-300 block`}
             alt="Alex Zeitlhofer Image"
           />
 
           {/* Spinning Carousel Icons */}
-          <div className="absolute w-full h-full flex items-center justify-center">
-            <div className="relative w-full h-full flex justify-center items-center carousel-spin">
-              {skillIcons.map((icon, index) => {
-                const angle = (index / skillIcons.length) * 360;
+          <div className="absolute w-full h-full flex items-center justify-center carousel-spin">
+            {skillIcons.map((icon, index) => {
+              const angle = (index / skillIcons.length) * 360;
 
-                return (
-                  <div
-                    key={index}
-                    className="absolute"
-                    style={{
-                      transform: `rotate(${angle}deg) translate(${
-                        imageSize / 2
-                      }px) rotate(-${angle}deg)`,
-                    }}
-                  >
-                    <img
-                      src={icon.src}
-                      alt={icon.text}
-                      className={`${iconDims} carousel-spin-counteract`}
-                    />
-                  </div>
-                );
-              })}
-            </div>
+              return (
+                <div
+                  key={index}
+                  className="absolute"
+                  style={{
+                    transform: `rotate(${angle}deg) translate(${
+                      imageSize / 2
+                    }px) rotate(-${angle}deg)`,
+                  }}
+                >
+                  <img
+                    src={icon.src}
+                    alt={icon.text}
+                    className={`${iconDims} carousel-spin-counteract`}
+                  />
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

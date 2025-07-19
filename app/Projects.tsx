@@ -1,13 +1,7 @@
 "use client";
-// import { Figtree } from "next/font/google";
 import { Project } from "./ProjectType";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import SectionTemplate from "./SectionTemplate";
-
-// const figtree = Figtree({
-//   weight: "700",
-//   subsets: ["latin"],
-// });
 
 const projects: Project[] = [
   {
@@ -35,7 +29,7 @@ export default function Projects() {
         columnsCountBreakPoints={{ 350: 1, 750: 2 }}
         className="w-full"
       >
-        <Masonry gutter="16px">
+        <Masonry>
           {projects.map((project, idx) => (
             <ProjectCard {...project} key={idx}></ProjectCard>
           ))}
