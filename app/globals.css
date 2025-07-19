@@ -2,9 +2,9 @@
 
 :root {
   --foreground: #f7f3f7;
-  --primary: #5778ff;
-  --secondary: #822ed1;
-  --background: #181a25;
+  --secondary: #3eb1ff;
+  --primary: #7027b4;
+  --background: #2a2a3b;
 }
 
 html {
@@ -105,4 +105,31 @@ body {
     rgba(87, 120, 255, 1) 60%,
     rgba(35, 250, 160, 1) 100%
   );
+}
+
+@keyframes carousel-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.carousel-spin {
+  animation: carousel-spin 30s linear infinite; /* Adjust duration as needed */
+  transform-origin: center;
+}
+
+@keyframes carousel-spin-counteract {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.carousel-spin-counteract {
+  animation: carousel-spin-counteract 30s linear infinite;
 }
