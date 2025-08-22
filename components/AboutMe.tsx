@@ -1,5 +1,5 @@
 import { Figtree } from "next/font/google";
-import SectionTemplate from "./SectionTemplate";
+import SectionTemplate from "../components/SectionTemplate";
 
 const figtree = Figtree({
   weight: "700",

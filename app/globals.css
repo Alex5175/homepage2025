@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --foreground: #f7f3f7;
+  --foreground: hsl(300, 20%, 96%);
   --secondary: #3eb1ff;
   --primary: #7027b4;
   --background: #2a2a3b;
@@ -132,4 +132,14 @@ body {
 
 .carousel-spin-counteract {
   animation: carousel-spin-counteract 30s linear infinite;
+}
+
+progress::-webkit-progress-value {
+  background-color: var(--primary); /* Example: Tailwind's indigo-500 */
+}
+progress::-moz-progress-bar {
+  background-color: var(--primary);
+}
+progress::-ms-fill {
+  background-color: var(--primary);
 }

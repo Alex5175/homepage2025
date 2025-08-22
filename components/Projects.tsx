@@ -1,5 +1,4 @@
 "use client";
-import { Project } from "./ProjectType";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import SectionTemplate from "./SectionTemplate";
 

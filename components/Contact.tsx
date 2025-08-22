@@ -1,5 +1,5 @@
 // import { Figtree } from "next/font/google";
-import SectionTemplate from "./SectionTemplate";
+import SectionTemplate from "@/components/SectionTemplate";
 import "./Contact.css";
 // const figtree = Figtree({
 //   weight: "700",
@@ -77,7 +77,9 @@ export default function Contact() {
       {/* Contact Display for Mobile */}
       <div className="grid grid-cols-2 md:hidden gap-2 w-full ">
         {cards.map((card, idx) => (
-          <div className="flex justify-center items-center" key={idx}>{card}</div>
+          <div className="flex justify-center items-center" key={idx}>
+            {card}
+          </div>
         ))}
       </div>
     </SectionTemplate>

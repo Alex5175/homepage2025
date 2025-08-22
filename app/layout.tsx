@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import NavBar from "./NavBar";
+import NavBar from "../components/NavBar";
 import "./globals.css";
 
 const isDisabled = false;

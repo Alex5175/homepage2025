@@ -34,7 +34,7 @@ export default function SectionTemplate({
       id={id}
       className={`w-screen max-w-screen p-8 ${
         hasFooter ? "min-h-[90dvh]" : "min-h-dvh"
-      }  pt-20 snap-start  ${
+      } pt-20 snap-start ${
         theme === "dark" ? "bg-background/0" : "bg-foreground/0"
       }`}
       style={{
@@ -43,6 +43,7 @@ export default function SectionTemplate({
           : undefined,
         backgroundSize: "cover",
         backgroundPosition: "center",
+        height: hasFooter ? "90dvh" : "100dvh", // Add this line
       }}
     >
       {/* Place Title, either with predesigned Style, or the given React Node */}

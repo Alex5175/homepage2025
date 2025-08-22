@@ -4,11 +4,11 @@
 import "./home.css";
 import React from "react";
 
-import Hero from "./Hero";
-import AboutMe from "./AboutMe";
-import Projects from "./Projects";
-import Contact from "./Contact";
-import Footer from "./Footer";
+import Hero from "@/components/Hero";
+import AboutMe from "@/components/AboutMe";
+import Projects from "@/components/Projects";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
