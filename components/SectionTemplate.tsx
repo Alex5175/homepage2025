@@ -36,14 +36,14 @@ export default function SectionTemplate({
         hasFooter ? "min-h-[90dvh]" : "min-h-dvh"
       } pt-20 snap-start ${
         theme === "dark" ? "bg-background/0" : "bg-foreground/0"
-      }`}
+      } flex flex-col overflow-auto`} // <-- add overflow-auto here
       style={{
         backgroundImage: backgroundImage
           ? `url(${backgroundImage})`
           : undefined,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        height: hasFooter ? "90dvh" : "100dvh", // Add this line
+        // Remove height property
       }}
     >
       {/* Place Title, either with predesigned Style, or the given React Node */}
@@ -60,7 +60,6 @@ export default function SectionTemplate({
           {title}
         </h2>
       )}
-
       {isReactNode(subTitle) ? (
         subTitle
       ) : (
@@ -74,8 +73,7 @@ export default function SectionTemplate({
           {subTitle}
         </h3>
       )}
-
-      <div className="w-full h-full">{children}</div>
+      <div className="w-full flex-1">{children}</div>
     </div>
   );
 }
