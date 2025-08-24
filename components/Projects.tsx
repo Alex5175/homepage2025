@@ -1,5 +1,4 @@
 "use client";
-import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import SectionTemplate from "./SectionTemplate";
 import { useRef, useEffect, useState } from "react";
 
