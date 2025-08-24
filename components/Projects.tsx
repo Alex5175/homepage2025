@@ -3,6 +3,13 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import SectionTemplate from "./SectionTemplate";
 import { useRef, useEffect, useState } from "react";
 
+import { Figtree } from "next/font/google";
+
+const figtree = Figtree({
+  weight: "700",
+  subsets: ["latin"],
+});
+
 const projects: Project[] = [
   {
     title: "Griessler Website",
@@ -26,16 +33,11 @@ export default function Projects() {
   return (
     <SectionTemplate title="Projekte" theme="dark" id="projects">
       {/* Card Project View on Mobile */}
-      <ResponsiveMasonry
-        columnsCountBreakPoints={{ 350: 1, 768: 2 }}
-        className="w-full block md:hidden"
-      >
-        <Masonry>
-          {projects.map((project, idx) => (
-            <ProjectCard {...project} key={idx}></ProjectCard>
-          ))}
-        </Masonry>
-      </ResponsiveMasonry>
+      <div className="w-full flex flex-col gap-4 md:hidden ">
+        {projects.map((project, idx) => (
+          <ProjectCard {...project} key={idx}></ProjectCard>
+        ))}
+      </div>
 
       {/* Desktop Tile Project View */}
       <div className=" gap-4 flex-col hidden md:flex">
@@ -121,9 +123,9 @@ function ProjectTile({
         `}
       >
         <h3
-          className={`text-3xl font-bold ${
-            alignLeft ? "text-left" : "text-right"
-          }`}
+          className={` text-[4vw] md:text-[2vw] font-bold ${
+            figtree.className
+          } ${alignLeft ? "text-left" : "text-right"}`}
         >
           {title}
         </h3>
@@ -137,7 +139,11 @@ function ProjectTile({
             <ProjectTag tagName={tag} key={tag}></ProjectTag>
           ))}
         </div>
-        <p className={`text-lg text-justify ${alignLeft ? "pr-8" : "pl-8"}`}>
+        <p
+          className={`text-[3vw] md:text-[1.25vw] text-justify ${
+            figtree.className
+          } ${alignLeft ? "pr-8" : "pl-8"}`}
+        >
           {description}
         </p>
       </div>
@@ -148,7 +154,7 @@ function ProjectTile({
 function ProjectTag({ tagName }: { tagName: string }) {
   return (
     <div className="rounded-full max-w-min h-6 bg-gradient-to-r from-primary to-secondary p-4 flex items-center">
-      <p className="text-foreground text-center text-sm">{tagName}</p>
+      <p className="text-foreground text-center md:text-[1.25vw]">{tagName}</p>
     </div>
   );
 }

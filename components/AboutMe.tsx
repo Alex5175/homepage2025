@@ -15,7 +15,7 @@ export default function AboutMe() {
       subTitle="Hi, ich bin Alex!"
     >
       <p
-        className={`md:columns-2  text-foreground text-[4vw] md:text-[1.75vw] ${figtree.className} text-justify`}
+        className={`  text-foreground text-[4vw] md:text-[1.75vw] ${figtree.className} text-justify`}
       >
         ich bin Webentwickler mit Leidenschaft für cleanen Code, durchdachtes
         Design und performante Websites. Ich liebe es, digitale Ideen zum Leben
