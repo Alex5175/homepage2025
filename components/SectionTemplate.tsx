@@ -1,5 +1,6 @@
 import { Figtree } from "next/font/google";
 import React from "react";
+import "./SectionTemplate.css";
 
 function isReactNode(node: unknown): boolean {
   return React.isValidElement(node);
@@ -32,11 +33,11 @@ export default function SectionTemplate({
   return (
     <div
       id={id}
-      className={`w-screen max-w-screen p-8 ${
-        hasFooter ? "min-h-[90dvh]" : "min-h-dvh"
-      } pt-20 snap-start ${
-        theme === "dark" ? "bg-background/0" : "bg-foreground/0"
-      } flex flex-col overflow-auto`} // <-- add overflow-auto here
+      className={`w-screen max-w-screen p-8 
+        // ${hasFooter ? "min-h-[90dvh]" : "min-h-dvh"}
+         pt-20  ${
+           theme === "dark" ? "bg-background/0" : "bg-foreground/0"
+         } flex flex-col overflow-auto`} // <-- add overflow-auto here
       style={{
         backgroundImage: backgroundImage
           ? `url(${backgroundImage})`
@@ -73,7 +74,7 @@ export default function SectionTemplate({
           {subTitle}
         </h3>
       )}
-      <div className="w-full flex-1">{children}</div>
+      <div className="w-full ">{children}</div>
     </div>
   );
 }

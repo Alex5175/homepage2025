@@ -24,7 +24,6 @@ export default function AboutMe() {
         der Melk. Technik, Kreativität und stetiges Lernen begleiten mich
         seitdem auf meinem Weg durch die Welt des Webs.
       </p>
-      <div className="h-96"></div>
     </SectionTemplate>
   );
 }

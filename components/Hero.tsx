@@ -71,7 +71,7 @@ export default function Hero() {
     <>
       <div
         id="hero"
-        className="h-screen p-8 py-20 w-screen grid overflow-hidden grid-cols-1 md:grid-cols-2 relative snap-start"
+        className="h-screen p-8 py-20 w-screen grid overflow-hidden grid-cols-1 md:grid-cols-2 relative "
       >
         <div>
           <h1

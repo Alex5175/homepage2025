@@ -1,13 +1,14 @@
 "use client";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import SectionTemplate from "./SectionTemplate";
+import { useRef, useEffect, useState } from "react";
 
 const projects: Project[] = [
   {
     title: "Griessler Website",
     image: "/images/griessler.webp",
     description:
-      "Im Rahmen eines Schulprojekts wurde die Griessler Website neu designed.",
+      "Im dritten Schuljahr der IT-Htl wurde dieses Projekt im Rahmen des ITP Unterichts entwickelt. Die Idee war ein einfacher Redesign der Website der Julius Griessler & Sohn KG, da diese Website schon sehr veraltet war. Damit der Kunde nach dem Ende des Projekts selber weiter an der Seite arbeiten konnte wurde Wordpress mit Elementor verwendet. ",
     alt: "Screenshot der Griessler Website",
     tags: ["Wordpress", "Elementor"],
   },
@@ -15,7 +16,7 @@ const projects: Project[] = [
     title: "StageUp Website",
     image: "/images/stageup.webp",
     description:
-      "In kooperation mit Benjamin Leitner wurde eine Website für sein Unternehmen StageUp erstellt.",
+      "In kooperation mit Benjamin Leitner wurde eine Website für sein Unternehmen StageUp erstellt. Diese wurde zur einfachen Wartung mit Wordpress und Elementor erstellt.",
     alt: "Screenshot der Griessler Website",
     tags: ["Wordpress", "Elementor"],
   },
@@ -24,9 +25,10 @@ const projects: Project[] = [
 export default function Projects() {
   return (
     <SectionTemplate title="Projekte" theme="dark" id="projects">
+      {/* Card Project View on Mobile */}
       <ResponsiveMasonry
-        columnsCountBreakPoints={{ 350: 1, 750: 2 }}
-        className="w-full"
+        columnsCountBreakPoints={{ 350: 1, 768: 2 }}
+        className="w-full block md:hidden"
       >
         <Masonry>
           {projects.map((project, idx) => (
@@ -34,7 +36,13 @@ export default function Projects() {
           ))}
         </Masonry>
       </ResponsiveMasonry>
-      <div className="h-96"></div>
+
+      {/* Desktop Tile Project View */}
+      <div className=" gap-4 flex-col hidden md:flex">
+        {projects.map((project, idx) => (
+          <ProjectTile {...project} idx={idx} key={idx}></ProjectTile>
+        ))}
+      </div>
     </SectionTemplate>
   );
 }
@@ -67,9 +75,79 @@ function ProjectCard({ title, image, description, alt, tags }: Project) {
   );
 }
 
+function ProjectTile({
+  title,
+  image,
+  description,
+  alt,
+  tags,
+  idx,
+}: Project & { idx: number }) {
+  const alignLeft = idx % 2 == 1;
+  const imgRef = useRef<HTMLImageElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setVisible(true);
+      },
+      { threshold: 0.5 }
+    );
+    if (imgRef.current) observer.observe(imgRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div className={`w-full p-4 flex ${alignLeft ? "flex-row-reverse" : ""}`}>
+      <img
+        ref={imgRef}
+        src={image}
+        alt={alt}
+        className={`max-w-[40vw] object-cover aspect-video rounded-md hover:scale-105 transition-all duration-500
+          ${
+            visible
+              ? "opacity-100 translate-x-0"
+              : alignLeft
+              ? "opacity-0 translate-x-16"
+              : "opacity-0 -translate-x-16"
+          }
+        `}
+      />
+
+      <div
+        className={`flex-1 flex flex-col gap-4 py-4 
+        text-foreground
+        `}
+      >
+        <h3
+          className={`text-3xl font-bold ${
+            alignLeft ? "text-left" : "text-right"
+          }`}
+        >
+          {title}
+        </h3>
+        <div
+          id="tags"
+          className={`hidden ${
+            alignLeft ? "" : "justify-end"
+          } gap-2  w-full md:flex`}
+        >
+          {tags.map((tag) => (
+            <ProjectTag tagName={tag} key={tag}></ProjectTag>
+          ))}
+        </div>
+        <p className={`text-lg text-justify ${alignLeft ? "pr-8" : "pl-8"}`}>
+          {description}
+        </p>
+      </div>
+    </div>
+  );
+}
+
 function ProjectTag({ tagName }: { tagName: string }) {
   return (
-    <div className="rounded-full max-w-min h-6 bg-background px-3 flex items-center">
+    <div className="rounded-full max-w-min h-6 bg-gradient-to-r from-primary to-secondary p-4 flex items-center">
       <p className="text-foreground text-center text-sm">{tagName}</p>
     </div>
   );
