@@ -1,6 +1,7 @@
 // import { Figtree } from "next/font/google";
 import SectionTemplate from "@/components/SectionTemplate";
 import "./Contact.css";
+import { motion } from "motion/react";
 // const figtree = Figtree({
 //   weight: "700",
 //   subsets: ["latin"],
@@ -12,35 +13,35 @@ const cards = [
     text="+43 660 6796469"
     url="tel:+436606796469"
     key={"/icons/telephone-handle-silhouette.png"}
-    className="float-animation delay-0"
+    delaySec={0}
   />,
   <ContactCard
     icon="/icons/email.png"
     text="kontakt@alex-zeitlhofer.com"
     url="mailto:kontakt@alex-zeitlhofer.com"
     key={"/icons/email.png"}
-    className="float-animation delay-200"
+    delaySec={0.2}
   />,
   <ContactCard
     icon="/icons/instagram.png"
     text="@alexanderzeitlhofer"
     url="https://www.instagram.com/alexanderzeitlhofer/"
     key={"/icons/instagram.png"}
-    className="float-animation delay-400"
+    delaySec={0.4}
   />,
   <ContactCard
     icon="/icons/linkedin.png"
     text="Alexander Zeitlhofer"
     url="https://www.linkedin.com/in/alexander-zeitlhofer-71976a266/"
     key={"/icons/linkedin.png"}
-    className="float-animation delay-600"
+    delaySec={0.6}
   />,
   <ContactCard
     icon="/icons/github.png"
     text="Alex5175"
     url="https://github.com/Alex5175"
     key={"/icons/github.png"}
-    className="float-animation delay-800"
+    delaySec={0.8}
   />,
 ];
 
@@ -97,11 +98,19 @@ function ContactCard({
   url,
   text,
   className,
-}: ContactCardProps & { className?: string }) {
+  delaySec,
+}: ContactCardProps & { className?: string; delaySec: number }) {
   return (
-    <a
+    <motion.a
       href={url}
       className={`w-40 h-40 md:w-40 md:h-48 flex flex-col p-4 justify-around bg-gradient-to-tr from-primary to-secondary rounded-lg transition-all ${className}`}
+      animate={{ y: [0, -16, 0, 16, 0], x: [0, -16, 0, 16, 0] }}
+      transition={{
+        duration: 3,
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay: delaySec,
+      }}
     >
       <div className="flex justify-center">
         <img src={icon} alt={text} className="object-contain w-20 md:w-28" />
@@ -110,6 +119,6 @@ function ContactCard({
       <p className="text-center text-foreground text-sm md:text-md font-bold hyphens-auto">
         {text}
       </p>
-    </a>
+    </motion.a>
   );
 }

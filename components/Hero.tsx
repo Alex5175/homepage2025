@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { Figtree } from "next/font/google";
-
+import { motion } from "motion/react";
 const figtree = Figtree({
   weight: "700",
   subsets: ["latin"],
@@ -71,7 +71,7 @@ export default function Hero() {
     <>
       <div
         id="hero"
-        className="h-screen p-8  w-screen flex flex-col lg:flex-row overflow-hidden relative snap-start"
+        className="h-screen p-8  w-screen flex flex-col lg:flex-row overflow-hidden relative "
       >
         <div id="title" className="flex-1">
           <h1
@@ -98,13 +98,17 @@ export default function Hero() {
 
         <div className="flex-1 relative flex items-center justify-center">
           {/* Image */}
-          <img
+
+          <motion.img
             ref={imageRef}
             src="/me_edited_no_bg_scaled2.png"
             loading="lazy"
             className={`w-[70vw] md:w-[35vw] rounded-full cursor-pointer transition-all duration-300 block`}
             alt="Alex Zeitlhofer Image"
-          />
+            initial={{ scale: 0.1 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.2, ease: "easeIn" }}
+          ></motion.img>
 
           {/* Spinning Carousel Icons */}
           <div className="absolute w-full h-full flex items-center justify-center carousel-spin">

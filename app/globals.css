@@ -5,6 +5,7 @@
   --secondary: #3eb1ff;
   --primary: #7027b4;
   --background: #2a2a3b;
+  cursor: none !important;
 }
 
 html {

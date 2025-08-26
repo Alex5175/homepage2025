@@ -1,5 +1,5 @@
 import GetTimeProgession from "@/lib/GetTimeProgression";
-import SectionTemplate from "../../components/SectionTemplate";
+import SectionTemplate from "@/components/SectionTemplate";
 
 export default function page() {
   const startDate = new Date("July 1, 2025");
