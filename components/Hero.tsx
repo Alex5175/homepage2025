@@ -71,11 +71,11 @@ export default function Hero() {
     <>
       <div
         id="hero"
-        className="h-screen p-8  w-screen grid overflow-hidden grid-cols-1 md:grid-cols-2 relative snap-start"
+        className="h-screen p-8  w-screen flex flex-col lg:flex-row overflow-hidden relative snap-start"
       >
-        <div>
+        <div id="title" className="flex-1">
           <h1
-            className={`leading-none text-[14vw] md:text-[9.5vw] ${figtree.className} text-foreground text-left`}
+            className={`leading-none text-[14vw] lg:text-[9.5vw] ${figtree.className} text-foreground text-left`}
           >
             ZEITLHOFER{" "}
             <span className="font-black bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
@@ -84,7 +84,7 @@ export default function Hero() {
           </h1>
 
           <p
-            className={`text-foreground text-[10vw] md:text-[5vw] leading-none mt-4 text-left ${figtree.className}`}
+            className={`text-foreground text-[10vw] lg:text-[5vw] leading-none mt-4 text-left ${figtree.className}`}
           >
             <span className="text-gradient-underline-hover">
               WEB-ENTWICKLUNG/-DESIGN
@@ -96,13 +96,13 @@ export default function Hero() {
           </p>
         </div>
 
-        <div className="relative flex items-center justify-center">
+        <div className="flex-1 relative flex items-center justify-center">
           {/* Image */}
           <img
             ref={imageRef}
             src="/me_edited_no_bg_scaled2.png"
             loading="lazy"
-            className={`w-[80vw]  md:w-[40vw] rounded-full cursor-pointer transition-all duration-300 block`}
+            className={`w-[70vw] md:w-[35vw] rounded-full cursor-pointer transition-all duration-300 block`}
             alt="Alex Zeitlhofer Image"
           />
 

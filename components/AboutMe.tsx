@@ -1,5 +1,7 @@
 import { Figtree } from "next/font/google";
-import SectionTemplate from "../components/SectionTemplate";
+import SectionTemplate from "./SectionTemplate";
+import Link from "next/link";
+import TimeLine from "./TimeLine";
 
 const figtree = Figtree({
   weight: "700",
@@ -12,18 +14,39 @@ export default function AboutMe() {
       title="wer bin ich?"
       id="aboutme"
       theme="dark"
-      subTitle="Hi, ich bin Alex!"
+      subTitle={
+        <h3
+          className={`text-foreground text-[10vw] md:text-[5vw] leading-none ${figtree.className} text-left mb-4 uppercase`}
+        >
+          Hi, ich bin{" "}
+          <span className="font-black bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            Alex!
+          </span>
+        </h3>
+      }
     >
-      <p
-        className={`  text-foreground text-[4vw] md:text-[1.75vw] ${figtree.className} text-justify`}
-      >
-        ich bin Webentwickler mit Leidenschaft für cleanen Code, durchdachtes
-        Design und performante Websites. Ich liebe es, digitale Ideen zum Leben
-        zu erwecken - pixelgenau, nutzerzentriert und zukunftssicher. Ich habe
-        meine Matura an der IT-HTL Ybbs abgeschlossen und komme aus Oberndorf an
-        der Melk. Technik, Kreativität und stetiges Lernen begleiten mich
-        seitdem auf meinem Weg durch die Welt des Webs.
-      </p>
+      <div className="flex flex-col">
+        <p
+          className={`text-foreground text-[4vw] md:text-[1.75vw] ${figtree.className} text-justify`}
+        >
+          ich bin Webentwickler mit Leidenschaft für cleanen Code, durchdachtes
+          Design und performante Websites. Ich liebe es, digitale Ideen zum
+          Leben zu erwecken - pixelgenau, nutzerzentriert und zukunftssicher.
+          Ich habe meine Matura an der{" "}
+          <Link
+            href={"https://www.sz-ybbs.ac.at/"}
+            className="text-[#06aac9] hover:underline transition-all "
+          >
+            IT-HTL Ybbs
+          </Link>{" "}
+          abgeschlossen und komme aus Oberndorf an der Melk. Technik,
+          Kreativität und stetiges Lernen begleiten mich seitdem auf meinem Weg
+          durch die Welt des Webs.
+        </p>
+        <TimeLine>
+          
+        </TimeLine>
+      </div>
     </SectionTemplate>
   );
 }
