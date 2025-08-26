@@ -1,7 +1,7 @@
 import { Figtree } from "next/font/google";
 import SectionTemplate from "./SectionTemplate";
 import Link from "next/link";
-import TimeLine from "./TimeLine";
+// import TimeLine from "./TimeLine";
 
 const figtree = Figtree({
   weight: "700",
@@ -43,9 +43,9 @@ export default function AboutMe() {
           Kreativität und stetiges Lernen begleiten mich seitdem auf meinem Weg
           durch die Welt des Webs.
         </p>
-        <TimeLine>
-          
-        </TimeLine>
+        {/* <TimeLine>
+
+        </TimeLine> */}
       </div>
     </SectionTemplate>
   );
