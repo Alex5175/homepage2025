@@ -3,6 +3,7 @@ import SectionTemplate from "./SectionTemplate";
 import { useRef, useEffect, useState } from "react";
 
 import { Figtree } from "next/font/google";
+import { motion } from "motion/react";
 
 const figtree = Figtree({
   weight: "700",
@@ -85,35 +86,20 @@ function ProjectTile({
   idx,
 }: Project & { idx: number }) {
   const alignLeft = idx % 2 == 1;
-  const imgRef = useRef<HTMLImageElement>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new window.IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setVisible(true);
-      },
-      { threshold: 0.5 }
-    );
-    if (imgRef.current) observer.observe(imgRef.current);
-    return () => observer.disconnect();
-  }, []);
 
   return (
     <div className={`w-full p-4 flex ${alignLeft ? "flex-row-reverse" : ""}`}>
-      <img
-        ref={imgRef}
+      <motion.img
         src={image}
         alt={alt}
-        className={`max-w-[40vw] object-cover aspect-video rounded-md hover:scale-105 transition-all duration-500
-          ${
-            visible
-              ? "opacity-100 translate-x-0"
-              : alignLeft
-              ? "opacity-0 translate-x-16"
-              : "opacity-0 -translate-x-16"
-          }
-        `}
+        initial={{ opacity: 0, x: alignLeft ? 128 : -128 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{
+          opacity: { delay: 0.5, duration: 0.3 },
+          x: { delay: 0.5, duration: 0.3 },
+        }}
+        whileHover={{ scale: 1.05 }}
+        className="max-w-[40vw] opacity-0 object-cover aspect-video rounded-md"
       />
 
       <div
