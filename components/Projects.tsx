@@ -1,6 +1,5 @@
 "use client";
 import SectionTemplate from "./SectionTemplate";
-import { useRef, useEffect, useState } from "react";
 
 import { Figtree } from "next/font/google";
 import { motion } from "motion/react";
