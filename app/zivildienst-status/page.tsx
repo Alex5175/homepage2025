@@ -1,3 +1,4 @@
+"use client";
 import GetTimeProgession from "@/lib/GetTimeProgression";
 import SectionTemplate from "@/components/SectionTemplate";
 
@@ -23,8 +24,7 @@ export default function page() {
           </div>
           <progress
             className="w-full h-full bg-secondary rounded-md "
-            value={progress}
-          ></progress>
+            value={progress}></progress>
         </div>
       </div>
     </SectionTemplate>
