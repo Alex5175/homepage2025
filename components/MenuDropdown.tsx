@@ -1,7 +1,15 @@
 "use client";
 import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { House, X, User, FolderRoot, Mail, MenuIcon } from "lucide-react";
+import { motion, Variants } from "framer-motion";
+import {
+  House,
+  X,
+  User,
+  FolderRoot,
+  Mail,
+  MenuIcon,
+  LucideIcon,
+} from "lucide-react";
 
 const containerVariants = {
   hidden: {},
@@ -22,7 +30,7 @@ const textVariants = {
   visible: { opacity: 1 },
   hidden: { opacity: 0, transition: { duration: 0.2 } },
 };
-const buttons: { href: string; Icon: any }[] = [
+const buttons: { href: string; Icon: LucideIcon }[] = [
   {
     href: "/#",
     Icon: House,
@@ -101,9 +109,9 @@ function MenuButton({
 }: {
   href: string;
   activeLink: string;
-  setActiveLink: any;
-  variants: any;
-  Icon: any;
+  setActiveLink: React.Dispatch<React.SetStateAction<string>>;
+  variants: Variants;
+  Icon: LucideIcon;
 }) {
   return (
     <motion.a
