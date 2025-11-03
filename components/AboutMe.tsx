@@ -1,6 +1,7 @@
 import { Figtree } from "next/font/google";
 import SectionTemplate from "./SectionTemplate";
 import Link from "next/link";
+import { motion } from "motion/react";
 // import TimeLine from "./TimeLine";
 
 const figtree = Figtree({
@@ -26,7 +27,10 @@ export default function AboutMe() {
       }
     >
       <div className="flex flex-col">
-        <p
+        <motion.p
+          initial={{ opacity: 0, marginTop: 30 }}
+          whileInView={{ opacity: 1, marginTop: 0 }}
+          transition={{ duration: 0.3, delay: 0.3 }}
           className={`text-foreground text-[4vw] md:text-[1.75vw] ${figtree.className} text-justify`}
         >
           ich bin Webentwickler mit Leidenschaft für cleanen Code, durchdachtes
@@ -42,10 +46,7 @@ export default function AboutMe() {
           abgeschlossen und komme aus Oberndorf an der Melk. Technik,
           Kreativität und stetiges Lernen begleiten mich seitdem auf meinem Weg
           durch die Welt des Webs.
-        </p>
-        {/* <TimeLine>
-
-        </TimeLine> */}
+        </motion.p>
       </div>
     </SectionTemplate>
   );

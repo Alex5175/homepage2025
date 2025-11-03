@@ -3,6 +3,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import NavBar from "../components/NavBar";
 import "./globals.css";
+// import RoundMenuButton from "@/components/MenuDropdown";
 
 const isDisabled = false;
 
@@ -54,7 +55,10 @@ export default function RootLayout({
         ) : (
           <>
             <NavBar />
-          <div>{children}</div>
+            <div>{children}</div>
+            {/* <div className="fixed right-4 top-16 transform -translate-y-1/2 z-50">
+              <RoundMenuButton />
+            </div> */}
             <Analytics />
             <SpeedInsights />
           </>

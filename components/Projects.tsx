@@ -2,7 +2,7 @@
 import SectionTemplate from "./SectionTemplate";
 
 import { Figtree } from "next/font/google";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 const figtree = Figtree({
   weight: "700",
@@ -10,6 +10,14 @@ const figtree = Figtree({
 });
 
 const projects: Project[] = [
+  {
+    title: "Meine eigene Website",
+    image: "/images/alex-zeitlhofer-webpage.png",
+    alt: "Bild von meiner Seite",
+    description:
+      "Als Beweis der Entwicklung meiner WebDev Skills erneuere ich meine eigene Hompage jedes Jahr. Die nächste Version wird vermutlich mitte 2026 erscheinen. Ältere Versionen der Website werden unter [Jahreszahl].alex-zeitlhofer.com zu finden sein (z.b. 2025.alex-zeitlhofer.com).",
+    tags: ["fortlaufend", "WebDev"],
+  },
   {
     title: "Griessler Website",
     image: "/images/griessler.webp",
@@ -68,7 +76,7 @@ function ProjectCard({ title, image, description, alt, tags }: Project) {
             ))}
           </div>
         </div>
-        <p className="text-[2.8vw] md:text-[1.3vw] text-ellipsis w-full">
+        <p className="text-[2.8vw] md:text-[1.3vw] text-ellipsis text-wrap w-full">
           {description}
         </p>
       </div>
@@ -104,21 +112,18 @@ function ProjectTile({
       <div
         className={`flex-1 flex flex-col gap-4 py-4 
         text-foreground
-        `}
-      >
+        `}>
         <h3
           className={` text-[4vw] md:text-[2vw] font-bold ${
             figtree.className
-          } ${alignLeft ? "text-left" : "text-right"}`}
-        >
+          } ${alignLeft ? "text-left" : "text-right"}`}>
           {title}
         </h3>
         <div
           id="tags"
           className={`hidden ${
             alignLeft ? "" : "justify-end"
-          } gap-2  w-full md:flex`}
-        >
+          } gap-2  w-full md:flex`}>
           {tags.map((tag) => (
             <ProjectTag tagName={tag} key={tag}></ProjectTag>
           ))}
@@ -126,8 +131,7 @@ function ProjectTile({
         <p
           className={`text-[3vw] md:text-[1.25vw] text-justify ${
             figtree.className
-          } ${alignLeft ? "pr-8" : "pl-8"}`}
-        >
+          } ${alignLeft ? "pr-8" : "pl-8"}`}>
           {description}
         </p>
       </div>

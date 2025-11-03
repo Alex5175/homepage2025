@@ -71,12 +71,10 @@ export default function Hero() {
     <>
       <div
         id="hero"
-        className="h-screen p-8  w-screen flex flex-col lg:flex-row overflow-hidden relative "
-      >
+        className="h-screen p-8  w-screen flex flex-col lg:flex-row overflow-hidden relative ">
         <div id="title" className="flex-1">
           <h1
-            className={`leading-none text-[14vw] lg:text-[9.5vw] ${figtree.className} text-foreground text-left`}
-          >
+            className={`leading-none text-[14vw] lg:text-[9.5vw] ${figtree.className} text-foreground text-left`}>
             ZEITLHOFER{" "}
             <span className="font-black bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               ALEXANDER
@@ -84,8 +82,7 @@ export default function Hero() {
           </h1>
 
           <p
-            className={`text-foreground text-[10vw] lg:text-[5vw] leading-none mt-4 text-left ${figtree.className}`}
-          >
+            className={`text-foreground text-[10vw] lg:text-[5vw] leading-none mt-4 text-left ${figtree.className}`}>
             <span className="text-gradient-underline-hover">
               WEB-ENTWICKLUNG/-DESIGN
             </span>{" "}
@@ -107,8 +104,7 @@ export default function Hero() {
             alt="Alex Zeitlhofer Image"
             initial={{ scale: 0.1 }}
             animate={{ scale: 1 }}
-            transition={{ duration: 0.2, ease: "easeIn" }}
-          ></motion.img>
+            transition={{ duration: 0.2, ease: "easeIn" }}></motion.img>
 
           {/* Spinning Carousel Icons */}
           <div className="absolute w-full h-full flex items-center justify-center carousel-spin">
@@ -123,8 +119,7 @@ export default function Hero() {
                     transform: `rotate(${angle}deg) translate(${
                       imageSize / 2
                     }px) rotate(-${angle}deg)`,
-                  }}
-                >
+                  }}>
                   <img
                     src={icon.src}
                     alt={icon.text}

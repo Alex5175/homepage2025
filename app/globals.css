@@ -7,15 +7,21 @@
   --background: #2a2a3b;
   cursor: none !important;
 }
+a {
+  cursor: none !important;
+}
 
 html {
   scroll-behavior: smooth;
   height: 100%;
   margin: 0;
   padding: 0;
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For IE/Edge */
 }
-html::-webkit-scrollbar {
-  width: 0;
+
+::-webkit-scrollbar {
+  display: none; /* For WebKit browsers (Chrome, Safari) */
 }
 
 body {
