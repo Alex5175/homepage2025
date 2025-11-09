@@ -32,8 +32,8 @@ const projects: Project[] = [
       <>
         Ein klassischer URL Shortener. Macht ein Kürzel aus einer langen URL um
         diese leichter zu versenden, speicher, usw. Dies App wurde als Challenge
-        in einem Tag entwickelt. Backend Service wurde mit Elysia.js gemacht und
-        Frontend mit Vite/React + Tanstack Router. Probier es auf{" "}
+        in einem Tag entwickelt. Backend Service wurde mit Elysia.js und
+        Frontend mit Vite/React + Tanstack Router gemacht. Probier es aus auf{" "}
         <a href="https://kuerzl.link" className=" underline">
           kuerzl.link
         </a>
