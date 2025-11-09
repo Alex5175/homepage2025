@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+
 import NavBar from "../components/NavBar";
 import "./globals.css";
 // import RoundMenuButton from "@/components/MenuDropdown";
@@ -59,8 +58,6 @@ export default function RootLayout({
             {/* <div className="fixed right-4 top-16 transform -translate-y-1/2 z-50">
               <RoundMenuButton />
             </div> */}
-            <Analytics />
-            <SpeedInsights />
           </>
         )}
       </body>

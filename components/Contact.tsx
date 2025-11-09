@@ -1,7 +1,7 @@
 // import { Figtree } from "next/font/google";
 import SectionTemplate from "@/components/SectionTemplate";
 import "./Contact.css";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 // const figtree = Figtree({
 //   weight: "700",
 //   subsets: ["latin"],
