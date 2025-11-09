@@ -1,6 +1,5 @@
 "use client";
 import SectionTemplate from "./SectionTemplate";
-
 import { Figtree } from "next/font/google";
 import { motion } from "framer-motion";
 
@@ -14,9 +13,33 @@ const projects: Project[] = [
     title: "Meine eigene Website",
     image: "/images/alex-zeitlhofer-webpage.png",
     alt: "Bild von meiner Seite",
-    description:
-      "Als Beweis der Entwicklung meiner WebDev Skills erneuere ich meine eigene Hompage jedes Jahr. Die nächste Version wird vermutlich mitte 2026 erscheinen. Ältere Versionen der Website werden unter [Jahreszahl].alex-zeitlhofer.com zu finden sein (z.b. 2025.alex-zeitlhofer.com).",
+    description: (
+      <>
+        Als Beweis der Entwicklung meiner WebDev Skills erneuere ich meine
+        eigene Hompage jedes Jahr. Die nächste Version wird vermutlich mitte
+        2026 erscheinen. Ältere Versionen der Website werden unter
+        [Jahreszahl].alex-zeitlhofer.com zu finden sein (z.b.
+        2025.alex-zeitlhofer.com).
+      </>
+    ),
     tags: ["fortlaufend", "WebDev"],
+  },
+  {
+    title: "Kuerzl.link",
+    image: "/images/kuerzl.link.png",
+    alt: "Screenshot der Kuerzl.link Website",
+    description: (
+      <>
+        Ein klassischer URL Shortener. Macht ein Kürzel aus einer langen URL um
+        diese leichter zu versenden, speicher, usw. Dies App wurde als Challenge
+        in einem Tag entwickelt. Backend Service wurde mit Elysia.js gemacht und
+        Frontend mit Vite/React + Tanstack Router. Probier es auf{" "}
+        <a href="https://kuerzl.link" className=" underline">
+          kuerzl.link
+        </a>
+      </>
+    ),
+    tags: ["React", "Elysia", "FullStack"],
   },
   {
     title: "Griessler Website",
