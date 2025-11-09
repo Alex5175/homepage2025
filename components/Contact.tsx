@@ -60,10 +60,10 @@ export default function Contact() {
 
         {/* Contact Cards in a circle using Tailwind and absolute positioning */}
         <div className="absolute left-1/2 z-20 -top-10 -translate-x-1/2 -translate-y-1/2">
-          <ContactCard {...cards[0]} key={cards[0].key} />
+          <ContactCard {...cards[0]} key={cards[0].key} imageStyle="invert" />
         </div>
         <div className="absolute left-[75%] top-[25%] -translate-x-1/2 -translate-y-1/2">
-          <ContactCard {...cards[1]} key={cards[1].key} />
+          <ContactCard {...cards[1]} key={cards[1].key} imageStyle="invert" />
         </div>
         <div className="absolute left-[75%] top-[80%] -translate-x-1/2 -translate-y-1/2">
           <ContactCard {...cards[2]} key={cards[2].key} />
@@ -72,7 +72,7 @@ export default function Contact() {
           <ContactCard {...cards[3]} key={cards[3].key} />
         </div>
         <div className="absolute left-[25%] top-[25%] -translate-x-1/2 -translate-y-1/2">
-          <ContactCard {...cards[4]} key={cards[4].key} />
+          <ContactCard {...cards[4]} key={cards[4].key} imageStyle="invert" />
         </div>
       </div>
 
@@ -100,11 +100,16 @@ function ContactCard({
   text,
   className,
   delaySec,
-}: ContactCardProps & { className?: string; delaySec: number }) {
+  imageStyle,
+}: ContactCardProps & {
+  className?: string;
+  delaySec: number;
+  imageStyle?: string;
+}) {
   return (
     <motion.a
       href={url}
-      className={`size-40 md:w-40 md:h-48 flex flex-col z-50 p-4 justify-around bg-gradient-to-tr from-primary to-secondary rounded-lg transition-all ${className}`}
+      className={`size-40 md:w-40 md:h-48 flex flex-col z-50 p-4 justify-around bg-gradient-to-tr from-primary to-secondary rounded-lg transition-all  ${className}`}
       animate={{ y: [0, -16, 0, 16, 0], x: [0, -16, 0, 16, 0] }}
       transition={{
         duration: 3,
@@ -113,7 +118,11 @@ function ContactCard({
         delay: delaySec,
       }}>
       <div className="flex justify-center">
-        <img src={icon} alt={text} className="object-contain w-20 md:w-28" />
+        <img
+          src={icon}
+          alt={text}
+          className={`object-contain w-20 md:w-28 ${imageStyle}`}
+        />
       </div>
 
       <p className="text-center text-foreground text-sm md:text-md font-bold hyphens-auto">
