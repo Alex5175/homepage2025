@@ -2,13 +2,32 @@
 import SectionTemplate from "./SectionTemplate";
 import { Figtree } from "next/font/google";
 import { motion } from "framer-motion";
-
 const figtree = Figtree({
   weight: "700",
   subsets: ["latin"],
 });
 
 const projects: Project[] = [
+  {
+    title: "Kuerzl.link",
+    image: "/images/kuerzl.link.png",
+    alt: "Screenshot der Kuerzl.link Website",
+    description: (
+      <>
+        Ein klassischer URL Shortener. Macht ein Kürzel aus einer langen URL um
+        diesen leichter zu versenden, speicher, usw. Dies App wurde als
+        Challenge in einem Tag entwickelt. Backend Service wurde mit Elysia.js
+        und Frontend mit Vite/React + Tanstack Router gemacht. Probier es aus
+        auf{" "}
+        <a href="https://kuerzl.link" className=" underline">
+          kuerzl.link
+        </a>
+        . Projekt Datein sind auf{" "}
+        <a href="https://github.com/Alex5175?tab=repositories&q=kuerzl&type=&language=&sort=" className="underline">Github</a> zu finden.
+      </>
+    ),
+    tags: ["React", "Elysia", "FullStack"],
+  },
   {
     title: "Meine eigene Website",
     image: "/images/alex-zeitlhofer-webpage.png",
@@ -24,23 +43,7 @@ const projects: Project[] = [
     ),
     tags: ["fortlaufend", "WebDev"],
   },
-  {
-    title: "Kuerzl.link",
-    image: "/images/kuerzl.link.png",
-    alt: "Screenshot der Kuerzl.link Website",
-    description: (
-      <>
-        Ein klassischer URL Shortener. Macht ein Kürzel aus einer langen URL um
-        diese leichter zu versenden, speicher, usw. Dies App wurde als Challenge
-        in einem Tag entwickelt. Backend Service wurde mit Elysia.js und
-        Frontend mit Vite/React + Tanstack Router gemacht. Probier es aus auf{" "}
-        <a href="https://kuerzl.link" className=" underline">
-          kuerzl.link
-        </a>
-      </>
-    ),
-    tags: ["React", "Elysia", "FullStack"],
-  },
+
   {
     title: "Griessler Website",
     image: "/images/griessler.webp",
