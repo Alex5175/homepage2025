@@ -9,6 +9,28 @@ const figtree = Figtree({
 
 const projects: Project[] = [
   {
+    title: "KFZ Zeitlhofer Website",
+    image: "/images/kfzzeitlhofer.png",
+    alt: "Screenshot der KFZ Zeitlhofer Landing Page",
+    description: (
+      <>
+        Die Website von KFZ Zeitlhofer wurde vollständig überarbeitet, um
+        moderner, übersichtlicher und benutzerfreundlicher zu werden. Ziel des
+        Redesigns war es, die Leistungen des Betriebs klarer darzustellen und
+        Besuchern eine schnelle Orientierung zu ermöglichen. Das neue Design
+        setzt auf eine aufgeräumte Struktur, größere Schrift und ein zeitgemäßes
+        Farbkonzept. Besuche die neue Seite auf{" "}
+        <a
+          href="https://www.kfz-zeitlhofer.at"
+          target="_blank"
+          className=" underline">
+          www.kfz-zeitlhofer.at
+        </a>
+      </>
+    ),
+    tags: ["React", "TSRouter"],
+  },
+  {
     title: "Kuerzl.link",
     image: "/images/kuerzl.link.png",
     alt: "Screenshot der Kuerzl.link Website",
@@ -19,11 +41,17 @@ const projects: Project[] = [
         Challenge in einem Tag entwickelt. Backend Service wurde mit Elysia.js
         und Frontend mit Vite/React + Tanstack Router gemacht. Probier es aus
         auf{" "}
-        <a href="https://kuerzl.link" className=" underline">
+        <a href="https://kuerzl.link" target="_blank" className=" underline">
           kuerzl.link
         </a>
         . Projekt Datein sind auf{" "}
-        <a href="https://github.com/Alex5175?tab=repositories&q=kuerzl&type=&language=&sort=" className="underline">Github</a> zu finden.
+        <a
+          href="https://github.com/Alex5175?tab=repositories&q=kuerzl&type=&language=&sort="
+          className="underline"
+          target="_blank">
+          Github
+        </a>{" "}
+        zu finden.
       </>
     ),
     tags: ["React", "Elysia", "FullStack"],
@@ -55,8 +83,16 @@ const projects: Project[] = [
   {
     title: "StageUp Website",
     image: "/images/stageup.webp",
-    description:
-      "In kooperation mit Benjamin Leitner wurde eine Website für sein Unternehmen StageUp erstellt. Diese wurde zur einfachen Wartung mit Wordpress und Elementor erstellt.",
+    description: (
+      <>
+        In kooperation mit Benjamin Leitner wurde eine Website für sein
+        Unternehmen StageUp erstellt. Diese wurde zur einfachen Wartung mit
+        Wordpress und Elementor erstellt. Verfügbar auf{" "}
+        <a href="https://www.stageup.at" target="_blank" className="underline">
+          www.stageup.at
+        </a>
+      </>
+    ),
     alt: "Screenshot der Griessler Website",
     tags: ["Wordpress", "Elementor"],
   },
@@ -121,7 +157,10 @@ function ProjectTile({
   const alignLeft = idx % 2 == 1;
 
   return (
-    <div className={`w-full p-4 flex ${alignLeft ? "flex-row-reverse" : ""}`}>
+    <div
+      className={`w-full p-4 flex overflow-hidden ${
+        alignLeft ? "flex-row-reverse" : ""
+      }`}>
       <motion.img
         src={image}
         alt={alt}
@@ -132,7 +171,7 @@ function ProjectTile({
           x: { delay: 0.5, duration: 0.3 },
         }}
         whileHover={{ scale: 1.05 }}
-        className="max-w-[40vw] opacity-0 object-cover aspect-video rounded-md"
+        className="max-w-[40vw] opacity-0 object-contain  rounded-md"
       />
 
       <div
