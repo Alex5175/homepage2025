@@ -165,3 +165,8 @@ progress::-moz-progress-bar {
 progress::-ms-fill {
   background-color: var(--primary);
 }
+
+.glow {
+  box-shadow: 0 0 10px var(--primary), 0 0 10px var(--secondary),
+    0 0 10px var(--primary);
+}

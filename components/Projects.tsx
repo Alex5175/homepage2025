@@ -1,7 +1,7 @@
 "use client";
 import SectionTemplate from "./SectionTemplate";
-import { Figtree } from "next/font/google";
 import { motion } from "framer-motion";
+import { Figtree } from "next/font/google";
 const figtree = Figtree({
   weight: "700",
   subsets: ["latin"],

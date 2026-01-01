@@ -49,12 +49,13 @@ export default function Contact() {
   return (
     <SectionTemplate title="KONTAKT" theme="dark" hasFooter={true} id="contact">
       {/* Contact Display for Desktop */}
-      <div className="relative  justify-center items-end w-full h-[45dvh]  mx-auto hidden md:flex">
+      <div className="relative  justify-center items-end w-full h-[80dvh]  mx-auto hidden md:flex ">
         {/* Silhouette Image */}
         <img
           draggable={false}
           src="/icons/contact.png"
           alt="Contact Silhuoette"
+          loading="lazy"
           className="absolute left-1/2 top-[60%] -translate-x-1/2 -translate-y-1/2 w-40 h-40 lg:w-60 lg:h-60 xl:w-[30vw] xl:h-[30vw] z-10 "
         />
 
@@ -121,6 +122,7 @@ function ContactCard({
         <img
           src={icon}
           alt={text}
+          loading="lazy"
           className={`object-contain w-20 md:w-28 ${imageStyle}`}
         />
       </div>

@@ -18,7 +18,7 @@ export default function SectionTemplate({
   titlePosition = "left",
   theme = "dark",
   backgroundImage,
-  hasFooter = false,
+  // hasFooter = false,
   id,
 }: Readonly<{
   children?: React.ReactNode;
@@ -34,7 +34,6 @@ export default function SectionTemplate({
     <div
       id={id}
       className={`w-screen max-w-screen p-8 
-        // ${hasFooter ? "min-h-[90dvh]" : "min-h-dvh"}
          pt-20  ${
            theme === "dark" ? "bg-background/0" : "bg-foreground/0"
          } flex flex-col overflow-auto`} // <-- add overflow-auto here
@@ -45,8 +44,7 @@ export default function SectionTemplate({
         backgroundSize: "cover",
         backgroundPosition: "center",
         // Remove height property
-      }}
-    >
+      }}>
       {/* Place Title, either with predesigned Style, or the given React Node */}
       {isReactNode(title) ? (
         title
@@ -54,10 +52,9 @@ export default function SectionTemplate({
         <h2
           className={`${
             theme === "dark" ? "text-foreground" : "text-background"
-          } text-[12.5vw] md:text-[9.5vw] leading-none ${
+          } text-[8vw] md:text-[9.5vw] leading-none ${
             figtree.className
-          } text-${titlePosition} uppercase`}
-        >
+          } text-${titlePosition} uppercase`}>
           {title}
         </h2>
       )}
@@ -67,10 +64,9 @@ export default function SectionTemplate({
         <h3
           className={`${
             theme === "dark" ? "text-foreground" : "text-background"
-          } text-[10vw] md:text-[5vw] leading-none ${
+          } text-[6vw] md:text-[5vw] leading-none ${
             figtree.className
-          } text-${titlePosition} mb-4 uppercase`}
-        >
+          } text-${titlePosition} mb-4 uppercase`}>
           {subTitle}
         </h3>
       )}
