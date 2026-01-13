@@ -3,7 +3,7 @@ import type { Metadata, Viewport } from "next";
 import NavBar from "../components/NavBar";
 import "./globals.css";
 // import RoundMenuButton from "@/components/MenuDropdown";
-import MouseProvider from "@/components/MouseProvider";
+// import MouseProvider from "@/components/MouseProvider";
 const isDisabled = false;
 
 export const metadata: Metadata = {
@@ -54,7 +54,7 @@ export default function RootLayout({
         ) : (
           <>
             <NavBar />
-            <MouseProvider>{children}</MouseProvider>
+            {children}
             {/* <div className="fixed right-4 top-16 transform -translate-y-1/2 z-50">
               <RoundMenuButton />
             </div> */}

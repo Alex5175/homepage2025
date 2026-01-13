@@ -2,13 +2,14 @@
 import { useState, useEffect, useRef } from "react";
 import { Figtree } from "next/font/google";
 import { motion } from "framer-motion";
+import Link from "next/link";
 const figtree = Figtree({
   weight: "700",
   subsets: ["latin"],
   preload: true,
 });
 
-const iconDims = "w-16  lg:w-24";
+const iconDims = "w-16";
 const skillIcons = [
   {
     src: "/icons/html.png",
@@ -71,7 +72,7 @@ export default function Hero() {
     <>
       <div
         id="hero"
-        className="h-screen p-8  w-screen flex flex-col lg:flex-row overflow-hidden relative ">
+        className=" p-8  w-screen flex flex-col lg:flex-row overflow-hidden relative gap-4">
         <div id="title" className="flex-1">
           <h1
             className={`leading-none text-[14vw] lg:text-[9.5vw] ${figtree.className} text-foreground text-left`}>
@@ -93,21 +94,21 @@ export default function Hero() {
           </p>
         </div>
 
-        <div className="flex-1 relative flex items-center justify-center">
-          {/* Image */}
+        <div className="flex-1 relative flex items-center  flex-col-reverse space-y-4 md:space-y-0 md:flex-col ">
+          <div className="flex-3  flex items-center justify-center carousel-spin">
+            {/* Image */}
+            <motion.img
+              ref={imageRef}
+              src="/me_edited_no_bg_scaled2.png"
+              loading="lazy"
+              className={`w-[70vw] md:w-[25vw] rounded-full cursor-pointer transition-all duration-300 block carousel-spin-counteract`}
+              alt="Alex Zeitlhofer Image"
+              initial={{ scale: 0.1 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.2, ease: "easeIn" }}></motion.img>
 
-          <motion.img
-            ref={imageRef}
-            src="/me_edited_no_bg_scaled2.png"
-            loading="lazy"
-            className={`w-[70vw] md:w-[35vw] rounded-full cursor-pointer transition-all duration-300 block`}
-            alt="Alex Zeitlhofer Image"
-            initial={{ scale: 0.1 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.2, ease: "easeIn" }}></motion.img>
+            {/* Spinning Carousel Icons */}
 
-          {/* Spinning Carousel Icons */}
-          <div className="absolute w-full h-full flex items-center justify-center carousel-spin">
             {skillIcons.map((icon, index) => {
               const angle = (index / skillIcons.length) * 360;
 
@@ -128,6 +129,14 @@ export default function Hero() {
                 </div>
               );
             })}
+          </div>
+
+          <div className="flex-1 flex items-center">
+            <Link
+              href="/#contact"
+              className={`bg-gradient-to-r from-primary to-secondary p-4 text-2xl rounded-md text-[5vw] lg:text-[2vw] text-foreground ${figtree.className}`}>
+              Sie brauchen eine Website?
+            </Link>
           </div>
         </div>
       </div>

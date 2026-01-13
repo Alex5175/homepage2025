@@ -16,34 +16,36 @@ export default function NavBar() {
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 h-16  w-full bg-black/50 flex items-center z-[1000]">
-        <div className="w-[66.6vw] pl-6">
-          <Link
-            href="/#hero"
-            className={`font-black text-foreground text-4xl md:text-6xl ${parisienne.className} cursor-pointer text-glow`}
-          >
-            Alex Zeitlhofer
-          </Link>
-        </div>
-
-        {/* Desktop menu */}
-        <div className="hidden md:flex w-[33.3vw] justify-around items-center text-foreground text-2xl font-bold">
-          <Link href="/#aboutme" className={btnClass}>
-            Über mich
-          </Link>
-          <Link href="/#projects" className={btnClass}>
-            Projekte
-          </Link>
-          <Link href="/#contact" className={btnClass}>
-            Kontakt
-          </Link>
+        <div className="flex justify-between w-screen px-4 ">
+          <div className=" pl-6">
+            <Link
+              href="/#hero"
+              className={`font-black text-foreground text-4xl md:text-6xl ${parisienne.className} cursor-pointer text-glow`}>
+              Alex Zeitlhofer
+            </Link>
+          </div>
+          {/* Desktop menu */}
+          <div className="hidden lg:flex gap-4  justify-around items-center text-foreground text-2xl font-bold">
+            <Link href="/#aboutme" className={btnClass}>
+              Über mich
+            </Link>
+            <Link href="/#services" className={btnClass}>
+              Dienstleistungen
+            </Link>
+            <Link href="/#projects" className={btnClass}>
+              Projekte
+            </Link>
+            <Link href="/#contact" className={btnClass}>
+              Kontakt
+            </Link>
+          </div>
         </div>
 
         {/* Hamburger icon for mobile */}
         <button
-          className="md:hidden ml-auto mr-8 flex flex-col justify-center items-center w-12 h-12"
+          className="lg:hidden ml-auto mr-8 flex flex-col justify-center items-center w-12 h-12"
           onClick={() => setOpen((o) => !o)}
-          aria-label="Menü öffnen"
-        >
+          aria-label="Menü öffnen">
           <span className="block w-8 h-1 bg-foreground mb-1 rounded transition-all" />
           <span className="block w-8 h-1 bg-foreground mb-1 rounded transition-all" />
           <span className="block w-8 h-1 bg-foreground rounded transition-all" />
@@ -52,28 +54,30 @@ export default function NavBar() {
       {/* Mobile dropdown menu */}
       {open && (
         <div
-          className="fixed top-16 left-0 w-full bg-background shadow-lg z-20 flex flex-col items-end p-6 gap-6 md:hidden"
-          style={{ boxSizing: "border-box", maxWidth: "100vw" }}
-        >
+          className="fixed top-16 left-0 w-full bg-black/50 shadow-lg z-20 flex flex-col items-end p-6 gap-6 lg:hidden"
+          style={{ boxSizing: "border-box", maxWidth: "100vw" }}>
           <Link
             href="/#aboutme"
             className={btnClass}
-            onClick={() => setOpen(false)}
-          >
+            onClick={() => setOpen(false)}>
             Über mich
+          </Link>
+          <Link
+            href="/#services"
+            className={btnClass}
+            onClick={() => setOpen(false)}>
+            Dienstleistungen
           </Link>
           <Link
             href="/#projects"
             className={btnClass}
-            onClick={() => setOpen(false)}
-          >
+            onClick={() => setOpen(false)}>
             Projekte
           </Link>
           <Link
             href="/#contact"
             className={btnClass}
-            onClick={() => setOpen(false)}
-          >
+            onClick={() => setOpen(false)}>
             Kontakt
           </Link>
         </div>
