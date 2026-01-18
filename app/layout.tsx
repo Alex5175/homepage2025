@@ -28,10 +28,11 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  icons: {
-    icon: "./me_edited_no_bg_scaled2.png",
-    apple: "./me_edited_no_bg_scaled2.png",
-  },
+
+  // icons: {
+  //   icon: "./favicon.ico",
+  //   apple: "/favicon.ico",
+  // },
 };
 
 export const viewport: Viewport = {
@@ -46,6 +47,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de" className="h-full">
+      {/* <head>
+        <link rel="icon" href="/favicon.ico" sizes="any"></link>
+      </head> */}
       <body className="antialiased flex flex-col min-h-full">
         {isDisabled ? (
           <main className="flex-grow">
