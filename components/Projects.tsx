@@ -2,6 +2,7 @@
 import SectionTemplate from "./SectionTemplate";
 import { motion } from "framer-motion";
 import { Figtree } from "next/font/google";
+import Link from "next/link";
 const figtree = Figtree({
   weight: "700",
   subsets: ["latin"],
@@ -12,6 +13,7 @@ const projects: Project[] = [
     title: "KFZ Zeitlhofer Website",
     image: "/images/kfzzeitlhofer.png",
     alt: "Screenshot der KFZ Zeitlhofer Landing Page",
+    url: "https://www.kfz-zeitlhofer.at",
     description: (
       <>
         Die Website von KFZ Zeitlhofer wurde vollständig überarbeitet, um
@@ -34,6 +36,7 @@ const projects: Project[] = [
     title: "Kuerzl.link",
     image: "/images/kuerzl.link.png",
     alt: "Screenshot der Kuerzl.link Website",
+    url: "https://kuerzl.link",
     description: (
       <>
         Ein klassischer URL Shortener. Macht ein Kürzel aus einer langen URL um
@@ -60,6 +63,7 @@ const projects: Project[] = [
     title: "Meine eigene Website",
     image: "/images/alex-zeitlhofer-webpage.png",
     alt: "Bild von meiner Seite",
+    url: "/#",
     description: (
       <>
         Als Beweis der Entwicklung meiner WebDev Skills erneuere ich meine
@@ -78,11 +82,13 @@ const projects: Project[] = [
     description:
       "Im dritten Schuljahr der IT-Htl wurde dieses Projekt im Rahmen des ITP Unterichts entwickelt. Die Idee war ein einfacher Redesign der Website der Julius Griessler & Sohn KG, da diese Website schon sehr veraltet war. Damit der Kunde nach dem Ende des Projekts selber weiter an der Seite arbeiten konnte wurde Wordpress mit Elementor verwendet. ",
     alt: "Screenshot der Griessler Website",
+    url: "",
     tags: ["Wordpress", "Elementor"],
   },
   {
     title: "StageUp Website",
     image: "/images/stageup.webp",
+    url: "https://www.stageup.at",
     description: (
       <>
         In kooperation mit Benjamin Leitner wurde eine Website für sein
@@ -118,15 +124,17 @@ export default function Projects() {
   );
 }
 
-function ProjectCard({ title, image, description, alt, tags }: Project) {
+function ProjectCard({ title, image, description, alt, tags, url }: Project) {
   return (
     <div className="flex flex-col grayscale hover:grayscale-0 transition-all duration-200 hover:scale-105 rounded-lg cursor-pointer hover:z-50 min-h-min">
-      <img
-        src={image}
-        alt={alt}
-        loading="lazy"
-        className="object-cover rounded-t-lg "
-      />
+      <Link href={url}>
+        <img
+          src={image}
+          alt={alt}
+          loading="lazy"
+          className="object-cover rounded-t-lg "
+        />
+      </Link>
       <div className="text-pretty bg-gradient-to-r from-primary to-secondary w-full p-4 rounded-b-lg overflow-hidden text-foreground min-h-32">
         <div className="flex">
           <h3 className=" text-[3vw] md:text-[1.5vw] font-bold flex-shrink-0">
@@ -153,6 +161,7 @@ function ProjectTile({
   alt,
   tags,
   idx,
+  url,
 }: Project & { idx: number }) {
   const alignLeft = idx % 2 == 1;
 
@@ -161,18 +170,20 @@ function ProjectTile({
       className={`w-full p-4 flex overflow-hidden ${
         alignLeft ? "flex-row-reverse" : ""
       }`}>
-      <motion.img
-        src={image}
-        alt={alt}
-        initial={{ opacity: 0, x: alignLeft ? 128 : -128 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{
-          opacity: { delay: 0.5, duration: 0.3 },
-          x: { delay: 0.5, duration: 0.3 },
-        }}
-        whileHover={{ scale: 1.05 }}
-        className="max-w-[40vw] opacity-0 object-contain  rounded-md"
-      />
+      <Link href={url}>
+        <motion.img
+          src={image}
+          alt={alt}
+          initial={{ opacity: 0, x: alignLeft ? 128 : -128 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{
+            opacity: { delay: 0.3, duration: 0.3 },
+            x: { delay: 0.3, duration: 0.3 },
+          }}
+          whileHover={{ scale: 1.05 }}
+          className="max-w-[40vw] opacity-0 object-contain  rounded-md"
+        />
+      </Link>
 
       <div
         className={`flex-1 flex flex-col gap-4 py-4 
@@ -193,6 +204,7 @@ function ProjectTile({
             <ProjectTag tagName={tag} key={tag}></ProjectTag>
           ))}
         </div>
+        {/* <img src={}></img> */}
         <p
           className={`text-[3vw] md:text-[1.25vw] text-justify ${
             figtree.className
