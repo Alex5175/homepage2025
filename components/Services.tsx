@@ -98,8 +98,8 @@ function ServiceCard({ title, description }: Service) {
       transition={{
         opacity: { delay: 0.1, duration: 0.3 },
       }}
-      className={` glow p-8 m-4 bg-foreground  text-background rounded-2xl ${figtree.className} flex flex-col justify-between `}>
-      <p className="text-[2vw] md:text-[2vw]/[2.2vw]">{title}</p>
+      className={` glow p-8 m-4 bg-foreground gap-4  text-background rounded-2xl ${figtree.className} flex flex-col  `}>
+      <h3 className="text-[4vw] md:text-[2vw]/[2.2vw]">{title}</h3>
       <p className="text-[2vw] md:text-[1.2vw]/[1.4vw]">{description}</p>
     </motion.div>
   );
