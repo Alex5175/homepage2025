@@ -1,3 +1,4 @@
+"use client";
 // import { Figtree } from "next/font/google";
 import SectionTemplate from "@/components/SectionTemplate";
 import "./Contact.css";

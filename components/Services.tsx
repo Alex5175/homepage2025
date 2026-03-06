@@ -1,3 +1,4 @@
+"use client";
 import SectionTemplate from "./SectionTemplate";
 import { Figtree } from "next/font/google";
 
