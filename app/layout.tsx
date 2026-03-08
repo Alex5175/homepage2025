@@ -109,6 +109,24 @@ export default function RootLayout({
             </div> */}
           </>
         )}
+
+        <script src="https://swetrix.org/swetrix.js" defer></script>
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            swetrix.init('T8su3ITrrLpN', {
+              apiURL: 'http://swetrixapi-fkkgksskco00kc8swgw048s8.46.224.54.208.sslip.io/log',
+            })
+            swetrix.trackViews()
+          })
+        </script>
+
+        <noscript>
+          <img
+            src="http://swetrixapi-fkkgksskco00kc8swgw048s8.46.224.54.208.sslip.io/log/noscript?pid=T8su3ITrrLpN"
+            alt=""
+            referrerpolicy="no-referrer-when-downgrade"
+          />
+        </noscript>
       </body>
     </html>
   );
