@@ -18,8 +18,8 @@ const cards = [
   },
   {
     icon: "/icons/email.png",
-    text: "kontakt@alex-zeitlhofer.com",
-    url: "mailto:kontakt@alex-zeitlhofer.com",
+    text: "office@alex-zeitlhofer.com",
+    url: "mailto:office@alex-zeitlhofer.com",
     key: "/icons/email.png",
     delaySec: 0.2,
   },
