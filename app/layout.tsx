@@ -98,7 +98,6 @@ export default function RootLayout({
       <body className="antialiased flex flex-col min-h-full">
         {isDisabled ? (
           <main className="grow">
-            
             <h1 className="text-2xl text-foreground">Temporary Maintenance</h1>
           </main>
         ) : (

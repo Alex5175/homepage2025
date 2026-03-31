@@ -1,3 +1,9 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Impressum",
+};
+
 export default function Impressum() {
   return (
     <div className="text-foreground p-8 pt-24 ">
