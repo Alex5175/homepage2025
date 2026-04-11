@@ -27,19 +27,20 @@ const sections: Section[] = [
         q: "Wie nehme ich Kontakt auf?",
         a: (
           <>
-            Schreib mir eine kurze Nachricht über das{" "}
+            Schreib mir eine kurze Nachricht{" "}
+            {/* über das{" "}
             <Link
               className="underline decoration-1 underline-offset-2 text-[#b06ef0] hover:text-[#c990f7] transition-colors"
               href={"/#kontakt"}
             >
               Kontaktformular
             </Link>{" "}
-            oder direkt per
+            oder direkt*/}{" "}
+            per{" "}
             <a
               className="underline decoration-1 underline-offset-2 text-secondary hover:text-[#7fd4ff] transition-colors"
               href="mailto:office@alex-zeitlhofer.com"
             >
-              {" "}
               E-Mail
             </a>
             . Du brauchst noch keine fertigen Unterlagen – eine grobe Idee
