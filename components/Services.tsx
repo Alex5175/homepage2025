@@ -4,6 +4,7 @@ import { Figtree } from "next/font/google";
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 
 const figtree = Figtree({
   weight: "700",
@@ -69,20 +70,38 @@ const services: Service[] = [
 ];
 
 export default function Services() {
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const grid = gridRef.current;
+    if (!grid) return;
+
+    const equalize = () => {
+      const children = Array.from(grid.children) as HTMLElement[];
+      children.forEach((c) => (c.style.minHeight = ""));
+      const max = Math.max(...children.map((c) => c.offsetHeight));
+      children.forEach((c) => (c.style.minHeight = `${max}px`));
+    };
+
+    const ro = new ResizeObserver(equalize);
+    ro.observe(grid);
+    return () => ro.disconnect();
+  }, []);
+
   return (
     <SectionTemplate
       title={"Dienstleistungen"}
       subTitle="Was mach ich eigentlich?"
       id="services"
     >
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 ">
+      <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {services.map((service, idx) => (
           <ServiceCard {...service} key={idx}></ServiceCard>
         ))}
 
         <Link
           href="/so-laeuft-ein-projekt-ab"
-          className={`h-56 flex flex-col justify-center items-center text-center glow p-8 bg-foreground/10 border border-foreground/20 hover:bg-foreground/15 transition-colors rounded-2xl ${figtree.className}`}
+          className={`flex flex-col justify-center items-center text-center glow p-8 bg-foreground/10 border border-foreground/20 hover:bg-foreground/15 transition-colors rounded-2xl ${figtree.className}`}
         >
           <p className="text-3xl text-foreground font-black mb-2">
             So läuft ein Projekt ab →
@@ -94,7 +113,7 @@ export default function Services() {
 
         <Link
           href="/#contact"
-          className={` h-56 flex justify-center items-center text-center  glow p-8 bg-gradient-to-tr from-primary to-secondary   rounded-2xl ${figtree.className}  `}
+          className={`flex justify-center items-center text-center glow p-8 bg-gradient-to-tr from-primary to-secondary rounded-2xl ${figtree.className}`}
         >
           <p className="text-4xl text-foreground font-black ">
             Jetzt Kontakt aufnehmen!
@@ -113,7 +132,7 @@ function ServiceCard({ title, description }: Service) {
       transition={{
         opacity: { delay: 0.1, duration: 0.3 },
       }}
-      className={`h-56  glow p-8 bg-foreground gap-4  text-background rounded-2xl ${figtree.className} flex flex-col  `}
+      className={`glow p-8 bg-foreground gap-4 text-background rounded-2xl ${figtree.className} flex flex-col`}
     >
       <h3 className="text-[4vw] md:text-[2vw]/[2.2vw]">{title}</h3>
       <p className="text-[2vw] md:text-[1.2vw]/[1.4vw]">{description}</p>
