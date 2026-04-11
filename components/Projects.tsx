@@ -10,6 +10,76 @@ const figtree = Figtree({
 
 const projects: Project[] = [
   {
+    tags: ["React", "TS Start"],
+    title: "Mach Metall GmbH",
+    image: "/images/mach_metall.png",
+    alt: "Landing Page der Mach Metall Website",
+    url: "https://mach-metall.at/",
+    description: (
+      <>
+        Die alte Website der Mach Metall GmbH hatte einige Probleme, mit
+        falschen Inhalten, fehlenden Links und einem Kontaktformular das Spam
+        erlaubte. Wir haben uns entschieden die Website von Grund auf neu zu
+        bauen, damit wir ein starkes Fundament für mehr Inhalte haben. Das neue
+        Kontaktformular wurde mit 3-facher Spam Protection geschützt damit nur
+        echte Anfragen durchkommen. Schau dir die Website hier an{" "}
+        <a
+          href="https://mach-metall.at/"
+          target="_blank"
+          rel="noreferrer"
+          className="underline"
+        >
+          www.mach-metall.at
+        </a>
+      </>
+    ),
+  },
+  {
+    title: "Musikschule Yspertal - Südliches Waldviertel",
+    image: "/images/musikschule_yspertal.png",
+    alt: "Landing Page der Musikschule Yspertal",
+    url: "https://www.musikschule.yspertal.com/",
+    description: (
+      <>
+        Wir haben der Website der Musikschule Yspertal - Südliches Waldviertel
+        einen neuen Anstrich verpasst. Zusammen mit meinen damaligen
+        Schulkollegen
+        <a
+          href="https://hannes-scheibelauer.at/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          {" "}
+          Hannes Scheibelauer
+        </a>
+        <a
+          href="https://michael-schoenauer.at/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          {" "}
+          Michael Schönauer
+        </a>
+        <a href="https://stageup.at/" target="_blank" rel="noreferrer">
+          {" "}
+          Benjamin Leitner{" "}
+        </a>
+        habe ich diese Website erstellt. Wir haben auch neue Lehrer Fotos
+        geschossen. Ich habe zusätzlich ein kleines Minispiel mit PHP
+        geschrieben. Probiers aus auf{" "}
+        <a
+          href="https://www.musikschule.yspertal.com/"
+          target="_blank"
+          rel="noreferrer"
+          className="underline"
+        >
+          www.musikschule.yspertal.com
+        </a>
+      </>
+    ),
+    tags: ["Wordpress", "PHP"],
+  },
+  {
     title: "KFZ Zeitlhofer Website",
     image: "/images/kfzzeitlhofer.png",
     alt: "Screenshot der KFZ Zeitlhofer Landing Page",
@@ -25,12 +95,14 @@ const projects: Project[] = [
         <a
           href="https://www.kfz-zeitlhofer.at"
           target="_blank"
-          className=" underline">
+          rel="noreferrer"
+          className=" underline"
+        >
           www.kfz-zeitlhofer.at
         </a>
       </>
     ),
-    tags: ["React", "TSRouter"],
+    tags: ["React", "TS Start"],
   },
   {
     title: "Kuerzl.link",
@@ -44,20 +116,27 @@ const projects: Project[] = [
         Challenge in einem Tag entwickelt. Backend Service wurde mit Elysia.js
         und Frontend mit Vite/React + Tanstack Router gemacht. Probier es aus
         auf{" "}
-        <a href="https://kuerzl.link" target="_blank" className=" underline">
+        <a
+          href="https://kuerzl.link"
+          target="_blank"
+          rel="noreferrer"
+          className=" underline"
+        >
           kuerzl.link
         </a>
         . Projekt Datein sind auf{" "}
         <a
           href="https://github.com/Alex5175?tab=repositories&q=kuerzl&type=&language=&sort="
           className="underline"
-          target="_blank">
+          target="_blank"
+          rel="noreferrer"
+        >
           Github
         </a>{" "}
         zu finden.
       </>
     ),
-    tags: ["React", "Elysia", "FullStack"],
+    tags: ["React", "Elysia", "Full Stack"],
   },
   {
     title: "Meine eigene Website",
@@ -73,16 +152,28 @@ const projects: Project[] = [
         2025.alex-zeitlhofer.com).
       </>
     ),
-    tags: ["fortlaufend", "WebDev"],
+    tags: ["fortlaufend", "Web Dev", "React"],
   },
 
   {
     title: "Griessler Website",
     image: "/images/griessler.webp",
-    description:
-      "Im dritten Schuljahr der IT-Htl wurde dieses Projekt im Rahmen des ITP Unterichts entwickelt. Die Idee war ein einfacher Redesign der Website der Julius Griessler & Sohn KG, da diese Website schon sehr veraltet war. Damit der Kunde nach dem Ende des Projekts selber weiter an der Seite arbeiten konnte wurde Wordpress mit Elementor verwendet. ",
+    description: (
+      <>
+        <span className="text-red-500">
+          Diese Website wird seit 2023 nicht mehr von mir gewartet und hat
+          seitdem ihr SSL Zertifikat verloren, seien sie Vorsichtig.
+        </span>
+        <br />
+        Im dritten Schuljahr der IT-Htl wurde dieses Projekt im Rahmen des ITP
+        Unterichts entwickelt. Die Idee war ein einfacher Redesign der Website
+        der Julius Griessler & Sohn KG, da diese Website schon sehr veraltet
+        war. Damit der Kunde nach dem Ende des Projekts selber weiter an der
+        Seite arbeiten konnte wurde Wordpress mit Elementor verwendet.{" "}
+      </>
+    ),
     alt: "Screenshot der Griessler Website",
-    url: "",
+    url: "https://griessler.com/",
     tags: ["Wordpress", "Elementor"],
   },
   {
@@ -94,12 +185,17 @@ const projects: Project[] = [
         In kooperation mit Benjamin Leitner wurde eine Website für sein
         Unternehmen StageUp erstellt. Diese wurde zur einfachen Wartung mit
         Wordpress und Elementor erstellt. Verfügbar auf{" "}
-        <a href="https://www.stageup.at" target="_blank" className="underline">
+        <a
+          href="https://www.stageup.at"
+          target="_blank"
+          rel="noreferrer"
+          className="underline"
+        >
           www.stageup.at
         </a>
       </>
     ),
-    alt: "Screenshot der Griessler Website",
+    alt: "Screenshot der StageUp Website",
     tags: ["Wordpress", "Elementor"],
   },
 ];
@@ -127,7 +223,7 @@ export default function Projects() {
 function ProjectCard({ title, image, description, alt, tags, url }: Project) {
   return (
     <div className="flex flex-col grayscale hover:grayscale-0 transition-all duration-200 hover:scale-105 rounded-lg cursor-pointer hover:z-50 min-h-min">
-      <Link href={url}>
+      <Link href={url} target="_blank" rel="noreferrer">
         <img
           src={image}
           alt={alt}
@@ -169,7 +265,8 @@ function ProjectTile({
     <div
       className={`w-full p-4 flex overflow-hidden ${
         alignLeft ? "flex-row-reverse" : ""
-      }`}>
+      }`}
+    >
       <Link href={url}>
         <motion.img
           src={image}
@@ -186,20 +283,23 @@ function ProjectTile({
       </Link>
 
       <div
-        className={`flex-1 flex flex-col gap-4 py-4 
+        className={`flex-1 flex flex-col gap-4 py-4
         text-foreground
-        `}>
+        `}
+      >
         <h3
           className={` text-[4vw] md:text-[2vw] font-bold ${
             figtree.className
-          } ${alignLeft ? "text-left" : "text-right"}`}>
+          } ${alignLeft ? "text-left" : "text-right"}`}
+        >
           {title}
         </h3>
         <div
           id="tags"
           className={`hidden ${
             alignLeft ? "" : "justify-end"
-          } gap-2  w-full md:flex`}>
+          } gap-2  w-full md:flex`}
+        >
           {tags.map((tag) => (
             <ProjectTag tagName={tag} key={tag}></ProjectTag>
           ))}
@@ -208,7 +308,8 @@ function ProjectTile({
         <p
           className={`text-[3vw] md:text-[1.25vw] text-justify ${
             figtree.className
-          } ${alignLeft ? "pr-8" : "pl-8"}`}>
+          } ${alignLeft ? "pr-8 " : "pl-8"}`}
+        >
           {description}
         </p>
       </div>
@@ -219,7 +320,9 @@ function ProjectTile({
 function ProjectTag({ tagName }: { tagName: string }) {
   return (
     <div className="rounded-full max-w-min h-6 bg-gradient-to-r from-primary to-secondary p-4 flex items-center">
-      <p className="text-foreground text-center md:text-[1.25vw]">{tagName}</p>
+      <p className="text-foreground text-center md:text-[1.25vw] font-bold text-nowrap">
+        {tagName}
+      </p>
     </div>
   );
 }
