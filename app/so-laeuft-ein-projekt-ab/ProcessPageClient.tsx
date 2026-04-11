@@ -301,7 +301,7 @@ export default function ProcessPageClient() {
             Klingt das nach einer Zusammenarbeit, die zu dir passt?
           </p>
           <Link
-            href="/kontakt"
+            href="/#contact"
             className={`${figtree.className} shrink-0 bg-foreground text-background px-6 py-3 rounded-lg text-base md:text-lg hover:scale-105 transition-transform duration-200`}
           >
             Kontakt aufnehmen
