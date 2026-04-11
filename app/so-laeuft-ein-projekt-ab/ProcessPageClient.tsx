@@ -152,6 +152,10 @@ const sections: Section[] = [
                 </span>
               ))}
             </span>
+            <span>
+              Die Domain kommt noch dazu – eine .at-Domain kostet in der Regel
+              ca. 50 €/Jahr, direkt beim Anbieter abgerechnet.
+            </span>
           </span>
         ),
       },
