@@ -1,14 +1,14 @@
 "use client";
 import GetTimeProgession from "@/lib/GetTimeProgression";
 import SectionTemplate from "@/components/SectionTemplate";
-
+import { redirect } from "next/navigation";
 export default function page() {
   const startDate = new Date("July 1, 2025");
   const endDate = new Date("March 31, 2026");
   const progress = GetTimeProgession(startDate, endDate);
 
   const textStyle = "text-foreground font-bold text-sm md:text-lg";
-
+  redirect("/");
   return (
     <SectionTemplate title="Zivildienst Status" hasFooter={false}>
       <div className="relative w-full h-full flex justify-center">
@@ -24,7 +24,8 @@ export default function page() {
           </div>
           <progress
             className="w-full h-full bg-secondary rounded-md "
-            value={progress}></progress>
+            value={progress}
+          ></progress>
         </div>
       </div>
     </SectionTemplate>
