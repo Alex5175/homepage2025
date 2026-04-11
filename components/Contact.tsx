@@ -118,7 +118,8 @@ function ContactCard({
         repeat: Infinity,
         ease: "easeInOut",
         delay: delaySec,
-      }}>
+      }}
+    >
       <div className="flex justify-center">
         <img
           src={icon}
