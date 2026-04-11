@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 
 import NavBar from "../components/NavBar";
 import "./globals.css";
+import Footer from "@/components/Footer";
 // import RoundMenuButton from "@/components/MenuDropdown";
 // import MouseProvider from "@/components/MouseProvider";
 const isDisabled = false;
@@ -90,6 +91,8 @@ export default function RootLayout({
   return (
     <html lang="de" className="h-full">
       <head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -104,6 +107,8 @@ export default function RootLayout({
           <>
             <NavBar />
             {children}
+            <Footer />
+
             {/* <div className="fixed right-4 top-16 transform -translate-y-1/2 z-50">
               <RoundMenuButton />
             </div> */}
