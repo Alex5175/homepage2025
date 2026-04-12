@@ -77,7 +77,7 @@ export default function Hero() {
           <h1
             className={`leading-none text-[14vw] lg:text-[9.5vw] ${figtree.className} text-foreground text-left`}>
             ZEITLHOFER{" "}
-            <span className="font-black bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <span className="font-black bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
               ALEXANDER
             </span>
           </h1>
