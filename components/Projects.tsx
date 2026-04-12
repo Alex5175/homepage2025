@@ -160,7 +160,7 @@ const projects: Project[] = [
     image: "/images/griessler.webp",
     description: (
       <>
-        <span className="text-red-500">
+        <span className="text-red-500 font-bold">
           Diese Website wird seit 2023 nicht mehr von mir gewartet und hat
           seitdem ihr SSL Zertifikat verloren, seien sie Vorsichtig.
         </span>
@@ -220,17 +220,21 @@ export default function Projects() {
   );
 }
 
+// Mobile Card
 function ProjectCard({ title, image, description, alt, tags, url }: Project) {
   return (
-    <div className="flex flex-col grayscale hover:grayscale-0 transition-all duration-200 hover:scale-105 rounded-lg cursor-pointer hover:z-50 min-h-min">
-      <Link href={url} target="_blank" rel="noreferrer">
-        <img
-          src={image}
-          alt={alt}
-          loading="lazy"
-          className="object-cover rounded-t-lg "
-        />
-      </Link>
+    <Link
+      href={url}
+      target="_blank"
+      rel="noreferrer"
+      className="flex flex-col transition-all duration-200 hover:scale-105 rounded-lg cursor-pointer hover:z-50 min-h-min"
+    >
+      <img
+        src={image}
+        alt={alt}
+        loading="lazy"
+        className="object-cover rounded-t-lg "
+      />
       <div className="text-pretty bg-gradient-to-r from-primary to-secondary w-full p-4 rounded-b-lg overflow-hidden text-foreground min-h-32">
         <div className="flex">
           <h3 className=" text-[3vw] md:text-[1.5vw] font-bold flex-shrink-0">
@@ -246,10 +250,11 @@ function ProjectCard({ title, image, description, alt, tags, url }: Project) {
           {description}
         </p>
       </div>
-    </div>
+    </Link>
   );
 }
 
+// Desktop Tile
 function ProjectTile({
   title,
   image,
