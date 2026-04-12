@@ -33,7 +33,7 @@ export default function SectionTemplate({
   return (
     <div
       id={id}
-      className={`w-screen max-w-screen p-8 
+      className={`w-full max-w-screen p-8
          pt-20  ${
            theme === "dark" ? "bg-background/0" : "bg-foreground/0"
          } flex flex-col overflow-auto`} // <-- add overflow-auto here
@@ -54,7 +54,8 @@ export default function SectionTemplate({
             theme === "dark" ? "text-foreground" : "text-background"
           } text-[8vw] md:text-[9.5vw] leading-none ${
             figtree.className
-          } text-${titlePosition} uppercase`}>
+          } text-${titlePosition} uppercase`}
+        >
           {title}
         </h2>
       )}
@@ -66,7 +67,8 @@ export default function SectionTemplate({
             theme === "dark" ? "text-foreground" : "text-background"
           } text-[6vw] md:text-[5vw] leading-none ${
             figtree.className
-          } text-${titlePosition} mb-4 uppercase`}>
+          } text-${titlePosition} mb-4 uppercase`}
+        >
           {subTitle}
         </h3>
       )}

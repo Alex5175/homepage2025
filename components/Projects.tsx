@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Figtree } from "next/font/google";
 import Link from "next/link";
 const figtree = Figtree({
-  weight: "700",
+  // weight: ,
   subsets: ["latin"],
 });
 
@@ -57,16 +57,17 @@ const projects: Project[] = [
           target="_blank"
           rel="noreferrer"
         >
-          {" "}
+          {", "}
           Michael Schönauer
         </a>
         <a href="https://stageup.at/" target="_blank" rel="noreferrer">
-          {" "}
+          {" und "}
           Benjamin Leitner{" "}
         </a>
         habe ich diese Website erstellt. Wir haben auch neue Lehrer Fotos
-        geschossen. Ich habe zusätzlich ein kleines Minispiel mit PHP
-        geschrieben. Probiers aus auf{" "}
+        geschossen um einen ordentlichen Durchgehenden Stil zu kreieren. Ich
+        habe zusätzlich ein kleines Minispiel mit PHP geschrieben. Probiers aus
+        auf{" "}
         <a
           href="https://www.musikschule.yspertal.com/"
           target="_blank"
@@ -223,21 +224,19 @@ export default function Projects() {
 // Mobile Card
 function ProjectCard({ title, image, description, alt, tags, url }: Project) {
   return (
-    <Link
-      href={url}
-      target="_blank"
-      rel="noreferrer"
-      className="flex flex-col transition-all duration-200 hover:scale-105 rounded-lg cursor-pointer hover:z-50 min-h-min"
-    >
-      <img
-        src={image}
-        alt={alt}
-        loading="lazy"
-        className="object-cover rounded-t-lg "
-      />
+    <div className="flex flex-col transition-all duration-200 hover:scale-105 rounded-lg cursor-pointer hover:z-50 min-h-min">
+      <Link href={url} target="_blank" rel="noreferrer">
+        <img
+          src={image}
+          alt={alt}
+          loading="lazy"
+          className="object-cover rounded-t-lg "
+        />
+      </Link>
+
       <div className="text-pretty bg-gradient-to-r from-primary to-secondary w-full p-4 rounded-b-lg overflow-hidden text-foreground min-h-32">
         <div className="flex">
-          <h3 className=" text-[3vw] md:text-[1.5vw] font-bold flex-shrink-0">
+          <h3 className=" text-[3vw] md:text-[1.5vw] font-bold shrink-0">
             {title}
           </h3>
           <div id="tags" className="hidden items-center ml-2 gap-2  md:flex">
@@ -250,7 +249,7 @@ function ProjectCard({ title, image, description, alt, tags, url }: Project) {
           {description}
         </p>
       </div>
-    </Link>
+    </div>
   );
 }
 
@@ -279,11 +278,13 @@ function ProjectTile({
           initial={{ opacity: 0, x: alignLeft ? 128 : -128 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{
-            opacity: { delay: 0.3, duration: 0.3 },
-            x: { delay: 0.3, duration: 0.3 },
+            opacity: { delay: 0.3, duration: 0.4 },
+            x: { delay: 0.3, duration: 0.4 },
+            scale: { delay: 0, duration: 0.1 },
+            ease: "easeIn",
           }}
-          whileHover={{ scale: 1.05 }}
-          className="max-w-[40vw] opacity-0 object-contain  rounded-md"
+          whileHover={{ scale: 1.03 }}
+          className="max-w-[40vw] opacity-0 object-contain  rounded-md "
         />
       </Link>
 
@@ -293,7 +294,7 @@ function ProjectTile({
         `}
       >
         <h3
-          className={` text-[4vw] md:text-[2vw] font-bold ${
+          className={` text-[4vw] md:text-[2vw] font-black   ${
             figtree.className
           } ${alignLeft ? "text-left" : "text-right"}`}
         >
@@ -309,7 +310,6 @@ function ProjectTile({
             <ProjectTag tagName={tag} key={tag}></ProjectTag>
           ))}
         </div>
-        {/* <img src={}></img> */}
         <p
           className={`text-[3vw] md:text-[1.25vw] text-justify ${
             figtree.className
