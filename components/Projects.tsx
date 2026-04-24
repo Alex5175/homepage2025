@@ -183,6 +183,11 @@ const projects: Project[] = [
     url: "https://www.stageup.at",
     description: (
       <>
+        <span className="text-red-500 font-bold">
+          Diese Website ist gerade im Umbau, kurzzeitige Aussetzer oder andere
+          Probleme können auf dieser Version der Website vorkommen.
+        </span>
+        <br />
         In kooperation mit Benjamin Leitner wurde eine Website für sein
         Unternehmen StageUp erstellt. Diese wurde zur einfachen Wartung mit
         Wordpress und Elementor erstellt. Verfügbar auf{" "}

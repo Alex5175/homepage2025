@@ -126,17 +126,14 @@ const sections: Section[] = [
         q: "Wie läuft das Hosting ab?",
         a: (
           <span className="flex flex-col gap-3">
-            <span>Du hast drei Möglichkeiten:</span>
+            <span>Du hast mehrere Möglichkeiten:</span>
             <span className="flex flex-col gap-2">
               {[
                 {
-                  label: "Hosting bei mir – 10 €/Monat",
-                  desc: "Ich kümmere mich um Server, Domain-Verwaltung und Erreichbarkeit. Du musst dich um nichts kümmern.",
-                },
-                {
                   label: "Hosting + Wartung bei mir – 20 €/Monat",
-                  desc: "Wie oben, plus regelmäßige Updates, Sicherheitschecks und kleinere inhaltliche Änderungen sind inbegriffen.",
+                  desc: "Ich kümmere mich um Server, Domain-Verwaltung und Erreichbarkeit. Du musst dich um nichts kümmern. Regelmäßige Updates, Sicherheitschecks und kleinere inhaltliche Änderungen sind inbegriffen. ",
                 },
+
                 {
                   label: "Selbst hosten",
                   desc: "Du hostest die Website bei einem Anbieter deiner Wahl. Ich übergebe dir alle Dateien und helfe dir beim Setup – danach bist du vollständig unabhängig.",
