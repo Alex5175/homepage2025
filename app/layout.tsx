@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next";
 import NavBar from "../components/NavBar";
 import "./globals.css";
 import Footer from "@/components/Footer";
+import Analytics from "@/components/Analytics";
 // import RoundMenuButton from "@/components/MenuDropdown";
 // import MouseProvider from "@/components/MouseProvider";
 const isDisabled = false;
@@ -97,10 +98,6 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <script
-          defer
-          src="https://assets.onedollarstats.com/stonks.js"
-          ></script>
       </head>
       <body className="antialiased flex flex-col min-h-full">
         {isDisabled ? (
@@ -109,6 +106,7 @@ export default function RootLayout({
           </main>
         ) : (
           <>
+            <Analytics />
             <NavBar />
             {children}
             <Footer />
