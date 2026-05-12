@@ -97,6 +97,10 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <script
+          defer
+          src="https://assets.onedollarstats.com/stonks.js"
+          ></script>
       </head>
       <body className="antialiased flex flex-col min-h-full">
         {isDisabled ? (
