@@ -33,6 +33,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Alex Zeitlhofer – Webentwickler aus Oberndorf an der Melk",
+    description:
+      "Webseiten-Erstellung, Web-Apps und Software-Entwicklung aus Oberndorf an der Melk, Niederösterreich.",
+    images: [
+      {
+        url: "/og-logo.jpg",
+        alt: "Alex Zeitlhofer IT Logo",
+      },
+    ],
+  },
   openGraph: {
     title: "Alex Zeitlhofer – Webentwickler aus Oberndorf an der Melk",
     description:
