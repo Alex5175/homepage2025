@@ -41,6 +41,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/og-logo.jpg",
+        width: 1200,
+        height: 630,
         alt: "Alex Zeitlhofer IT Logo",
       },
     ],
@@ -55,10 +57,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/me_edited_no_bg_scaled2.png",
-        width: 800,
-        height: 800,
-        alt: "Alex Zeitlhofer – Webentwickler",
+        url: "/og-logo.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Alex Zeitlhofer IT Logo",
       },
     ],
   },
