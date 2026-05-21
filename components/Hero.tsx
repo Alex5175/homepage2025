@@ -80,7 +80,7 @@ export default function Hero() {
           >
             ZEITLHOFER{" "}
             <span className=" bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
-              ALEXANDER
+              ALEX
             </span>
           </h1>
 

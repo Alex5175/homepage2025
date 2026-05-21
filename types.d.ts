@@ -5,4 +5,5 @@ type Project = {
   description: string | React.ReactNode;
   alt: string;
   tags: string[];
+  date?: string;
 };

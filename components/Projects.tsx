@@ -10,11 +10,30 @@ const figtree = Figtree({
 
 const projects: Project[] = [
   {
-    tags: ["React", "TS Start"],
+    tags: ["in Arbeit", "Tanstack Start", "Fullstack"],
+    image: "/images/stageup-new.png",
+    title: "StageUp",
+    alt: "Landing Page der neuen Stageup Website",
+
+    description: (
+      <>
+        Für StageUp wurde eine neue Landing Page mit eingebauten Eventtechnik
+        Mietungssystem entwickelt. Hierfür wurde zusätzlich ein
+        Verwaltungsdashboard gemacht. Beide wurden mit Tanstack Start + einem
+        ElysiaJs Backend gebaut. Die Seite ist gerade noch im Aufbau und wird
+        vorrausichtlich in dem nächsten paar Monaten veröffentlicht.
+      </>
+    ),
+    url: "https://stageup.at",
+    date: "Mai 2026",
+  },
+  {
+    tags: ["React", "Tanstack Start"],
     title: "Mach Metall GmbH",
     image: "/images/mach_metall.png",
     alt: "Landing Page der Mach Metall Website",
     url: "https://mach-metall.at/",
+    date: "März 2026",
     description: (
       <>
         Die alte Website der Mach Metall GmbH hatte einige Probleme, mit
@@ -35,10 +54,89 @@ const projects: Project[] = [
     ),
   },
   {
+    title: "KFZ Zeitlhofer Website",
+    image: "/images/kfzzeitlhofer.png",
+    alt: "Screenshot der KFZ Zeitlhofer Landing Page",
+    url: "https://www.kfz-zeitlhofer.at",
+    date: "Jänner 2026",
+    description: (
+      <>
+        Die Website von KFZ Zeitlhofer wurde vollständig überarbeitet, um
+        moderner, übersichtlicher und benutzerfreundlicher zu werden. Ziel des
+        Redesigns war es, die Leistungen des Betriebs klarer darzustellen und
+        Besuchern eine schnelle Orientierung zu ermöglichen. Das neue Design
+        setzt auf eine aufgeräumte Struktur, größere Schrift und ein zeitgemäßes
+        Farbkonzept. Besuche die neue Seite auf{" "}
+        <a
+          href="https://www.kfz-zeitlhofer.at"
+          target="_blank"
+          rel="noreferrer"
+          className=" underline"
+        >
+          www.kfz-zeitlhofer.at
+        </a>
+      </>
+    ),
+    tags: ["React", "Tanstack Start"],
+  },
+  {
+    title: "Kuerzl.link",
+    image: "/images/kuerzl.link.png",
+    alt: "Screenshot der Kuerzl.link Website",
+    url: "https://kuerzl.link",
+    date: "November 2025",
+    description: (
+      <>
+        Ein klassischer URL Shortener. Macht ein Kürzel aus einer langen URL um
+        diesen leichter zu versenden, speicher, usw. Dies App wurde als
+        Challenge in einem Tag entwickelt. Backend Service wurde mit Elysia.js
+        und Frontend mit Vite/React + Tanstack Router gemacht. Probier es aus
+        auf{" "}
+        <a
+          href="https://kuerzl.link"
+          target="_blank"
+          rel="noreferrer"
+          className=" underline"
+        >
+          kuerzl.link
+        </a>
+        . Projekt Datein sind auf{" "}
+        <a
+          href="https://github.com/Alex5175?tab=repositories&q=kuerzl&type=&language=&sort="
+          className="underline"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Github
+        </a>{" "}
+        zu finden.
+      </>
+    ),
+    tags: ["React", "Elysia", "Full Stack"],
+  },
+  {
+    title: "Meine eigene Website",
+    image: "/images/alex-zeitlhofer-webpage.png",
+    alt: "Bild von meiner Seite",
+    url: "/#",
+    date: "August 2025",
+    description: (
+      <>
+        Als Beweis der Entwicklung meiner WebDev Skills erneuere ich meine
+        eigene Hompage jedes Jahr. Die nächste Version wird vermutlich mitte
+        2026 erscheinen. Ältere Versionen der Website werden unter
+        [Jahreszahl].alex-zeitlhofer.com zu finden sein (z.b.
+        2025.alex-zeitlhofer.com).
+      </>
+    ),
+    tags: ["fortlaufend", "Web Dev", "React"],
+  },
+  {
     title: "Musikschule Yspertal - Südliches Waldviertel",
     image: "/images/musikschule_yspertal.png",
     alt: "Landing Page der Musikschule Yspertal",
     url: "https://www.musikschule.yspertal.com/",
+    date: "März 2025",
     description: (
       <>
         Wir haben der Website der Musikschule Yspertal - Südliches Waldviertel
@@ -81,106 +179,10 @@ const projects: Project[] = [
     tags: ["Wordpress", "PHP"],
   },
   {
-    title: "KFZ Zeitlhofer Website",
-    image: "/images/kfzzeitlhofer.png",
-    alt: "Screenshot der KFZ Zeitlhofer Landing Page",
-    url: "https://www.kfz-zeitlhofer.at",
-    description: (
-      <>
-        Die Website von KFZ Zeitlhofer wurde vollständig überarbeitet, um
-        moderner, übersichtlicher und benutzerfreundlicher zu werden. Ziel des
-        Redesigns war es, die Leistungen des Betriebs klarer darzustellen und
-        Besuchern eine schnelle Orientierung zu ermöglichen. Das neue Design
-        setzt auf eine aufgeräumte Struktur, größere Schrift und ein zeitgemäßes
-        Farbkonzept. Besuche die neue Seite auf{" "}
-        <a
-          href="https://www.kfz-zeitlhofer.at"
-          target="_blank"
-          rel="noreferrer"
-          className=" underline"
-        >
-          www.kfz-zeitlhofer.at
-        </a>
-      </>
-    ),
-    tags: ["React", "TS Start"],
-  },
-  {
-    title: "Kuerzl.link",
-    image: "/images/kuerzl.link.png",
-    alt: "Screenshot der Kuerzl.link Website",
-    url: "https://kuerzl.link",
-    description: (
-      <>
-        Ein klassischer URL Shortener. Macht ein Kürzel aus einer langen URL um
-        diesen leichter zu versenden, speicher, usw. Dies App wurde als
-        Challenge in einem Tag entwickelt. Backend Service wurde mit Elysia.js
-        und Frontend mit Vite/React + Tanstack Router gemacht. Probier es aus
-        auf{" "}
-        <a
-          href="https://kuerzl.link"
-          target="_blank"
-          rel="noreferrer"
-          className=" underline"
-        >
-          kuerzl.link
-        </a>
-        . Projekt Datein sind auf{" "}
-        <a
-          href="https://github.com/Alex5175?tab=repositories&q=kuerzl&type=&language=&sort="
-          className="underline"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Github
-        </a>{" "}
-        zu finden.
-      </>
-    ),
-    tags: ["React", "Elysia", "Full Stack"],
-  },
-  {
-    title: "Meine eigene Website",
-    image: "/images/alex-zeitlhofer-webpage.png",
-    alt: "Bild von meiner Seite",
-    url: "/#",
-    description: (
-      <>
-        Als Beweis der Entwicklung meiner WebDev Skills erneuere ich meine
-        eigene Hompage jedes Jahr. Die nächste Version wird vermutlich mitte
-        2026 erscheinen. Ältere Versionen der Website werden unter
-        [Jahreszahl].alex-zeitlhofer.com zu finden sein (z.b.
-        2025.alex-zeitlhofer.com).
-      </>
-    ),
-    tags: ["fortlaufend", "Web Dev", "React"],
-  },
-
-  {
-    title: "Griessler Website",
-    image: "/images/griessler.webp",
-    description: (
-      <>
-        <span className="text-red-500 font-bold">
-          Diese Website wird seit 2023 nicht mehr von mir gewartet und hat
-          seitdem ihr SSL Zertifikat verloren, seien sie Vorsichtig.
-        </span>
-        <br />
-        Im dritten Schuljahr der IT-Htl wurde dieses Projekt im Rahmen des ITP
-        Unterichts entwickelt. Die Idee war ein einfacher Redesign der Website
-        der Julius Griessler & Sohn KG, da diese Website schon sehr veraltet
-        war. Damit der Kunde nach dem Ende des Projekts selber weiter an der
-        Seite arbeiten konnte wurde Wordpress mit Elementor verwendet.{" "}
-      </>
-    ),
-    alt: "Screenshot der Griessler Website",
-    url: "https://griessler.com/",
-    tags: ["Wordpress", "Elementor"],
-  },
-  {
     title: "StageUp Website",
     image: "/images/stageup.webp",
     url: "https://www.stageup.at",
+    date: "März 2023",
     description: (
       <>
         <span className="text-red-500 font-bold">
@@ -204,6 +206,29 @@ const projects: Project[] = [
     alt: "Screenshot der StageUp Website",
     tags: ["Wordpress", "Elementor"],
   },
+  {
+    title: "Griessler Website",
+    image: "/images/griessler.webp",
+    date:" November 2022",
+    description: (
+      <>
+        <span className="text-red-500 font-bold">
+          Diese Website wird seit 2023 nicht mehr von mir gewartet und hat
+          seitdem ihr SSL Zertifikat verloren, seien sie Vorsichtig.
+        </span>
+        <br />
+        Im dritten Schuljahr der IT-Htl wurde dieses Projekt im Rahmen des ITP
+        Unterichts entwickelt. Die Idee war ein einfacher Redesign der Website
+        der Julius Griessler & Sohn KG, da diese Website schon sehr veraltet
+        war. Damit der Kunde nach dem Ende des Projekts selber weiter an der
+        Seite arbeiten konnte wurde Wordpress mit Elementor verwendet.{" "}
+      </>
+    ),
+    alt: "Screenshot der Griessler Website",
+    url: "https://griessler.com/",
+    tags: ["Wordpress", "Elementor"],
+  },
+
 ];
 
 export default function Projects() {
@@ -241,7 +266,7 @@ function ProjectCard({ title, image, description, alt, tags, url }: Project) {
 
       <div className="text-pretty bg-gradient-to-r from-primary to-secondary w-full p-4 rounded-b-lg overflow-hidden text-foreground min-h-32">
         <div className="flex">
-          <h3 className=" text-[3vw] md:text-[1.5vw] font-bold shrink-0">
+          <h3 className=" text-[4vw] md:text-[1.5vw] font-bold shrink-0">
             {title}
           </h3>
           <div id="tags" className="hidden items-center ml-2 gap-2  md:flex">
@@ -267,6 +292,7 @@ function ProjectTile({
   tags,
   idx,
   url,
+  date,
 }: Project & { idx: number }) {
   const alignLeft = idx % 2 == 1;
 
@@ -294,17 +320,30 @@ function ProjectTile({
       </Link>
 
       <div
-        className={`flex-1 flex flex-col gap-4 py-4
+        className={`flex-1 flex flex-col gap-3 py-4
         text-foreground
         `}
       >
-        <h3
-          className={` text-[4vw] md:text-[2vw] font-black   ${
-            figtree.className
-          } ${alignLeft ? "text-left" : "text-right"}`}
-        >
-          {title}
-        </h3>
+        <div>
+          <h3
+            className={` text-[4vw] md:text-[2vw] font-black   ${
+              figtree.className
+            } ${alignLeft ? "text-left" : "text-right"}`}
+          >
+            {title}
+          </h3>
+          <p
+            className={`  ${
+              figtree.className
+            } ${alignLeft ? "text-left" : "text-right"}
+            tracking-tight
+              text-md opacity-70
+              `}
+          >
+            {date}
+          </p>
+        </div>
+
         <div
           id="tags"
           className={`hidden ${
