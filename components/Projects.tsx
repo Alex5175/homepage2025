@@ -11,7 +11,7 @@ const figtree = Figtree({
 const projects: Project[] = [
   {
     tags: ["in Arbeit", "Tanstack Start", "Fullstack"],
-    image: "/images/stageup-new.png",
+    image: "/images/stageup-new.webp",
     title: "StageUp",
     alt: "Landing Page der neuen Stageup Website",
 
@@ -30,7 +30,7 @@ const projects: Project[] = [
   {
     tags: ["React", "Tanstack Start"],
     title: "Mach Metall GmbH",
-    image: "/images/mach_metall.png",
+    image: "/images/mach_metall.webp",
     alt: "Landing Page der Mach Metall Website",
     url: "https://mach-metall.at/",
     date: "März 2026",
@@ -55,7 +55,7 @@ const projects: Project[] = [
   },
   {
     title: "KFZ Zeitlhofer Website",
-    image: "/images/kfzzeitlhofer.png",
+    image: "/images/kfzzeitlhofer.webp",
     alt: "Screenshot der KFZ Zeitlhofer Landing Page",
     url: "https://www.kfz-zeitlhofer.at",
     date: "Jänner 2026",
@@ -81,7 +81,7 @@ const projects: Project[] = [
   },
   {
     title: "Kuerzl.link",
-    image: "/images/kuerzl.link.png",
+    image: "/images/kuerzl.link.webp",
     alt: "Screenshot der Kuerzl.link Website",
     url: "https://kuerzl.link",
     date: "November 2025",
@@ -116,7 +116,7 @@ const projects: Project[] = [
   },
   {
     title: "Meine eigene Website",
-    image: "/images/alex-zeitlhofer-webpage.png",
+    image: "/images/alex-zeitlhofer-webpage.webp",
     alt: "Bild von meiner Seite",
     url: "/#",
     date: "August 2025",
@@ -133,7 +133,7 @@ const projects: Project[] = [
   },
   {
     title: "Musikschule Yspertal - Südliches Waldviertel",
-    image: "/images/musikschule_yspertal.png",
+    image: "/images/musikschule_yspertal.webp",
     alt: "Landing Page der Musikschule Yspertal",
     url: "https://www.musikschule.yspertal.com/",
     date: "März 2025",
@@ -251,13 +251,17 @@ export default function Projects() {
   );
 }
 
+function toMobileSrc(src: string) {
+  return src.replace(/\.webp$/, "-mobile.webp");
+}
+
 // Mobile Card
 function ProjectCard({ title, image, description, alt, tags, url }: Project) {
   return (
     <div className="flex flex-col transition-all duration-200 hover:scale-105 rounded-lg cursor-pointer hover:z-50 min-h-min">
       <Link href={url} target="_blank" rel="noreferrer">
         <img
-          src={image}
+          src={toMobileSrc(image)}
           alt={alt}
           loading="lazy"
           className="object-cover rounded-t-lg "
