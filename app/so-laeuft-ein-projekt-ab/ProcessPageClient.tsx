@@ -27,16 +27,14 @@ const sections: Section[] = [
         q: "Wie nehme ich Kontakt auf?",
         a: (
           <>
-            Schreib mir eine kurze Nachricht{" "}
-            {/* über das{" "}
+            Schreib mir eine kurze Nachricht über das{" "}
             <Link
               className="underline decoration-1 underline-offset-2 text-[#b06ef0] hover:text-[#c990f7] transition-colors"
-              href={"/#kontakt"}
+              href={"/#contakt"}
             >
               Kontaktformular
             </Link>{" "}
-            oder direkt*/}{" "}
-            per{" "}
+            oder direkt per{" "}
             <a
               className="underline decoration-1 underline-offset-2 text-secondary hover:text-[#7fd4ff] transition-colors"
               href="mailto:office@alex-zeitlhofer.com"
@@ -58,7 +56,7 @@ const sections: Section[] = [
       },
       {
         q: "Was kostet eine Website?",
-        a: `Projekte starten ab 1.100 €. Du bekommst immer ein fixes Angebot, bevor es losgeht – keine versteckten Kosten, keine bösen Überraschungen.
+        a: `Projekte starten ab 1.200 €. Du bekommst immer ein fixes Angebot, bevor es losgeht – keine versteckten Kosten, keine bösen Überraschungen.
         Bei Projekten mit wandelnden Anforderungen oder größerem Umfang arbeiten wir nach Stundensatz – dieser beträgt 60 €/Std.`,
       },
       {
@@ -195,7 +193,7 @@ function FaqItem({ item, index }: { item: FaqItem; index: number }) {
         onClick={() => setOpen(!open)}
         className={`w-full flex items-center justify-between gap-4 py-5 text-left ${figtree.className}`}
       >
-        <span className="text-foreground text-[3.5vw] md:text-[1.05vw] leading-snug">
+        <span className="text-foreground text-sm md:text-base leading-snug">
           {item.q}
         </span>
         <span
@@ -215,7 +213,7 @@ function FaqItem({ item, index }: { item: FaqItem; index: number }) {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <p className="text-foreground/85 text-[3vw] md:text-[1vw] leading-relaxed pb-5 font-normal max-w-2xl">
+            <p className="text-foreground/85 text-sm md:text-base leading-relaxed pb-5 font-normal max-w-2xl">
               {item.a}
             </p>
           </motion.div>
@@ -236,12 +234,12 @@ function SectionBlock({ section }: { section: Section }) {
         className="flex items-baseline gap-3 md:gap-5 mb-4 md:mb-6"
       >
         <span
-          className={`section-number ${figtree.className} text-[9vw] md:text-[4.5vw] leading-none select-none`}
+          className={`section-number ${figtree.className} text-4xl md:text-6xl leading-none select-none`}
         >
           {section.number}
         </span>
         <h2
-          className={`${figtree.className} text-foreground text-[5vw] md:text-[2.5vw] leading-none uppercase`}
+          className={`${figtree.className} text-foreground text-xl md:text-4xl leading-none uppercase`}
         >
           {section.title}
         </h2>
@@ -268,7 +266,7 @@ export default function ProcessPageClient() {
           className="mb-12 md:mb-16"
         >
           <h1
-            className={`${figtree.className} text-[8vw] md:text-[5.5vw] leading-none uppercase text-foreground mb-4`}
+            className={`${figtree.className} text-4xl md:text-7xl leading-none uppercase text-foreground mb-4`}
           >
             So läuft ein Projekt ab
           </h1>
@@ -293,7 +291,7 @@ export default function ProcessPageClient() {
           className={`bg-linear-to-tr from-primary to-secondary rounded-xl glow p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6`}
         >
           <p
-            className={`${figtree.className} text-foreground text-[4vw] md:text-[1.6vw] leading-tight max-w-lg`}
+            className={`${figtree.className} text-foreground text-base md:text-2xl leading-tight max-w-lg`}
           >
             Klingt das nach einer Zusammenarbeit, die zu dir passt?
           </p>

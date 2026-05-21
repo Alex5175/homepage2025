@@ -270,7 +270,7 @@ function ProjectCard({ title, image, description, alt, tags, url }: Project) {
 
       <div className="text-pretty bg-gradient-to-r from-primary to-secondary w-full p-4 rounded-b-lg overflow-hidden text-foreground min-h-32">
         <div className="flex">
-          <h3 className=" text-[4vw] md:text-[1.5vw] font-bold shrink-0">
+          <h3 className=" text-base md:text-xl font-bold shrink-0">
             {title}
           </h3>
           <div id="tags" className="hidden items-center ml-2 gap-2  md:flex">
@@ -279,7 +279,7 @@ function ProjectCard({ title, image, description, alt, tags, url }: Project) {
             ))}
           </div>
         </div>
-        <p className="text-[2.8vw] md:text-[1.3vw] text-ellipsis text-wrap w-full">
+        <p className="text-sm md:text-lg text-ellipsis text-wrap w-full">
           {description}
         </p>
       </div>
@@ -330,7 +330,7 @@ function ProjectTile({
       >
         <div>
           <h3
-            className={` text-[4vw] md:text-[2vw] font-black   ${
+            className={` text-base md:text-3xl font-black   ${
               figtree.className
             } ${alignLeft ? "text-left" : "text-right"}`}
           >
@@ -359,7 +359,7 @@ function ProjectTile({
           ))}
         </div>
         <p
-          className={`text-[3vw] md:text-[1.25vw] text-justify ${
+          className={`text-sm md:text-lg text-justify ${
             figtree.className
           } ${alignLeft ? "pr-8 " : "pl-8"}`}
         >
@@ -373,7 +373,7 @@ function ProjectTile({
 function ProjectTag({ tagName }: { tagName: string }) {
   return (
     <div className="rounded-full max-w-min h-6 bg-gradient-to-r from-primary to-secondary p-4 flex items-center">
-      <p className="text-foreground text-center md:text-[1.25vw] font-bold text-nowrap">
+      <p className="text-foreground text-center md:text-lg font-bold text-nowrap">
         {tagName}
       </p>
     </div>

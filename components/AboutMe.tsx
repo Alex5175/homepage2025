@@ -17,7 +17,7 @@ export default function AboutMe() {
       theme="dark"
       subTitle={
         <h3
-          className={`text-foreground text-[10vw] md:text-[5vw] leading-none ${figtree.className} text-left mb-4 uppercase`}
+          className={`text-foreground text-4xl md:text-7xl leading-none ${figtree.className} text-left mb-4 uppercase`}
         >
           Hi, ich bin{" "}
           <span className="font-black bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
@@ -31,7 +31,7 @@ export default function AboutMe() {
           initial={{ opacity: 0, marginTop: 30 }}
           whileInView={{ opacity: 1, marginTop: 0 }}
           transition={{ duration: 0.3, delay: 0.3 }}
-          className={`text-foreground text-[4vw] md:text-[1.75vw] ${figtree.className} text-justify`}
+          className={`text-foreground text-base md:text-2xl ${figtree.className} text-justify`}
         >
           ich bin Webentwickler mit Leidenschaft für cleanen Code, durchdachtes
           Design und performante Websites. Ich liebe es, digitale Ideen zum

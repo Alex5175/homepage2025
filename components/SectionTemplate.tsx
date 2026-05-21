@@ -52,7 +52,7 @@ export default function SectionTemplate({
         <h2
           className={`${
             theme === "dark" ? "text-foreground" : "text-background"
-          } text-[8vw] md:text-[9.5vw] leading-none ${
+          } text-3xl md:text-9xl leading-none ${
             figtree.className
           } text-${titlePosition} uppercase`}
         >
@@ -65,7 +65,7 @@ export default function SectionTemplate({
         <h3
           className={`${
             theme === "dark" ? "text-foreground" : "text-background"
-          } text-[6vw] md:text-[5vw] leading-none ${
+          } text-2xl md:text-7xl leading-none ${
             figtree.className
           } text-${titlePosition} mb-4 uppercase`}
         >

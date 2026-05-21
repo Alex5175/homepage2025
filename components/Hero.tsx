@@ -76,7 +76,7 @@ export default function Hero() {
       >
         <div id="title" className="flex-1">
           <h1
-            className={`leading-none text-[14vw] lg:text-[9.5vw] ${figtree.className} text-foreground text-left`}
+            className={`leading-none text-6xl lg:text-9xl ${figtree.className} text-foreground text-left`}
           >
             ZEITLHOFER{" "}
             <span className=" bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
@@ -85,7 +85,7 @@ export default function Hero() {
           </h1>
 
           <p
-            className={`text-foreground text-[10vw] lg:text-[5vw] leading-none mt-4 text-left ${figtree.className}`}
+            className={`text-foreground text-4xl lg:text-7xl leading-none mt-4 text-left ${figtree.className}`}
           >
             <span className="text-gradient-underline-hover">
               WEB-ENTWICKLUNG/-DESIGN
@@ -139,7 +139,7 @@ export default function Hero() {
           <div className="flex-1 flex items-center">
             <Link
               href="/#contact"
-              className={`bg-gradient-to-r from-primary to-secondary p-4 text-2xl rounded-md text-[5vw] lg:text-[2vw] text-foreground ${figtree.className}`}
+              className={`bg-gradient-to-r from-primary to-secondary p-4 rounded-md text-xl lg:text-3xl text-foreground ${figtree.className}`}
             >
               Sie brauchen eine Website?
             </Link>

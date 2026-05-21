@@ -134,8 +134,8 @@ function ServiceCard({ title, description }: Service) {
       }}
       className={`glow p-8 bg-foreground gap-4 text-background rounded-2xl ${figtree.className} flex flex-col`}
     >
-      <h3 className="text-[5vw] md:text-[2vw]/[2.2vw]">{title}</h3>
-      <p className="text-[3vw] md:text-[1.2vw]/[1.4vw]">{description}</p>
+      <h3 className="text-xl md:text-3xl/tight">{title}</h3>
+      <p className="text-sm md:text-base/relaxed">{description}</p>
     </motion.div>
   );
 }
