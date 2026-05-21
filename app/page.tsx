@@ -2,13 +2,14 @@
 // import { Imperial_Script, Aref_Ruqaa } from "next/font/google";
 import "./home.css";
 import React from "react";
+import dynamic from "next/dynamic";
 
 import Hero from "@/components/Hero";
-import AboutMe from "@/components/AboutMe";
-import Projects from "@/components/Projects";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
-import Services from "@/components/Services";
+
+const AboutMe = dynamic(() => import("@/components/AboutMe"));
+const Services = dynamic(() => import("@/components/Services"));
+const Projects = dynamic(() => import("@/components/Projects"));
+const Contact = dynamic(() => import("@/components/Contact"));
 
 export default function Home() {
   return (

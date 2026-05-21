@@ -7,3 +7,10 @@ type Project = {
   tags: string[];
   date?: string;
 };
+
+type Mailprops = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};

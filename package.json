@@ -15,7 +15,8 @@
     "next": "^16.0.10",
     "onedollarstats": "^0.0.19",
     "react": "^19.2.3",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "resend": "^6.12.3"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

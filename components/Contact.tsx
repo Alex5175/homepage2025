@@ -3,10 +3,9 @@
 import SectionTemplate from "@/components/SectionTemplate";
 import "./Contact.css";
 import { motion } from "framer-motion";
-// const figtree = Figtree({
-//   weight: "700",
-//   subsets: ["latin"],
-// });
+import { useState } from "react";
+import { sendContactMail } from "@/app/actions";
+import ContactCardNew from "@/components/ContactCardNew";
 
 const cards = [
   {
@@ -14,6 +13,7 @@ const cards = [
     text: "+43 660 6796469",
     url: "tel:+436606796469",
     key: "/icons/telephone-handle-silhouette.png",
+    gradient: "bg-gradient-to-tr from-primary to-secondary",
     delaySec: 0,
   },
   {
@@ -21,6 +21,7 @@ const cards = [
     text: "office@alex-zeitlhofer.com",
     url: "mailto:office@alex-zeitlhofer.com",
     key: "/icons/email.png",
+    gradient: "bg-gradient-to-br from-secondary to-primary",
     delaySec: 0.2,
   },
   {
@@ -28,6 +29,7 @@ const cards = [
     text: "@alexanderzeitlhofer",
     url: "https://www.instagram.com/alexanderzeitlhofer/",
     key: "/icons/instagram.png",
+    gradient: "bg-gradient-to-t from-primary to-secondary",
     delaySec: 0.4,
   },
   {
@@ -35,6 +37,7 @@ const cards = [
     text: "Alexander Zeitlhofer",
     url: "https://www.linkedin.com/in/alexander-zeitlhofer-71976a266/",
     key: "/icons/linkedin.png",
+    gradient: "bg-gradient-to-bl from-secondary to-primary",
     delaySec: 0.6,
   },
   {
@@ -42,16 +45,100 @@ const cards = [
     text: "Alex5175",
     url: "https://github.com/Alex5175",
     key: "/icons/github.png",
+    gradient: "bg-gradient-to-r from-primary to-secondary",
     delaySec: 0.8,
   },
 ];
 
 export default function Contact() {
+  const [form, setForm] = useState<Mailprops>({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
+    "idle",
+  );
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("sending");
+    try {
+      await sendContactMail(form);
+      setStatus("sent");
+      setForm({ name: "", email: "", subject: "", message: "" });
+    } catch (err) {
+      console.error(err);
+      setStatus("error");
+    }
+  }
+
+  const inputClass =
+    "w-full px-5 py-4 rounded-lg bg-white/5 border border-white/10 text-foreground text-lg placeholder-foreground/40 focus:outline-none focus:border-primary/60 transition-all";
+
   return (
     <SectionTemplate title="KONTAKT" theme="dark" hasFooter={true} id="contact">
+      {/* Contact Form */}
+      <form
+        onSubmit={handleSubmit}
+        className="w-full max-w-4xl mx-auto flex flex-col gap-6 my-16 "
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <input
+            type="text"
+            required
+            placeholder="Name"
+            value={form.name}
+            onChange={(e) => setForm({ ...form, name: e.target.value })}
+            className={inputClass}
+          />
+          <input
+            type="email"
+            required
+            placeholder="Email"
+            value={form.email}
+            onChange={(e) => setForm({ ...form, email: e.target.value })}
+            className={inputClass}
+          />
+        </div>
+        <input
+          type="text"
+          required
+          placeholder="Betreff"
+          value={form.subject}
+          onChange={(e) => setForm({ ...form, subject: e.target.value })}
+          className={inputClass}
+        />
+        <textarea
+          required
+          placeholder="Nachricht"
+          rows={7}
+          value={form.message}
+          onChange={(e) => setForm({ ...form, message: e.target.value })}
+          className={`${inputClass} resize-none`}
+        />
+        <button
+          type="submit"
+          disabled={status === "sending"}
+          className="px-8 py-4 rounded-lg bg-gradient-to-tr from-primary to-secondary text-foreground text-lg font-bold transition-all hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          {status === "sending" ? "Wird gesendet..." : "Senden"}
+        </button>
+        {status === "sent" && (
+          <p className="text-green-400 text-center">
+            Nachricht erfolgreich gesendet!
+          </p>
+        )}
+        {status === "error" && (
+          <p className="text-red-400 text-center">
+            Etwas ist schiefgelaufen. Bitte versuche es erneut.
+          </p>
+        )}
+      </form>
+
       {/* Contact Display for Desktop */}
-      <div className="relative  justify-center items-end w-full h-[80dvh]  mx-auto hidden md:flex ">
-        {/* Silhouette Image */}
+      {/*<div className="relative  justify-center items-end w-full h-[80dvh]  mx-auto hidden md:flex ">
         <img
           draggable={false}
           src="/icons/contact.png"
@@ -60,7 +147,6 @@ export default function Contact() {
           className="absolute left-1/2 top-[60%] -translate-x-1/2 -translate-y-1/2 w-40 h-40 lg:w-60 lg:h-60 xl:w-[30vw] xl:h-[30vw] z-10 "
         />
 
-        {/* Contact Cards in a circle using Tailwind and absolute positioning */}
         <div className="absolute left-1/2 z-20 -top-10 -translate-x-1/2 -translate-y-1/2">
           <ContactCard {...cards[0]} key={cards[0].key} imageStyle="invert" />
         </div>
@@ -76,9 +162,14 @@ export default function Contact() {
         <div className="absolute left-[25%] top-[25%] -translate-x-1/2 -translate-y-1/2">
           <ContactCard {...cards[4]} key={cards[4].key} imageStyle="invert" />
         </div>
+      </div>*/}
+
+      <div className="grid-cols-5 p-4 gap-4 hidden md:grid  ">
+        {cards.map((card) => (
+          <ContactCardNew {...card} key={card.key} />
+        ))}
       </div>
 
-      {/* Contact Display for Mobile */}
       <div className="grid grid-cols-2 md:hidden gap-2 w-full ">
         {cards.map((card, idx) => (
           <div className="flex justify-center items-center" key={idx}>
