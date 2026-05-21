@@ -2,10 +2,10 @@
 // import { Figtree } from "next/font/google";
 import SectionTemplate from "@/components/SectionTemplate";
 import "./Contact.css";
-import { motion } from "framer-motion";
 import { useState } from "react";
 import { sendContactMail } from "@/app/actions";
 import ContactCardNew from "@/components/ContactCardNew";
+import TurnstileWidget from "@/components/TurnstileWidget";
 
 const cards = [
   {
@@ -60,14 +60,20 @@ export default function Contact() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
     "idle",
   );
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (!turnstileToken) {
+      setStatus("error");
+      return;
+    }
     setStatus("sending");
     try {
-      await sendContactMail(form);
+      await sendContactMail(form, turnstileToken);
       setStatus("sent");
       setForm({ name: "", email: "", subject: "", message: "" });
+      setTurnstileToken(null);
     } catch (err) {
       console.error(err);
       setStatus("error");
@@ -118,9 +124,14 @@ export default function Contact() {
           onChange={(e) => setForm({ ...form, message: e.target.value })}
           className={`${inputClass} resize-none`}
         />
+        <TurnstileWidget
+          onSuccess={setTurnstileToken}
+          onExpire={() => setTurnstileToken(null)}
+          onError={() => setTurnstileToken(null)}
+        />
         <button
           type="submit"
-          disabled={status === "sending"}
+          disabled={status === "sending" || !turnstileToken}
           className="px-8 py-4 rounded-lg bg-gradient-to-tr from-primary to-secondary text-foreground text-lg font-bold transition-all hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {status === "sending" ? "Wird gesendet..." : "Senden"}
@@ -192,24 +203,16 @@ function ContactCard({
   url,
   text,
   className,
-  delaySec,
   imageStyle,
 }: ContactCardProps & {
   className?: string;
-  delaySec: number;
+  delaySec?: number;
   imageStyle?: string;
 }) {
   return (
-    <motion.a
+    <a
       href={url}
       className={`size-40 md:w-40 md:h-48 flex flex-col z-50 p-4 justify-around bg-gradient-to-tr from-primary to-secondary rounded-lg transition-all  ${className}`}
-      animate={{ y: [0, -16, 0, 16, 0], x: [0, -16, 0, 16, 0] }}
-      transition={{
-        duration: 3,
-        repeat: Infinity,
-        ease: "easeInOut",
-        delay: delaySec,
-      }}
     >
       <div className="flex justify-center">
         <img
@@ -223,6 +226,6 @@ function ContactCard({
       <p className="text-center text-foreground text-sm md:text-md font-bold hyphens-auto">
         {text}
       </p>
-    </motion.a>
+    </a>
   );
 }

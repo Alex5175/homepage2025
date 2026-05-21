@@ -58,7 +58,7 @@ export default function ContactCardNew({
         transformStyle: "preserve-3d",
         transformPerspective: 1000,
       }}
-      className={`relative aspect-[5/7] p-6 ${gradient} rounded-xl will-change-transform shadow-2xl shadow-black/40`}
+      className={`relative aspect-[5/7] p-6 ${gradient} rounded-xl shadow-2xl shadow-black/40`}
     >
       {/* Inner border ring */}
       <div
@@ -76,7 +76,7 @@ export default function ContactCardNew({
               `radial-gradient(circle at ${sx} ${sy}, rgba(255,255,255,0.35), transparent 50%)`,
           ),
         }}
-        className="pointer-events-none absolute inset-0 rounded-xl mix-blend-overlay h-full"
+        className="pointer-events-none absolute inset-0 rounded-xl h-full"
       />
 
       {/* Top-left icon */}

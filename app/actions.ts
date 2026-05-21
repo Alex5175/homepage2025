@@ -4,6 +4,22 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+async function verifyTurnstile(token: string) {
+  const res = await fetch(
+    "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({
+        secret: process.env.TURNSTILE_SECRET_KEY!,
+        response: token,
+      }),
+    },
+  );
+  const data = (await res.json()) as { success: boolean };
+  return data.success;
+}
+
 async function sendMail({ html }: { html: string }) {
   await resend.emails.send({
     from: process.env.RESEND_MAIL!,
@@ -13,12 +29,15 @@ async function sendMail({ html }: { html: string }) {
   });
 }
 
-export async function sendContactMail({
-  name,
-  email,
-  subject,
-  message,
-}: Mailprops) {
+export async function sendContactMail(
+  { name, email, subject, message }: Mailprops,
+  turnstileToken: string,
+) {
+  const ok = await verifyTurnstile(turnstileToken);
+  if (!ok) {
+    throw new Error("Captcha verification failed");
+  }
+
   const html = `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f4f4f4;">
       <div style="background-color: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
