@@ -101,7 +101,7 @@ export default function Services() {
 
         <Link
           href="/so-laeuft-ein-projekt-ab"
-          className={`flex flex-col justify-center items-center text-center glow p-8 bg-foreground/10 border border-foreground/20 hover:bg-foreground/15 transition-colors rounded-2xl ${figtree.className}`}
+          className={`flex flex-col justify-center items-center text-center p-8 bg-white/5 border border-white/10 backdrop-blur-xl hover:bg-white/10 hover:border-white/20 transition-colors rounded-2xl ${figtree.className}`}
         >
           <p className="text-3xl text-foreground font-black mb-2">
             So läuft ein Projekt ab →
@@ -113,7 +113,7 @@ export default function Services() {
 
         <Link
           href="/#contact"
-          className={`flex justify-center items-center text-center glow p-8 bg-gradient-to-tr from-primary to-secondary rounded-2xl ${figtree.className}`}
+          className={`flex justify-center items-center text-center p-8 bg-linear-to-tr from-primary to-secondary shadow-[0_0_30px_-8px_rgba(176,110,240,0.7)] hover:scale-[1.02] transition-transform rounded-2xl ${figtree.className}`}
         >
           <p className="text-4xl text-foreground font-black ">
             Jetzt Kontakt aufnehmen!
@@ -132,7 +132,7 @@ function ServiceCard({ title, description }: Service) {
       transition={{
         opacity: { delay: 0.1, duration: 0.3 },
       }}
-      className={`glow p-8 bg-foreground gap-4 text-background rounded-2xl ${figtree.className} flex flex-col`}
+      className={`p-8 bg-white/5 border border-white/10 backdrop-blur-xl gap-4 text-foreground rounded-2xl hover:bg-white/10 hover:border-white/20 transition-colors ${figtree.className} flex flex-col`}
     >
       <h3 className="text-xl md:text-3xl/tight">{title}</h3>
       <p className="text-sm md:text-base/relaxed">{description}</p>

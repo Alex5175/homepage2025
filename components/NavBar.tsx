@@ -15,10 +15,11 @@ const figtree = Figtree({
 export default function NavBar() {
   const [open, setOpen] = useState(false);
   const btnClass = `cursor-pointer text-white bg-clip-text text-transparent drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] ${figtree.className}`;
+  const ctaClass = `group inline-flex items-center gap-2 px-5 py-2 rounded-full text-foreground font-bold bg-linear-to-r from-primary to-secondary shadow-[0_0_24px_-8px_rgba(176,110,240,0.8)] hover:scale-[1.04] transition-transform ${figtree.className}`;
 
   return (
     <>
-      <nav className="sticky top-0 left-0 right-0 h-16  w-full bg-black/50 flex items-center z-[1000]">
+      <nav className="sticky top-0 left-0 right-0 h-16  w-full bg-black/30 backdrop-blur-xl border-b border-white/10 flex items-center z-[1000]">
         <div className="flex justify-between w-screen px-4 ">
           <div className=" pl-6">
             <Link
@@ -39,8 +40,19 @@ export default function NavBar() {
             <Link href="/#projects" className={btnClass}>
               Projekte
             </Link>
-            <Link href="/#contact" className={btnClass}>
-              Kontakt
+            <Link href="/#contact" className={ctaClass}>
+              <span>Kostenloses Erstgespräch</span>
+              <svg
+                className="w-4 h-4 transition-transform group-hover:translate-x-0.5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
             </Link>
           </div>
         </div>
@@ -59,7 +71,7 @@ export default function NavBar() {
       {/* Mobile dropdown menu */}
       {open && (
         <div
-          className="fixed top-16 left-0 w-full bg-black/50 shadow-lg z-20 flex flex-col items-end p-6 gap-6 lg:hidden"
+          className="fixed top-16 left-0 w-full bg-black/40 backdrop-blur-xl border-b border-white/10 shadow-lg z-20 flex flex-col items-end p-6 gap-6 lg:hidden"
           style={{ boxSizing: "border-box", maxWidth: "100vw" }}
         >
           <Link
@@ -85,10 +97,21 @@ export default function NavBar() {
           </Link>
           <Link
             href="/#contact"
-            className={btnClass}
+            className={ctaClass}
             onClick={() => setOpen(false)}
           >
-            Kontakt
+            <span>Kostenloses Erstgespräch</span>
+            <svg
+              className="w-4 h-4 transition-transform group-hover:translate-x-0.5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M5 12h14M13 5l7 7-7 7" />
+            </svg>
           </Link>
         </div>
       )}

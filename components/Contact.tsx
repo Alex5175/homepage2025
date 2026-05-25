@@ -132,7 +132,7 @@ export default function Contact() {
         <button
           type="submit"
           disabled={status === "sending" || !turnstileToken}
-          className="px-8 py-4 rounded-lg bg-gradient-to-tr from-primary to-secondary text-foreground text-lg font-bold transition-all hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="self-start px-8 py-4 rounded-full bg-linear-to-r from-primary to-secondary text-foreground text-lg font-bold shadow-[0_0_30px_-8px_rgba(176,110,240,0.7)] transition-all hover:scale-[1.02] hover:opacity-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
         >
           {status === "sending" ? "Wird gesendet..." : "Senden"}
         </button>

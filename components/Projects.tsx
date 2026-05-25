@@ -256,30 +256,66 @@ function toMobileSrc(src: string) {
 }
 
 // Mobile Card
-function ProjectCard({ title, image, description, alt, tags, url }: Project) {
+function ProjectCard({
+  title,
+  image,
+  description,
+  alt,
+  tags,
+  url,
+  date,
+}: Project) {
   return (
-    <div className="flex flex-col transition-all duration-200 hover:scale-105 rounded-lg cursor-pointer hover:z-50 min-h-min">
-      <Link href={url} target="_blank" rel="noreferrer">
+    <div className="group flex flex-col rounded-2xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-xl transition-colors duration-200 hover:bg-white/10 hover:border-white/20">
+      <Link
+        href={url}
+        target="_blank"
+        rel="noreferrer"
+        className="relative block overflow-hidden"
+      >
         <img
           src={toMobileSrc(image)}
           alt={alt}
           loading="lazy"
-          className="object-cover rounded-t-lg "
+          className="w-full object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/0 to-transparent"
         />
       </Link>
 
-      <div className="text-pretty bg-gradient-to-r from-primary to-secondary w-full p-4 rounded-b-lg overflow-hidden text-foreground min-h-32">
-        <div className="flex">
-          <h3 className=" text-base md:text-xl font-bold shrink-0">
+      <div
+        className={`p-4 flex flex-col gap-3 text-foreground ${figtree.className}`}
+      >
+        <div className="flex items-baseline justify-between gap-2">
+          <Link
+            href={url}
+            target="_blank"
+            rel="noreferrer"
+            className="text-lg font-black leading-tight hover:underline underline-offset-4"
+          >
             {title}
-          </h3>
-          <div id="tags" className="hidden items-center ml-2 gap-2  md:flex">
+          </Link>
+          {date && (
+            <span className="text-xs text-foreground/50 shrink-0">{date}</span>
+          )}
+        </div>
+
+        {tags?.length > 0 && (
+          <div className="flex flex-wrap gap-1.5">
             {tags.map((tag) => (
-              <ProjectTag tagName={tag} key={tag}></ProjectTag>
+              <span
+                key={tag}
+                className="px-2.5 py-0.5 rounded-full text-[11px] font-semibold border border-white/15 bg-white/5 text-foreground/80"
+              >
+                {tag}
+              </span>
             ))}
           </div>
-        </div>
-        <p className="text-sm md:text-lg text-ellipsis text-wrap w-full">
+        )}
+
+        <p className="text-sm text-foreground/80 leading-relaxed">
           {description}
         </p>
       </div>
@@ -372,8 +408,8 @@ function ProjectTile({
 
 function ProjectTag({ tagName }: { tagName: string }) {
   return (
-    <div className="rounded-full max-w-min h-6 bg-gradient-to-r from-primary to-secondary p-4 flex items-center">
-      <p className="text-foreground text-center md:text-lg font-bold text-nowrap">
+    <div className="rounded-full max-w-min px-3 py-1 border border-white/15 bg-white/5 backdrop-blur-md flex items-center">
+      <p className="text-foreground/80 text-center text-sm font-semibold text-nowrap">
         {tagName}
       </p>
     </div>
