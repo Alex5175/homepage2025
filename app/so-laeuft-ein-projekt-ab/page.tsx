@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   description:
     "Wie läuft ein Webentwicklungs-Projekt ab? Hier erkläre ich dir Schritt für Schritt meinen Prozess – von der ersten Anfrage bis zum Launch und darüber hinaus.",
   keywords: ["Webentwicklung Prozess", "Zusammenarbeit", "Alex Zeitlhofer"],
+  alternates: {
+    canonical: "/so-laeuft-ein-projekt-ab",
+  },
 };
 
 export default function Page() {
