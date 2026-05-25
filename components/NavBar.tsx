@@ -34,7 +34,7 @@ export default function NavBar() {
               Über mich
             </Link>
             <Link href="/#services" className={btnClass}>
-              Dienstleistungen
+              Leistungen
             </Link>
             <Link href="/#projects" className={btnClass}>
               Projekte
@@ -74,7 +74,7 @@ export default function NavBar() {
             className={btnClass}
             onClick={() => setOpen(false)}
           >
-            Dienstleistungen
+            Leistungen
           </Link>
           <Link
             href="/#projects"

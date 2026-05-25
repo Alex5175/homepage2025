@@ -34,7 +34,7 @@ export default function SectionTemplate({
     <div
       id={id}
       className={`w-full max-w-screen p-8
-         pt-20  ${
+         pt-12  ${
            theme === "dark" ? "bg-background/0" : "bg-foreground/0"
          } flex flex-col overflow-auto`} // <-- add overflow-auto here
       style={{
@@ -44,7 +44,8 @@ export default function SectionTemplate({
         backgroundSize: "cover",
         backgroundPosition: "center",
         // Remove height property
-      }}>
+      }}
+    >
       {/* Place Title, either with predesigned Style, or the given React Node */}
       {isReactNode(title) ? (
         title
@@ -52,7 +53,7 @@ export default function SectionTemplate({
         <h2
           className={`${
             theme === "dark" ? "text-foreground" : "text-background"
-          } text-3xl md:text-9xl leading-none ${
+          } text-5xl md:text-7xl leading-none ${
             figtree.className
           } text-${titlePosition} uppercase`}
         >
@@ -65,7 +66,7 @@ export default function SectionTemplate({
         <h3
           className={`${
             theme === "dark" ? "text-foreground" : "text-background"
-          } text-2xl md:text-7xl leading-none ${
+          } text-3xl md:text-5xl leading-none ${
             figtree.className
           } text-${titlePosition} mb-4 uppercase`}
         >

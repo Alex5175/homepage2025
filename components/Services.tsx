@@ -90,7 +90,7 @@ export default function Services() {
 
   return (
     <SectionTemplate
-      title={"Dienstleistungen"}
+      title={"Leistungen"}
       subTitle="Was mach ich eigentlich?"
       id="services"
     >

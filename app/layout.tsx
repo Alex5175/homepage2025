@@ -4,6 +4,7 @@ import NavBar from "../components/NavBar";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Analytics from "@/components/Analytics";
+import SiteBackdrop from "@/components/SiteBackdrop";
 // import RoundMenuButton from "@/components/MenuDropdown";
 // import MouseProvider from "@/components/MouseProvider";
 const isDisabled = false;
@@ -121,6 +122,7 @@ export default function RootLayout({
         ) : (
           <>
             <Analytics />
+            <SiteBackdrop />
             <NavBar />
             {children}
             <Footer />
