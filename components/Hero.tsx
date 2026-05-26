@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { Figtree, JetBrains_Mono } from "next/font/google";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const figtree = Figtree({
   subsets: ["latin"],
@@ -91,19 +91,46 @@ const codeLines: Array<{
 ];
 
 export default function Hero() {
-  const [currentBuzzword, setCurrentBuzzword] = useState(buzzwords[0]);
+  const [buzzIndex, setBuzzIndex] = useState(0);
+  const [typed, setTyped] = useState("");
+  const [phase, setPhase] = useState<"typing" | "holding" | "deleting">(
+    "typing",
+  );
   const [pointer, setPointer] = useState({ x: 0.5, y: 0.5 });
   const heroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    setCurrentBuzzword(buzzwords[Math.floor(Math.random() * buzzwords.length)]);
-    const interval = setInterval(() => {
-      setCurrentBuzzword(
-        buzzwords[Math.floor(Math.random() * buzzwords.length)],
-      );
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
+    const word = buzzwords[buzzIndex];
+
+    if (phase === "typing") {
+      if (typed.length < word.length) {
+        const t = setTimeout(
+          () => setTyped(word.slice(0, typed.length + 1)),
+          70,
+        );
+        return () => clearTimeout(t);
+      }
+      const t = setTimeout(() => setPhase("holding"), 1600);
+      return () => clearTimeout(t);
+    }
+
+    if (phase === "holding") {
+      const t = setTimeout(() => setPhase("deleting"), 800);
+      return () => clearTimeout(t);
+    }
+
+    if (phase === "deleting") {
+      if (typed.length > 0) {
+        const t = setTimeout(
+          () => setTyped(word.slice(0, typed.length - 1)),
+          35,
+        );
+        return () => clearTimeout(t);
+      }
+      setBuzzIndex((i) => (i + 1) % buzzwords.length);
+      setPhase("typing");
+    }
+  }, [typed, phase, buzzIndex]);
 
   useEffect(() => {
     const onMove = (e: MouseEvent) => {
@@ -131,65 +158,31 @@ export default function Hero() {
     >
       {/* LEFT — copy */}
       <div className="relative flex-1 flex flex-col gap-6 z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className={`inline-flex items-center gap-2 self-start px-3 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-xs lg:text-sm text-foreground/80 ${mono.className}`}
-        >
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
-          </span>
-          Verfügbar für neue Projekte
-        </motion.div>
-
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className={`leading-[0.95] text-6xl sm:text-6xl lg:text-8xl ${figtree.className} font-black text-foreground text-left`}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.05 }}
+          className={`leading-[0.95] text-7xl sm:text-7xl lg:text-8xl ${figtree.className} font-black text-foreground text-left`}
         >
           <span className="block">Websites</span>
           <span
             className="block relative mt-2"
             style={{ minHeight: "calc(1.9em)" }}
           >
-            <AnimatePresence mode="wait">
-              <motion.span
-                key={currentBuzzword}
-                initial={{
-                  opacity: 0,
-                  y: 18,
-                  filter: "blur(8px)",
-                  textShadow: "0 0 24px rgba(176, 110, 240, 0.9)",
-                }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                  filter: "blur(0px)",
-                  textShadow: "0 0 0px rgba(176, 110, 240, 0)",
-                }}
-                exit={{
-                  opacity: 0,
-                  y: -18,
-                  filter: "blur(8px)",
-                  textShadow: "0 0 24px rgba(127, 212, 255, 0.9)",
-                }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-                className="absolute inset-0 bg-linear-to-r from-primary via-fuchsia-400 to-secondary bg-clip-text text-transparent"
-                style={{ willChange: "contents" }}
-              >
-                {currentBuzzword}
-              </motion.span>
-            </AnimatePresence>
+            <span className="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
+              {typed}
+            </span>
+            <span
+              aria-hidden
+              className="inline-block w-[0.08em] h-[0.85em] align-middle ml-1 bg-foreground/80 animate-pulse translate-y-[-0.05em]"
+            />
           </span>
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.25 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.15 }}
           className={`text-foreground text-4xl sm:text-4xl lg:text-4xl font-bold leading-tight text-left ${figtree.className}`}
         >
           <span className="text-gradient-underline-hover">
@@ -202,9 +195,9 @@ export default function Hero() {
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.25 }}
           className="flex flex-wrap gap-3 mt-2"
         >
           <a
@@ -235,7 +228,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.5, delay: 0.35 }}
           className={`flex items-center gap-6 mt-4 text-foreground/60 text-sm ${mono.className}`}
         >
           <div className="flex flex-col">
@@ -256,9 +249,9 @@ export default function Hero() {
 
         {/* Mobile-only decorative stack card */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.55 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.45 }}
           className="relative lg:hidden mt-4"
         >
           <div

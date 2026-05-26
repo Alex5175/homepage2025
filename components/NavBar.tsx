@@ -15,7 +15,7 @@ const figtree = Figtree({
 export default function NavBar() {
   const [open, setOpen] = useState(false);
   const btnClass = `cursor-pointer text-white bg-clip-text text-transparent drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] ${figtree.className}`;
-  const ctaClass = `group inline-flex items-center gap-2 px-5 py-2 rounded-full text-foreground font-bold bg-linear-to-r from-primary to-secondary shadow-[0_0_24px_-8px_rgba(176,110,240,0.8)] hover:scale-[1.04] transition-transform ${figtree.className}`;
+  const ctaClass = `cta-shine group inline-flex items-center gap-2 px-5 py-2 rounded-full text-foreground font-bold bg-linear-to-r from-primary to-secondary hover:scale-[1.04] transition-transform ${figtree.className}`;
 
   return (
     <>

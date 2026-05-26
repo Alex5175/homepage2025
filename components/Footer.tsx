@@ -46,13 +46,6 @@ export default function Footer() {
             Webentwicklung & Software aus Oberndorf an der Melk,
             Niederösterreich.
           </p>
-          <span className="inline-flex items-center gap-2 mt-2 text-xs text-foreground/70">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
-            </span>
-            Verfügbar für neue Projekte
-          </span>
         </div>
 
         {/* Pages */}
