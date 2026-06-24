@@ -16,11 +16,9 @@ export default function Home() {
     <>
       <main>
         <Hero></Hero>
-
         <AboutMe></AboutMe>
         <Services></Services>
         <Projects></Projects>
-
         <Contact></Contact>
       </main>
     </>

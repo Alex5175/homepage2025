@@ -12,7 +12,7 @@ const projects: Project[] = [
   {
     tags: ["in Arbeit", "Tanstack Start", "Fullstack"],
     image: "/images/stageup-new.webp",
-    title: "StageUp",
+    title: "StageUp Neuveröffentlichung",
     alt: "Landing Page der neuen Stageup Website",
 
     description: (
@@ -20,12 +20,11 @@ const projects: Project[] = [
         Für StageUp wurde eine neue Landing Page mit eingebauten Eventtechnik
         Mietungssystem entwickelt. Hierfür wurde zusätzlich ein
         Verwaltungsdashboard gemacht. Beide wurden mit Tanstack Start + einem
-        ElysiaJs Backend gebaut. Die Seite ist gerade noch im Aufbau und wird
-        vorrausichtlich in dem nächsten paar Monaten veröffentlicht.
+        ElysiaJs Backend gebaut. Die Website ist ab sofort verfügbar.
       </>
     ),
     url: "https://stageup.at",
-    date: "Mai 2026",
+    date: "Juni 2026",
   },
   {
     tags: ["React", "Tanstack Start"],
@@ -178,38 +177,38 @@ const projects: Project[] = [
     ),
     tags: ["Wordpress", "PHP"],
   },
-  {
-    title: "StageUp Website",
-    image: "/images/stageup.webp",
-    url: "https://www.stageup.at",
-    date: "März 2023",
-    description: (
-      <>
-        <span className="text-red-500 font-bold">
-          Diese Website ist gerade im Umbau, kurzzeitige Aussetzer oder andere
-          Probleme können auf dieser Version der Website vorkommen.
-        </span>
-        <br />
-        In kooperation mit Benjamin Leitner wurde eine Website für sein
-        Unternehmen StageUp erstellt. Diese wurde zur einfachen Wartung mit
-        Wordpress und Elementor erstellt. Verfügbar auf{" "}
-        <a
-          href="https://www.stageup.at"
-          target="_blank"
-          rel="noreferrer"
-          className="underline"
-        >
-          www.stageup.at
-        </a>
-      </>
-    ),
-    alt: "Screenshot der StageUp Website",
-    tags: ["Wordpress", "Elementor"],
-  },
+  // {
+  //   title: "StageUp Website",
+  //   image: "/images/stageup.webp",
+  //   url: "https://www.stageup.at",
+  //   date: "März 2023",
+  //   description: (
+  //     <>
+  //       <span className="text-red-500 font-bold">
+  //         Diese Website ist gerade im Umbau, kurzzeitige Aussetzer oder andere
+  //         Probleme können auf dieser Version der Website vorkommen.
+  //       </span>
+  //       <br />
+  //       In kooperation mit Benjamin Leitner wurde eine Website für sein
+  //       Unternehmen StageUp erstellt. Diese wurde zur einfachen Wartung mit
+  //       Wordpress und Elementor erstellt. Verfügbar auf{" "}
+  //       <a
+  //         href="https://www.stageup.at"
+  //         target="_blank"
+  //         rel="noreferrer"
+  //         className="underline"
+  //       >
+  //         www.stageup.at
+  //       </a>
+  //     </>
+  //   ),
+  //   alt: "Screenshot der StageUp Website",
+  //   tags: ["Wordpress", "Elementor"],
+  // },
   {
     title: "Griessler Website",
     image: "/images/griessler.webp",
-    date:" November 2022",
+    date: " November 2022",
     description: (
       <>
         <span className="text-red-500 font-bold">
@@ -228,7 +227,6 @@ const projects: Project[] = [
     url: "https://griessler.com/",
     tags: ["Wordpress", "Elementor"],
   },
-
 ];
 
 export default function Projects() {

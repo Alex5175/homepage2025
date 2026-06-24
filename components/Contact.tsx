@@ -3,6 +3,7 @@
 import SectionTemplate from "@/components/SectionTemplate";
 import "./Contact.css";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { sendContactMail } from "@/app/actions";
 import ContactCardNew from "@/components/ContactCardNew";
 import TurnstileWidget from "@/components/TurnstileWidget";
@@ -57,10 +58,9 @@ export default function Contact() {
     subject: "",
     message: "",
   });
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
-    "idle",
-  );
+  const [status, setStatus] = useState<"idle" | "sending" | "error">("idle");
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const router = useRouter();
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -71,9 +71,9 @@ export default function Contact() {
     setStatus("sending");
     try {
       await sendContactMail(form, turnstileToken);
-      setStatus("sent");
       setForm({ name: "", email: "", subject: "", message: "" });
       setTurnstileToken(null);
+      router.push("/thank-you");
     } catch (err) {
       console.error(err);
       setStatus("error");
@@ -86,7 +86,7 @@ export default function Contact() {
   return (
     <SectionTemplate title="KONTAKT" theme="dark" hasFooter={true} id="contact">
       {/* Contact Form */}
-      <form
+      {/*<form
         onSubmit={handleSubmit}
         className="w-full max-w-4xl mx-auto flex flex-col gap-6 my-16 "
       >
@@ -136,17 +136,12 @@ export default function Contact() {
         >
           {status === "sending" ? "Wird gesendet..." : "Senden"}
         </button>
-        {status === "sent" && (
-          <p className="text-green-400 text-center">
-            Nachricht erfolgreich gesendet!
-          </p>
-        )}
         {status === "error" && (
           <p className="text-red-400 text-center">
             Etwas ist schiefgelaufen. Bitte versuche es erneut.
           </p>
         )}
-      </form>
+      </form>*/}
 
       {/* Contact Display for Desktop */}
       {/*<div className="relative  justify-center items-end w-full h-[80dvh]  mx-auto hidden md:flex ">
