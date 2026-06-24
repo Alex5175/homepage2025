@@ -28,6 +28,9 @@
       ],
       "@prismaClient": [
         "./app/generated/prisma"
+      ],
+      "@payload-config": [
+        "./payload.config.ts"
       ]
     }
   },

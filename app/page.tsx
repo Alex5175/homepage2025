@@ -6,6 +6,8 @@ import dynamic from "next/dynamic";
 
 import Hero from "@/components/Hero";
 
+export const revalidate = 60;
+
 const AboutMe = dynamic(() => import("@/components/AboutMe"));
 const Services = dynamic(() => import("@/components/Services"));
 const Projects = dynamic(() => import("@/components/Projects"));
